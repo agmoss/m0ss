@@ -23,7 +23,8 @@
     "typeorm:generate": "npm run typeorm migration:generate -- -n",
     "typeorm:migrate": "npm run typeorm migration:run",
     "typeorm:revert": "npm run typeorm migration:revert",
-    "typeorm:sync": "npm run typeorm schema:sync"
+    "typeorm:sync": "npm run typeorm schema:sync",
+    "typeorm:drop": "npm run typeorm schema:drop"
   },
   "dependencies": {
     "@nestjs/common": "^7.6.15",

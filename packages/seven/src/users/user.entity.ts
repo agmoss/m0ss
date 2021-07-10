@@ -1,10 +1,12 @@
 import { Field, ObjectType } from "@nestjs/graphql";
 import {
     Column,
+    CreateDateColumn,
     Entity,
     JoinTable,
     ManyToMany,
     PrimaryGeneratedColumn,
+    UpdateDateColumn,
 } from "typeorm";
 
 import { Roles } from "../roles/roles.entity";
@@ -36,4 +38,10 @@ export class User {
     })
     @JoinTable()
     roles: Roles[];
+
+    @CreateDateColumn({ name: "created_at" })
+    createdAt: Date;
+
+    @UpdateDateColumn({ name: "updated_at" })
+    updatedAt: Date;
 }
