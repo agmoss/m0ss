@@ -1,10 +1,9 @@
 import { IProfile } from "blog-types";
 import { ActionType, action } from "typesafe-actions";
-
-type RD<T> = "Init" | "Pend" | "Fail" | T;
+import { RemoteData } from "../../utils/RemoteData";
 
 interface IModel {
-    profile: RD<IProfile>;
+    profile: RemoteData<IProfile>;
 }
 
 const initialState: IModel = {

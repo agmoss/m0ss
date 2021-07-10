@@ -16,7 +16,7 @@ export = {
     cli: {
         migrationsDir: 'src/migrations',
     },
-    synchronize: true,
+    synchronize: false,
     migrationsTableName: "migrations_typeorm",
     migrationsRun: true
 };

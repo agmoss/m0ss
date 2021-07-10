@@ -1,10 +1,9 @@
 import { ActionType, action } from "typesafe-actions";
 import Cookies from "universal-cookie";
-
-type RD<T> = "Init" | "Pend" | "Fail" | T;
+import { RemoteData } from "../../utils/RemoteData";
 
 interface IModel {
-    token: RD<string>;
+    token: RemoteData<string>;
 }
 
 const initialState: IModel = {
@@ -12,12 +11,12 @@ const initialState: IModel = {
 };
 
 export interface IUserLogin {
+    email: string;
     password: string;
-    identifier: string;
 }
 
 export const actions = {
-    userLogin: (c: IUserLogin) => action("USER_LOGIN", c),
+    userLogin: (loginInput: IUserLogin) => action("USER_LOGIN", loginInput),
     receiveUserLogin: (token: string) => action("RECEIVE_USER_LOGIN", token),
     userLoginError: (e: string) => action("USER_LOGIN_ERROR", e),
 };

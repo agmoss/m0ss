@@ -3,7 +3,7 @@ import { GraphQLClient } from "graphql-request";
 export const getEndpoint = () => {
     let ENDPOINT = "";
     if (process.env.NODE_ENV === "development") {
-        ENDPOINT = "http://localhost:1337";
+        ENDPOINT = "http://localhost:3001";
     } else if (process.env.NODE_ENV === "production") {
         ENDPOINT = "https://honeyy.azurewebsites.net";
     }

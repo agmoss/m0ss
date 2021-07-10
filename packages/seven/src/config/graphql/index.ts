@@ -1,5 +1,3 @@
-import { join } from "path";
-
 import { Injectable } from "@nestjs/common";
 import { GqlModuleOptions, GqlOptionsFactory } from "@nestjs/graphql";
 

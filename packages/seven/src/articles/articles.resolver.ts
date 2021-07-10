@@ -22,8 +22,8 @@ export class ArticlesResolver {
     }
 
     @Mutation((returns) => Article)
-    @UseGuards(GqlAuth, RolesGqlGuard)
-    @Roles(Role.Admin)
+    // @UseGuards(GqlAuth, RolesGqlGuard)
+    // @Roles(Role.Admin)
     async addArticle(
         @Args("newArticle") newArticle: ArticleInput,
         @CurrentUser() user: User

@@ -16,7 +16,7 @@ export class LocalGqlStrategy extends PassportStrategy(Strategy) {
         return ctx.getContext().req;
     }
 
-    async validate(username: string, password: string): Promise<any> {
-        return await this.authService.validateUser(username, password);
+    async validate(email: string, password: string): Promise<any> {
+        return await this.authService.validateUser(email, password);
     }
 }

@@ -3,3 +3,4 @@ lerna-debug.log
 .env
 dist
 yarn-error.log
+adders.md

@@ -1,13 +1,10 @@
 import { IArticle, IArticleTarget, IArticles } from "blog-types";
-import { Variables } from "graphql-request/dist/types";
 import { all, call, put, takeLatest } from "redux-saga/effects";
 import { createAsyncAction } from "typesafe-actions";
+import { fetcher, fetcher2 } from "../../utils/fetcher";
 
-import { getText } from "../../getData";
-import { client, getEndpoint } from "../../gqlClient";
-
-const fetcher = <F, P>(q: string, a?: F) => client.request<P>(q, a);
-const fetcher2 = <F, P>(q: string, a: Variables) => client.request<P>(q, a);
+import { getText } from "../../utils/getData";
+import { getEndpoint } from "../../utils/gqlClient";
 
 export const convertArticleToTarget = async (a: IArticle) => {
     let md = "";
@@ -47,12 +44,8 @@ export const queryArticle = `
             title
             description
             internalLink
-            image {
-                url
-            }
-            markdown {
-                url
-            }
+            image
+            markdown
             markdownLink
             externalLink
         }
@@ -64,7 +57,7 @@ function* fetchArticle(action: ReturnType<typeof fetchArticleAsync.request>) {
         const response: IArticle = yield call(fetcher2, queryArticle, {
             id: action.payload,
         });
-        const article = yield convertArticleToTarget(response);
+        const article: IArticleTarget = yield convertArticleToTarget(response);
         yield put(fetchArticleAsync.success(article));
     } catch (e) {
         yield put(fetchArticleAsync.failure(e.message));
@@ -87,15 +80,10 @@ export const queryArticles = `
             id
             title
             description
-            internalLink
-            image {
-                url
-            }
-            markdown {
-                url
-            }
-            markdownLink
+            image
+            markdown
             externalLink
+            internalLink
         }
     }
 `;

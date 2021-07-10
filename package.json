@@ -10,9 +10,9 @@
         "import-sort-parser-babylon": "^6.0.0",
         "import-sort-parser-typescript": "^6.0.0",
         "import-sort-style-module": "^6.0.0",
-        "lerna": "^3.22.1",
-        "markdownlint-cli": "^0.25.0",
-        "sort-package-json": "^1.48.0"
+        "lerna": "^4.0.0",
+        "markdownlint-cli": "^0.27.1",
+        "sort-package-json": "^1.50.0"
     },
     "scripts": {
         "bootstrap": "lerna bootstrap --use-workspaces",

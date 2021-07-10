@@ -18,8 +18,8 @@ export class Article {
     @Column()
     description: string;
 
-    @Field()
-    @Column()
+    @Field({ nullable: true })
+    @Column({ nullable: true })
     image: string;
 
     @Field()
@@ -27,7 +27,7 @@ export class Article {
     markdown: string;
 
     @Field()
-    @Column({ name: "internal_link" })
+    @Column({ name: "internal_link", nullable: true })
     internalLink: string;
 
     @Field()

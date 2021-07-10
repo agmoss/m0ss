@@ -17,6 +17,7 @@ export class ArticlesService {
     }
 
     async create(data: ArticleInput): Promise<Article> {
+        console.log(data);
         return await this.articlesRepository.save(data);
     }
 }

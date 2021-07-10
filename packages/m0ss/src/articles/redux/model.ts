@@ -1,11 +1,10 @@
 import { IArticleTarget } from "blog-types";
 import { ActionType, action } from "typesafe-actions";
-
-type RD<T> = "Init" | "Pend" | "Fail" | T;
+import { RemoteData } from "../../utils/RemoteData";
 
 interface IArticleModel {
-    art: RD<IArticleTarget>;
-    articles: RD<IArticleTarget[]>;
+    art: RemoteData<IArticleTarget>;
+    articles: RemoteData<IArticleTarget[]>;
 }
 
 const initialState: IArticleModel = {

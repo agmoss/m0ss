@@ -9,6 +9,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import { IMedia } from "blog-types";
 import React from "react";
+import * as O from "fp-ts/lib/Option";
+import { pipe } from "fp-ts/function";
 
 const useStyles = makeStyles((theme) => ({
     icon: {
@@ -38,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 interface IMediaPage {
-    media: IMedia;
+    media: O.Option<IMedia[]>;
 }
 
 export default function Media({ media }: IMediaPage) {
@@ -70,42 +72,62 @@ export default function Media({ media }: IMediaPage) {
                 </div>
                 <Container className={classes.cardGrid} maxWidth="md">
                     <Grid container spacing={4}>
-                        {media.images.map((m) => (
-                            <Grid item key={m.title} xs={12} sm={6} md={4}>
-                                <Card className={classes.card}>
-                                    <CardMedia
-                                        className={classes.cardMedia}
-                                        image={m.preview.url}
-                                        title="Image title"
-                                    />
-                                    <CardContent
-                                        className={classes.cardContent}
-                                    >
-                                        <Typography
-                                            gutterBottom
-                                            variant="h5"
-                                            component="h2"
-                                        >
-                                            {m.title}
-                                        </Typography>
-                                    </CardContent>
-                                    <CardActions>
-                                        <a
-                                            href={m.asset.url}
-                                            title={"Download"}
-                                            download
-                                        >
-                                            <Button
-                                                size="small"
-                                                color="primary"
+                        {pipe(
+                            media,
+                            O.fold(
+                                () => <div>"No Media"</div>,
+                                (_m) => (
+                                    <div>
+                                        {_m.map((m) => (
+                                            <Grid
+                                                item
+                                                key={m.title}
+                                                xs={12}
+                                                sm={6}
+                                                md={4}
                                             >
-                                                Download
-                                            </Button>
-                                        </a>
-                                    </CardActions>
-                                </Card>
-                            </Grid>
-                        ))}
+                                                <Card className={classes.card}>
+                                                    <CardMedia
+                                                        className={
+                                                            classes.cardMedia
+                                                        }
+                                                        image={m.preview}
+                                                        title="Image title"
+                                                    />
+                                                    <CardContent
+                                                        className={
+                                                            classes.cardContent
+                                                        }
+                                                    >
+                                                        <Typography
+                                                            gutterBottom
+                                                            variant="h5"
+                                                            component="h2"
+                                                        >
+                                                            {m.title}
+                                                        </Typography>
+                                                    </CardContent>
+                                                    <CardActions>
+                                                        <a
+                                                            href={m.asset}
+                                                            title={"Download"}
+                                                            download
+                                                        >
+                                                            <Button
+                                                                size="small"
+                                                                color="primary"
+                                                            >
+                                                                Download
+                                                            </Button>
+                                                        </a>
+                                                    </CardActions>
+                                                </Card>
+                                            </Grid>
+                                        ))}
+                                    </div>
+                                )
+                            )
+                        )}
                     </Grid>
                 </Container>
             </main>

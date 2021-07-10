@@ -1,37 +1,29 @@
-import { IMedia } from "blog-types";
-import React, { useState } from "react";
-import useSWR from "swr";
-import Cookies from "universal-cookie";
+import React from "react";
+import { useDispatch } from "react-redux";
+import { compose } from "redux";
 
 import withPage from "../../components/withPage";
-import { client } from "../../gqlClient";
-import { queryMedia } from "../../gqlQuery";
 import { Error, Loading } from "../../pages/placeholders";
 import MediaPage from "../pages/media";
+import { actions as mediaActions } from "../redux/model";
+import { useMedia } from "../redux/hooks";
 
 const MediaContainer = () => {
-    const cookies = new Cookies();
-    const [media, setMedia] = useState<IMedia | null>(null);
+    const dispatch = useDispatch();
 
-    function fetcher(query: string) {
-        client.setHeader("Authorization", `Bearer ${cookies.get("ahhhh")}`);
-        return client.request<IMedia>(query);
+    const fetchMedia = compose(dispatch, mediaActions.fetchMedia);
+
+    const media = useMedia();
+
+    if (media === "Init") {
+        fetchMedia();
     }
 
-    const { data, error } = useSWR([queryMedia], fetcher);
-
-    if (error) {
+    if (media === "Fail") {
         return <Error />;
     }
-    if (!data) {
-        return <Loading />;
-    }
-    if (media === null) {
-        try {
-            setMedia(data);
-        } catch (e) {
-            return <Error />;
-        }
+
+    if (media === "Init" || media === "Pend") {
         return <Loading />;
     }
 

@@ -19,8 +19,8 @@ export class User {
     id: number;
 
     @Field()
-    @Column({ name: "user_name" })
-    userName: string;
+    @Column({ name: "email" })
+    email: string;
 
     @Field()
     @Column()

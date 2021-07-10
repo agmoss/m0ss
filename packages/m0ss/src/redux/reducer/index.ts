@@ -6,6 +6,7 @@ import { reducer as articlesReducer } from "../../articles/redux/model";
 import { reducer as profileReducer } from "../../profile/redux/model";
 import { reducer as themeReducer } from "../../theme/redux/model";
 import { reducer as userReducer } from "../../user/redux/model";
+import { reducer as mediaReducer } from "../../media/redux/model";
 
 const createRootReducer = (history: History) =>
     combineReducers({
@@ -14,6 +15,7 @@ const createRootReducer = (history: History) =>
         profile: profileReducer,
         art: articlesReducer,
         user: userReducer,
+        media: mediaReducer,
     });
 
 export default createRootReducer;

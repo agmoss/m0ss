@@ -7,6 +7,8 @@ import createSagaMiddleware from "redux-saga";
 import articlesRootSaga from "../../articles/redux/saga";
 import profileRootSaga from "../../profile/redux/saga";
 import userRootSaga from "../../user/redux/saga";
+import mediaRootSaga from "../../media/redux/saga";
+
 import createRootReducer from "../reducer";
 
 const logger = createLogger({
@@ -28,5 +30,6 @@ const store = createStore(
 sagaMiddleware.run(profileRootSaga);
 sagaMiddleware.run(articlesRootSaga);
 sagaMiddleware.run(userRootSaga);
+sagaMiddleware.run(mediaRootSaga);
 
 export default store;
