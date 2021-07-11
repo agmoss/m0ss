@@ -1,10 +1,10 @@
 import { UseGuards } from "@nestjs/common";
 import { Args, Mutation, Query, Resolver } from "@nestjs/graphql";
 
-import { GqlAuth } from "../auth/gql.guard";
+import { GqlAuth } from "../auth/guards/gql.guard";
 import { Role } from "../auth/role.enum";
 import { Roles as RolesDecorator } from "../auth/roles.decorator";
-import { RolesGqlGuard } from "../auth/RolesGql.guard";
+import { RolesGqlGuard } from "../auth/guards/RolesGql.guard";
 import { RolesInput } from "./dto/roles.dto";
 import { Roles } from "./roles.entity";
 import { RolesService } from "./roles.service";

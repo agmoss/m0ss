@@ -21,9 +21,10 @@ import {
 } from "./pages";
 import Landing from "./profile/containers/landing";
 import { useThemeSelection } from "./theme/redux/hooks";
+import { Paths } from "./utils/paths";
 
 interface IMatchParams {
-    id: string;
+    slug: string;
 }
 type IMatchProps = RouteComponentProps<IMatchParams>;
 
@@ -45,17 +46,13 @@ const App = () => {
         [__theme__.theme, __theme__.color]
     );
 
-    const LandingWProps = () => {
-        return <Landing />;
-    };
-
     const WrappedLanding = withHelmet({
         title: "Andrew Moss",
         meta: {
             name: "Andrew Moss",
             content: "Andrew Moss Personal Website",
         },
-    })(withPage(LandingWProps));
+    })(withPage(Landing));
 
     return (
         <ThemeProvider theme={theme}>
@@ -65,13 +62,11 @@ const App = () => {
                     <Route exact path="/">
                         <WrappedLanding />
                     </Route>
-                    <Route path="/content">
-                        <WrappedDashboard />
-                    </Route>
-                    <Route path="/react-circles">
+
+                    <Route path={Paths.CIRCLES}>
                         <WrappedReactCirclesDemo />
                     </Route>
-                    <Route path="/offcircle">
+                    <Route path={Paths.OFFCIRCLE}>
                         <div
                             style={{
                                 overflowX: "hidden",
@@ -81,21 +76,24 @@ const App = () => {
                             <WrappedOffCircleWeb />
                         </div>
                     </Route>
-                    <Route path="/README">
+                    <Route path={Paths.README}>
                         <WrappedProjectReadme />
                     </Route>
-                    <Route path="/signin">
+                    <Route path={Paths.SIGNIN}>
                         <WrappedSignin />
                     </Route>
-                    <Route path="/media">
+                    <Route path={Paths.MEDIA}>
                         <WrappedMedia />
                     </Route>
                     <Route
-                        path="/article/:id"
+                        path={`${Paths.CONTENT}/:slug`}
                         render={({ match }: IMatchProps) => {
-                            return <ArticleContainer id={match.params.id} />;
+                            return <ArticleContainer id={match.params.slug} />;
                         }}
                     />
+                    <Route path={Paths.CONTENT}>
+                        <WrappedDashboard />
+                    </Route>
                     <Route>
                         <WrappedReactCirclesDemo />
                     </Route>

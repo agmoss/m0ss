@@ -16,8 +16,13 @@ export class ArticlesService {
         return this.articlesRepository.find();
     }
 
+    async findOne(slug: string): Promise<Article> {
+        return await this.articlesRepository.findOne({
+            where: [{ slug: slug }],
+        });
+    }
+
     async create(data: ArticleInput): Promise<Article> {
-        console.log(data);
         return await this.articlesRepository.save(data);
     }
 }

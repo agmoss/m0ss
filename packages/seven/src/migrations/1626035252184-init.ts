@@ -1,11 +1,11 @@
 import { MigrationInterface, QueryRunner } from "typeorm";
 
-export class init1625958509555 implements MigrationInterface {
-    name = "init1625958509555";
+export class init1626035252184 implements MigrationInterface {
+    name = "init1626035252184";
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.query(
-            `CREATE TABLE "articles" ("id" SERIAL NOT NULL, "title" character varying NOT NULL, "description" character varying NOT NULL, "image" character varying, "markdown" character varying NOT NULL, "internal_link" character varying, "external_link" character varying NOT NULL, "is_active" boolean NOT NULL DEFAULT true, "created_at" TIMESTAMP NOT NULL DEFAULT now(), "updated_at" TIMESTAMP NOT NULL DEFAULT now(), CONSTRAINT "PK_0a6e2c450d83e0b6052c2793334" PRIMARY KEY ("id"))`
+            `CREATE TABLE "articles" ("id" SERIAL NOT NULL, "title" character varying NOT NULL, "description" character varying NOT NULL, "image" character varying, "markdown" character varying NOT NULL, "internal_link" character varying, "external_link" character varying NOT NULL, "slug" character varying NOT NULL, "is_active" boolean NOT NULL DEFAULT true, "created_at" TIMESTAMP NOT NULL DEFAULT now(), "updated_at" TIMESTAMP NOT NULL DEFAULT now(), CONSTRAINT "PK_0a6e2c450d83e0b6052c2793334" PRIMARY KEY ("id"))`
         );
         await queryRunner.query(
             `CREATE TABLE "media" ("id" SERIAL NOT NULL, "title" character varying NOT NULL, "preview" character varying NOT NULL, "asset" character varying NOT NULL, "is_active" boolean NOT NULL DEFAULT true, "created_at" TIMESTAMP NOT NULL DEFAULT now(), "updated_at" TIMESTAMP NOT NULL DEFAULT now(), CONSTRAINT "PK_f4e0fcac36e050de337b670d8bd" PRIMARY KEY ("id"))`

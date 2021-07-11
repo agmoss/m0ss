@@ -2,34 +2,7 @@ import { IArticle, IArticleTarget, IArticles } from "blog-types";
 import { all, call, put, takeLatest } from "redux-saga/effects";
 import { createAsyncAction } from "typesafe-actions";
 import { fetcher, fetcher2 } from "../../utils/fetcher";
-
-import { getText } from "../../utils/getData";
-import { getEndpoint } from "../../utils/gqlClient";
-
-export const convertArticleToTarget = async (a: IArticle) => {
-    let md = "";
-
-    if (a.article.markdownLink) {
-        md = await getText(a.article.markdownLink);
-    } else if (a.article.markdown.url) {
-        md = await getText(`${getEndpoint()}${a.article.markdown.url}`);
-    }
-
-    const artTarget: IArticleTarget = {
-        article: {
-            id: a.article.id,
-            title: a.article.title,
-            description: a.article.description,
-            internalLink: a.article.internalLink,
-            markdown: {
-                content: md,
-            },
-            externalLink: a.article.externalLink,
-        },
-    };
-
-    return artTarget;
-};
+import { convertArticleToTarget } from "../utils";
 
 const fetchArticleAsync = createAsyncAction(
     "FETCH_ARTICLE",
@@ -38,26 +11,32 @@ const fetchArticleAsync = createAsyncAction(
 )<string, IArticleTarget, Error>();
 
 export const queryArticle = `
-    query article($id: ID!) {
-        article(id: $id) {
+    query article($slug: String!) {
+        article(slug: $slug) {
             id
             title
+            slug
             description
-            internalLink
             image
             markdown
-            markdownLink
             externalLink
+            internalLink
         }
     }
 `;
 
 function* fetchArticle(action: ReturnType<typeof fetchArticleAsync.request>) {
     try {
-        const response: IArticle = yield call(fetcher2, queryArticle, {
-            id: action.payload,
-        });
-        const article: IArticleTarget = yield convertArticleToTarget(response);
+        const response: { article: IArticle } = yield call(
+            fetcher2,
+            queryArticle,
+            {
+                slug: action.payload,
+            }
+        );
+        const article: IArticleTarget = yield convertArticleToTarget(
+            response.article
+        );
         yield put(fetchArticleAsync.success(article));
     } catch (e) {
         yield put(fetchArticleAsync.failure(e.message));
@@ -79,6 +58,7 @@ export const queryArticles = `
         articles {
             id
             title
+            slug
             description
             image
             markdown
@@ -98,9 +78,7 @@ function* fetchArticles(action: ReturnType<typeof fetchArticlesAsync.request>) {
 
         const createTargetArticles = async () => {
             return Promise.all(
-                response.articles.map((a) =>
-                    convertArticleToTarget({ article: a })
-                )
+                response.articles.map((a) => convertArticleToTarget(a))
             );
         };
 

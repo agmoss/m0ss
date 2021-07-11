@@ -22,7 +22,7 @@ curl 'http://localhost:3001/graphql' \
 ## REST Login
 
 ```bash
-curl -X POST http://localhost:3001/auth/login -d '{"username": "sample", "password": "XXXXXXX"}' -H "Content-Type: application/json"
+curl -X POST http://localhost:3001/auth/login -d '{"email": "sample", "password": "XXXXXXX"}' -H "Content-Type: application/json"
 ```
 
 ## GraphQL Login
@@ -48,7 +48,7 @@ curl 'http://localhost:3001/graphql' \
 curl 'http://localhost:3001/graphql' \
 -X POST \
 -H "Content-Type: application/json" \
--H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNhbXBsZSIsInN1YiI6MSwiaWF0IjoxNjI1OTQ5ODE1LCJleHAiOjE2MjU5NDk4NzV9.8Y1IQs3r10wRSpknj-K2_tilxu8lQMEzfTztZd9t_HM" \
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhbXBsZSIsInN1YiI6MSwiaWF0IjoxNjI2MDMzMDkyLCJleHAiOjE2MjYwMzMxNTJ9.S7yM43cBB1dMpdHg7uO4rSJRqST5pVu58tdthJj1PjA" \
 --data '{
     "query": "mutation addArticle($newArticle:ArticleInput!){addArticle(newArticle:$newArticle){title} } ",
      "variables": {

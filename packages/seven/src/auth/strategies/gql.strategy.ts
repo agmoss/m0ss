@@ -3,10 +3,10 @@ import { GqlExecutionContext } from "@nestjs/graphql";
 import { PassportStrategy } from "@nestjs/passport";
 import { Strategy } from "passport-local";
 
-import { AuthService } from "./auth.service";
+import { AuthService } from "../auth.service";
 
 @Injectable()
-export class LocalGqlStrategy extends PassportStrategy(Strategy) {
+export class GqlStrategy extends PassportStrategy(Strategy) {
     constructor(private authService: AuthService) {
         super();
     }

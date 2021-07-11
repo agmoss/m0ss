@@ -18,5 +18,5 @@ export = {
     },
     synchronize: false,
     migrationsTableName: "migrations_typeorm",
-    migrationsRun: true
+    migrationsRun: false
 };

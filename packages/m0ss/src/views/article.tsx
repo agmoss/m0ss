@@ -52,11 +52,8 @@ export const Article = ({ article }: IArticleView) => {
     return (
         <div>
             <Helmet>
-                <title>{article.article.title}</title>
-                <meta
-                    name="description"
-                    content={article.article.description}
-                />
+                <title>{article.title}</title>
+                <meta name="description" content={article.description} />
             </Helmet>
             <Container maxWidth="lg">
                 <main>
@@ -69,8 +66,8 @@ export const Article = ({ article }: IArticleView) => {
                     >
                         <Grid item xs={12}>
                             {MarkdownComponent(
-                                article.article.markdown.content
-                                    ? article.article.markdown.content
+                                article._markdown.content
+                                    ? article._markdown.content
                                     : "No Content for this article :("
                             )}
                         </Grid>

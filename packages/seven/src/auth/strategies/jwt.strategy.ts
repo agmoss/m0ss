@@ -5,8 +5,8 @@ import * as E from "fp-ts/lib/Either";
 import { pipe } from "fp-ts/lib/function";
 import { ExtractJwt, Strategy } from "passport-jwt";
 
-import { User } from "../users/user.entity";
-import { UsersService } from "../users/users.service";
+import { User } from "../../users/user.entity";
+import { UsersService } from "../../users/users.service";
 
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {

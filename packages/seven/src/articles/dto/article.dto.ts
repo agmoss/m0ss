@@ -1,5 +1,5 @@
 import { Field, InputType } from "@nestjs/graphql";
-import { IsOptional, Length, MaxLength } from "class-validator";
+import { Length, MaxLength } from "class-validator";
 
 @InputType()
 export class ArticleInput {
@@ -18,6 +18,10 @@ export class ArticleInput {
     @Field()
     @Length(1, 255)
     markdown: string;
+
+    @Field()
+    @Length(1, 255)
+    slug: string;
 
     @Field({ nullable: true })
     internalLink: string;

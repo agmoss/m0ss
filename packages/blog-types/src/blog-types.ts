@@ -35,58 +35,33 @@ export interface IProfile {
 }
 
 export interface IArticle {
-    article: {
-        id: string;
-        title: string;
-        description: string;
-        internalLink: string | null;
-        image: {
-            url: string;
-        };
-        markdown: {
-            url: string;
-        };
-        markdownLink: string | null;
-        externalLink: string | null;
+    id: number;
+    title: string;
+    slug: string;
+    description: string;
+    internalLink: string | null;
+    image: string;
+    markdown: string;
+    isActive: boolean;
+    createdAt: Date;
+    updatedAt: Date;
+    externalLink: string | null;
+}
+
+export interface IArticleTarget extends IArticle {
+    _markdown: {
+        content: string | null;
     };
 }
 
 export interface IArticles {
-    articles: [
-        {
-            id: string;
-            title: string;
-            description: string;
-            internalLink: string | null;
-            image: {
-                url: string;
-            };
-            markdown: {
-                url: string;
-            };
-            markdownLink: string | null;
-            externalLink: string | null;
-        }
-    ];
-}
-
-export interface IArticleTarget {
-    article: {
-        id: string;
-        title: string;
-        description: string;
-        internalLink: string | null;
-        markdown: {
-            content: string | null;
-        };
-        externalLink: string | null;
-    };
+    articles: IArticle[];
 }
 
 export interface IMedia {
-    id:number;
+    id: number;
     title: string;
     asset: string;
     isActive: boolean;
-    preview: string
+    preview: string;
 }

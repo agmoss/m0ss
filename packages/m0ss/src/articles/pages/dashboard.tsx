@@ -19,6 +19,7 @@ import { IArticleTarget } from "blog-types";
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { IconButton } from "three-ui";
+import { Paths } from "../../utils/paths";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -44,33 +45,31 @@ const ArticleCard = ({ article }: IArticleCard) => {
             <Divider />
             <ListItem>
                 <ListItemText
-                    primary={article.article.title}
-                    secondary={article.article.description}
+                    primary={article.title}
+                    secondary={article.description}
                 />
 
-                {article.article.markdown.content ? (
+                {article._markdown.content ? (
                     <Button
                         onClick={() =>
-                            history.push(`article/${article.article.id}`)
+                            history.push(`${Paths.CONTENT}/${article.slug}`)
                         }
                     >
                         About
                     </Button>
                 ) : null}
-                {article.article.internalLink ? (
+                {article.internalLink ? (
                     <Button
-                        onClick={() =>
-                            history.push(`/${article.article.internalLink}`)
-                        }
+                        onClick={() => history.push(`/${article.internalLink}`)}
                     >
                         Live
                     </Button>
                 ) : null}
-                {article.article.externalLink ? (
+                {article.externalLink ? (
                     <Link
                         target="_blank"
                         rel="noopener noreferrer"
-                        href={article.article.externalLink}
+                        href={article.externalLink}
                         style={{ textDecoration: "none" }}
                         color="inherit"
                     >
@@ -141,12 +140,7 @@ const Dashboard = ({ articles }: IDashboard) => {
                         </AppBar>
                         <List>
                             {articles.map((a) => {
-                                return (
-                                    <ArticleCard
-                                        key={a.article.id}
-                                        article={a}
-                                    />
-                                );
+                                return <ArticleCard key={a.id} article={a} />;
                             })}
                         </List>
                     </div>

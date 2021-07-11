@@ -32,13 +32,17 @@ export class Article {
     @Column()
     markdown: string;
 
-    @Field()
+    @Field({ nullable: true })
     @Column({ name: "internal_link", nullable: true })
     internalLink: string;
 
     @Field()
     @Column({ name: "external_link" })
     externalLink: string;
+
+    @Field()
+    @Column()
+    slug: string;
 
     @Field()
     @Column({ default: true, name: "is_active" })

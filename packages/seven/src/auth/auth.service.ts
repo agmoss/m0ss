@@ -12,14 +12,14 @@ export class AuthService {
         private jwtService: JwtService
     ) {}
 
-    async validateUser(email: string, pass: string): Promise<User> {
+    async validateUser(email: string, password: string): Promise<User> {
         const user = await this.usersService.findOne(email);
 
         if (!user) {
             throw new ForbiddenException("User not found!");
         }
 
-        const validCredentials = await bcrypt.compare(pass, user.password);
+        const validCredentials = await bcrypt.compare(password, user.password);
 
         if (!validCredentials) {
             throw new ForbiddenException("Credentials are invalid");
