@@ -3,7 +3,7 @@ import Circles from "react-circles";
 import { withFade } from "three-ui";
 
 import Dashboard from "../articles/containers/dashboard";
-import { withHelmet } from "../components/withHelmet";
+import withHelmet from "../components/withHelmet";
 import withPage from "../components/withPage";
 import MediaContainer from "../media/containers/media";
 import Signin from "../user/pages/signin";

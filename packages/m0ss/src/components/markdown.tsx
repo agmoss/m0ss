@@ -1,5 +1,5 @@
 import { Link, Typography } from "@material-ui/core";
-import ReactMarkdown, { MarkdownOptions } from "markdown-to-jsx";
+import ReactMarkdown, { MarkdownToJSX } from "markdown-to-jsx";
 import React from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { monokai } from "react-syntax-highlighter/dist/esm/styles/hljs";
@@ -50,7 +50,7 @@ const options = {
 };
 
 const Markdown = <P extends []>(md: string, ...props: P) => (
-    <ReactMarkdown options={options as MarkdownOptions} {...props}>
+    <ReactMarkdown options={options as MarkdownToJSX.Options} {...props}>
         {md}
     </ReactMarkdown>
 );

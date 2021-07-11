@@ -9,7 +9,7 @@ import {
 import { theme as customTheme } from "three-ui";
 
 import ArticleContainer from "./articles/containers/article";
-import { withHelmet } from "./components/withHelmet";
+import withHelmet from "./components/withHelmet";
 import withPage from "./components/withPage";
 import {
     WrappedDashboard,

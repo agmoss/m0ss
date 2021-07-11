@@ -16,17 +16,19 @@ const useStyles = makeStyles(() =>
 );
 
 // eslint-disable-next-line @typescript-eslint/ban-types
-const withPage = <T extends object>(
-    WrappedComponent: ComponentType<T>
-): React.FC<T> => ({ ...props }) => {
-    const classes = useStyles();
-    return (
-        <div className={classes.root}>
-            <Header />
-            <WrappedComponent {...(props as T)} />
-            <Footer />
-        </div>
-    );
-};
+const withPage =
+    // eslint-disable-next-line @typescript-eslint/ban-types
+
+        <T extends object>(WrappedComponent: ComponentType<T>): React.FC<T> =>
+        ({ ...props }) => {
+            const classes = useStyles();
+            return (
+                <div className={classes.root}>
+                    <Header />
+                    <WrappedComponent {...(props as T)} />
+                    <Footer />
+                </div>
+            );
+        };
 
 export default withPage;

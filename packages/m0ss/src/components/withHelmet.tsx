@@ -9,18 +9,23 @@ interface IMeta {
     };
 }
 
-export const withHelmet = ({ title, meta }: IMeta) => <
-    T extends Record<string, unknown>
->(
-    WrappedComponent: ComponentType<T>
-): React.FC<T> => ({ ...props }) => {
-    return (
-        <>
-            <Helmet>
-                <title>{title}</title>
-                <meta name={meta.name} content={meta.content} />
-            </Helmet>
-            <WrappedComponent {...(props as T)} />
-        </>
-    );
-};
+const withHelmet =
+    ({ title, meta }: IMeta) =>
+    <T extends Record<string, unknown>>(
+        WrappedComponent: ComponentType<T>
+    ): React.FC<T> =>
+    ({ ...props }) => {
+        return (
+            <>
+                <Helmet>
+                    <title>{title}</title>
+                    <meta name={meta.name} content={meta.content} />
+                </Helmet>
+                <WrappedComponent {...(props as T)} />
+            </>
+        );
+    };
+
+withHelmet.displayName = "withHelmet";
+
+export default withHelmet;

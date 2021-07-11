@@ -28,8 +28,7 @@ function* fetchProfile(action: ReturnType<typeof fetchProfileAsync.request>) {
                     url: "",
                     content: text,
                 },
-                bio:
-                    "Hi, I'm a full stack developer with a focus on web applications, infrastructure, data visualization, and creative programming. I am currently hard at work on the next big thing. You'll be hearing about it soon...",
+                bio: "Hi, I'm a full stack developer with a focus on web applications, infrastructure, data visualization, and creative programming. I am currently hard at work on the next big thing. You'll be hearing about it soon...",
                 color: "red",
             },
         };
