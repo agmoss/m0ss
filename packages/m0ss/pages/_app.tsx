@@ -31,15 +31,12 @@ export default function App({ Component, pageProps }: AppProps) {
                     name="viewport"
                     content="minimum-scale=1, initial-scale=1, width=device-width"
                 />
-                <script type="application/ld+json">{`
-                    ${JSON.stringify(websiteSchema)}
-                `}</script>
-                <script type="application/ld+json">{`
-                    ${JSON.stringify(personSchema)}
-                `}</script>
-                <script type="application/ld+json">{`
-                    ${JSON.stringify(orgSchema)}
-                `}</script>
+                {/* prettier-ignore */}
+                <script type="application/ld+json">{`${JSON.stringify(websiteSchema).trim()}`}</script>
+                {/* prettier-ignore */}
+                <script type="application/ld+json">{`${JSON.stringify(personSchema).trim()}`}</script>
+                {/* prettier-ignore */}
+                <script type="application/ld+json">{`${JSON.stringify(orgSchema).trim()}`}</script>
                 <link rel="icon" href="/favicon.ico" />
                 <meta
                     property="og:title"
