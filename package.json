@@ -1,0 +1,35 @@
+{
+  "name": "root",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agmoss/m0ss.git"
+  },
+  "license": "MIT",
+  "author": "Andrew Moss <andrew@m0ss.dev> (https://m0ss.dev/)",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "bootstrap": "lerna bootstrap --use-workspaces",
+    "bootstrap:clean": "lerna clean -y && lerna bootstrap --use-workspaces",
+    "format-imports": "import-sort --write '**/*.{js,jsx,ts,tsx}'",
+    "format-package-json": "sort-package-json 'packages/*/package.json'",
+    "lint-markdown": "markdownlint --ignore coverage --ignore dist --ignore **/node_modules/** '**/*.md' '.**/**/*.md'"
+  },
+  "dependencies": {
+    "import-sort-cli": "^6.0.0",
+    "import-sort-parser-babylon": "^6.0.0",
+    "import-sort-parser-typescript": "^6.0.0",
+    "import-sort-style-module": "^6.0.0",
+    "markdownlint-cli": "^0.28.1",
+    "sort-package-json": "^1.50.0"
+  },
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  },
+  "engines": {
+    "node": "16.X",
+    "yarn": ">=1.19.1"
+  }
+}
