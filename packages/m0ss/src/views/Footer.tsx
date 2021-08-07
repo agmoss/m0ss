@@ -11,6 +11,7 @@ import {
 
 import React from "react";
 import { useRouter } from "next/router";
+import { Paths } from "../utils/Paths";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -82,7 +83,7 @@ export const Footer = () => {
                                                 size="large"
                                                 className={classes.button}
                                                 onClick={() =>
-                                                    router.push("/readme")
+                                                    router.push(Paths.README)
                                                 }
                                                 role="link"
                                             >

@@ -7697,6 +7697,11 @@ scheduler@^0.20.2:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
 
+schema-dts@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/schema-dts/-/schema-dts-0.10.0.tgz#7e1a2ba6ba5cfe12c0cd6a8e43b6c23695c2391d"
+  integrity sha512-swqBU3bFgtz/b+ldP/LEshp4clgOt130uKIgVOGLx+K3lYGUL8censjA9nQX8+jMz1oU/AeNktCIClTaNLuJzw==
+
 "semver@2 || 3 || 4 || 5", semver@^5.5.0, semver@^5.5.1, semver@^5.6.0, semver@^5.7.0, semver@^5.7.1:
   version "5.7.1"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.7.1.tgz#a954f931aeba508d307bbf069eff0c01c96116f7"

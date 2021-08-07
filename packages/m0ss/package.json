@@ -26,6 +26,7 @@
     "react-spring": "^9.2.4",
     "react-syntax-highlighter": "^15.4.4",
     "react-with-gesture": "^4.0.8",
+    "schema-dts": "^0.10.0",
     "utility-types": "^3.10.0"
   },
   "devDependencies": {
