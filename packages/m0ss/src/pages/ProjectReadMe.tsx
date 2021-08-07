@@ -1,6 +1,6 @@
 import { Grid, Theme, createStyles, makeStyles } from "@material-ui/core";
-import React from "react";
 
+import React from "react";
 import { withMarkdownView } from "../components/withMarkdownView";
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-interface IProjectReadMe {
+export interface IProjectReadMe {
     md: string;
 }
 

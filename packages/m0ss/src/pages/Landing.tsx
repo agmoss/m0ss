@@ -1,9 +1,8 @@
-import React from "react";
 import { DeepRequired } from "utility-types";
-
 import { Hero } from "../views/Hero";
 import { IProfile } from "../data";
 import { MainContent } from "../views/MainContent";
+import React from "react";
 
 interface ILanding {
     profile: DeepRequired<IProfile>;

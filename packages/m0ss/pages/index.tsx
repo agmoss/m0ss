@@ -1,12 +1,22 @@
+import * as E from "fp-ts/lib/Either";
+
 import { IProfile, landingData } from "../src/data";
 
 import { DeepRequired } from "utility-types";
 import { Landing as LandingPage } from "../src/pages/Landing";
 import { getText } from "../src/utils/getData";
+import { pipe } from "fp-ts/lib/function";
 import withPage from "../src/components/withPage";
 
 export async function getStaticProps(context: any) {
-    const md = await getText(landingData.profile.rant.url);
+    const md = pipe(
+        await getText(landingData.profile.rant.url),
+        E.fold(
+            (_l) => "error",
+            (r) => r
+        )
+    );
+
     const data: DeepRequired<IProfile> = {
         ...landingData,
         profile: {

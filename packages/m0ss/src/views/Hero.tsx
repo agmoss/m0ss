@@ -12,6 +12,7 @@ import {
 
 import { Card } from "../components/Card";
 import React from "react";
+import { metaData } from "../data";
 import { withPull } from "../components/withPull";
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -47,10 +48,10 @@ export const Hero = ({ primary, secondary, bio }: IProps) => {
 
     const CtaCard = () => (
         <Paper className={classes.mainContent}>
-            <Typography variant="h3" gutterBottom>
-                m0ss.dev
+            <Typography variant="h3" component="h1" gutterBottom>
+                {metaData.name}
             </Typography>
-            <Typography variant="h5" paragraph gutterBottom>
+            <Typography variant="h5" component="h3" paragraph gutterBottom>
                 {bio}
             </Typography>
         </Paper>

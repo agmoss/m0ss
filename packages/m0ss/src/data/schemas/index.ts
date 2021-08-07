@@ -1,4 +1,5 @@
-import { WebSite, Person, WithContext, Organization } from "schema-dts";
+import { Organization, Person, WebSite, WithContext } from "schema-dts";
+
 import { metaData } from "..";
 
 export const websiteSchema: WithContext<WebSite> = {

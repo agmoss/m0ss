@@ -1,22 +1,27 @@
-import React from "react";
-import Head from "next/head";
+import * as E from "fp-ts/lib/Either";
 
-import ProjectReadme from "../../src/pages/ProjectReadMe";
+import ProjectReadme, { IProjectReadMe } from "../../src/pages/ProjectReadMe";
+
+import Head from "next/head";
+import React from "react";
 import { getText } from "../../src/utils/getData";
+import { metaData } from "../../src/data";
+import { pipe } from "fp-ts/lib/function";
 import withPage from "../../src/components/withPage";
-import {  metaData } from "../../src/data";
 
 export async function getStaticProps(context: any) {
-    const md = await getText(
-        "https://raw.githubusercontent.com/agmoss/m0ss/master/README.md"
+
+    const md = pipe(
+        await getText(metaData.readmeLink),
+        E.fold(
+            (_l) => "error",
+            (r) => r
+        )
     );
+
     return {
         props: { md: md },
     };
-}
-
-interface IProjectReadMe {
-    md: string;
 }
 
 function ReadmePage({ md }: IProjectReadMe) {

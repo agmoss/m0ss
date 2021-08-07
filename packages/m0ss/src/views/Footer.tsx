@@ -9,9 +9,9 @@ import {
     makeStyles,
 } from "@material-ui/core";
 
+import { Paths } from "../utils/Paths";
 import React from "react";
 import { useRouter } from "next/router";
-import { Paths } from "../utils/Paths";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({

@@ -1,13 +1,13 @@
 import React, { useState } from "react";
+import { orgSchema, personSchema, websiteSchema } from "../src/data/schemas";
 
 import { AppProps } from "next/app";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Head from "next/head";
 import { ThemeProvider } from "@material-ui/core/styles";
+import { metaData } from "../src/data";
 import theme from "../src/theme";
 import { useEffect } from "react";
-import { metaData } from "../src/data";
-import { orgSchema, personSchema, websiteSchema } from "../src/data/schemas";
 
 export default function App({ Component, pageProps }: AppProps) {
     const [key, setKey] = useState(0);

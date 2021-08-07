@@ -10,7 +10,7 @@ import {
     createStyles,
     makeStyles,
 } from "@material-ui/core";
-import { Apps, GitHub, LinkedIn, Mail } from "@material-ui/icons";
+import { GitHub, LinkedIn, Mail } from "@material-ui/icons";
 import React, { useState } from "react";
 
 import { ContactDialog } from "./ContactDialog";
