@@ -1,34 +1,59 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">m0ss.dev</h1>
 
-## Getting Started
+<div align="center">
+  <img src="https://m0ss.blob.core.windows.net/media/m0ss_v1.svg" alt="Logo" width="150" height="150"/>
+</div>
 
-First, run the development server:
+<br />
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+<div align="center">
+  <!-- Dependencies -->
+  <a>
+    <img src="https://img.shields.io/david/agmoss/m0ss-v2" alt="Dependencies" />
+  </a>
+  <!-- Version -->
+  <a href="https://github.com/agmoss/m0ss">
+    <img src="https://img.shields.io/github/package-json/v/agmoss/m0ss-v2" alt="Version" />
+  </a>
+  <!-- Size -->
+  <a>
+    <img src="https://img.shields.io/github/languages/code-size/agmoss/m0ss-v2" alt="Code Size" />
+  </a>
+  <!-- Repo Size -->
+  <a>
+    <img src="https://img.shields.io/github/repo-size/agmoss/m0ss-v2" alt="Repo Size" />
+  </a>
+  <!-- Style -->
+  <a>
+    <img alt="code style: prettier" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square">
+  </a>
+    <!-- Lerna -->
+  <a>
+    <img alt="Lerna" src="https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg">
+  </a>
+    <!-- website -->
+  <a href="https://m0ss.dev">
+    <img alt="site" src="https://img.shields.io/website?url=https%3A%2F%2Fm0ss.dev">
+  </a>
+  <!-- Language -->
+  <a>
+    <img alt="language" src="https://img.shields.io/github/languages/top/agmoss/m0ss-v2">
+  </a>
+    <!-- License -->
+  <a>
+    <img alt="license" src="https://img.shields.io/github/license/agmoss/m0ss-v2">
+  </a>
+</div>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<div align="center">
+  <h3>
+    <a href="https://m0ss.dev/">
+      Website
+    </a>
+  </h3>
+</div>
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.tsx`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<div align="center">
+  <sub>Built by
+  <a href="https://github.com/agmoss">Andrew Moss</a>
+</div>
