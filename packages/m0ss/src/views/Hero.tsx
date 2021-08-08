@@ -9,9 +9,9 @@ import {
     createStyles,
     makeStyles,
 } from "@material-ui/core";
+
 import Image from 'next/image'
 import React from "react";
-
 import { metaData } from "../data";
 import { withPull } from "../components/withPull";
 
