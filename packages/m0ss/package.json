@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "next-sitemap",
     "build:analyze": "ANALYZE=true next build",
     "start": "next start",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.tsx\" \"pages/**/*.tsx\"",
@@ -41,6 +42,7 @@
     "@types/react-syntax-highlighter": "^13.5.2",
     "eslint": "7.32.0",
     "eslint-config-next": "11.0.1",
+    "next-sitemap": "^1.6.148",
     "prettier": "^2.3.2",
     "typescript": "4.3.5"
   }

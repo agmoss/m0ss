@@ -1,7 +1,6 @@
 import { Link, Typography } from "@material-ui/core";
 import ReactMarkdown, { MarkdownToJSX } from "markdown-to-jsx";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { monokai } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { PrismAsyncLight as SyntaxHighlighter } from "react-syntax-highlighter";
 
 import React from "react";
 
@@ -41,9 +40,6 @@ const options = {
         a: { component: Link, props: { variant: "body1" } },
         code: {
             component: SyntaxHighlighter,
-            props: {
-                style: monokai,
-            },
         },
         img: { props: {} },
     },

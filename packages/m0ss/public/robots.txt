@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://m0ss.dev
+
+# Sitemaps
+Sitemap: https://m0ss.dev/sitemap.xml
