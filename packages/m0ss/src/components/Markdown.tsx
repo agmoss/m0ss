@@ -1,7 +1,5 @@
 import { Link, Typography } from "@material-ui/core";
 import ReactMarkdown, { MarkdownToJSX } from "markdown-to-jsx";
-import { PrismAsyncLight as SyntaxHighlighter } from "react-syntax-highlighter";
-
 import React from "react";
 
 const options = {
@@ -39,7 +37,12 @@ const options = {
         },
         a: { component: Link, props: { variant: "body1" } },
         code: {
-            component: SyntaxHighlighter,
+            component: Typography,
+            props: {
+                variant: "body1",
+                color: "secondary",
+                display: "inline",
+            },
         },
         img: { props: {} },
     },

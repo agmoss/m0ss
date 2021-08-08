@@ -13,6 +13,9 @@ const rawTheme = createTheme({
         primary: {
             main: "#e91e63",
         },
+        secondary:{
+            main:"#54f542"
+        }
     },
 });
 

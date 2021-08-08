@@ -1,8 +1,8 @@
 import * as E from "fp-ts/lib/Either";
-import { IStr, postData } from "../data";
+import { IStr, postData, PostDataWithContent } from "../data";
 import { pipe } from "fp-ts/lib/function";
 
-export const getText = async (url: string) => {
+export const getText = async (url: string): Promise<E.Either<string, any>> => {
     try {
         const response = await fetch(url);
         const text = await response.text();
@@ -11,8 +11,6 @@ export const getText = async (url: string) => {
         return E.left(e);
     }
 };
-
-
 
 export const getPostData = async ({ str }: IStr) => {
     const link = postData.find((p) => p.slug === str);
@@ -23,9 +21,21 @@ export const getPostData = async ({ str }: IStr) => {
 
     return pipe(
         await getText(link.mdLink),
-        E.fold(
-            (_l) => "error",
-            (r) => r
+        E.fold<string, string, PostDataWithContent | string>(
+            (_l) => {
+                return "error";
+            },
+            (r) => {
+                return {
+                    content: r,
+                    ...link,
+                };
+            }
         )
     );
 };
+
+
+export function isPostData(postData: PostDataWithContent | string): postData is PostDataWithContent {
+    return (postData as PostDataWithContent).content !== undefined;
+  }

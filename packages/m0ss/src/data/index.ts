@@ -60,6 +60,8 @@ export type PostData = {
     link: string;
 };
 
+export type PostDataWithContent = PostData & { content: string };
+
 export const postData: PostData[] = [
     {
         slug: "nestjs-graphql-azure-functions",

@@ -1,6 +1,12 @@
-import { Organization, Person, WebSite, WithContext } from "schema-dts";
+import {
+    Article,
+    Organization,
+    Person,
+    WebSite,
+    WithContext,
+} from "schema-dts";
 
-import { metaData } from "..";
+import { metaData, PostData } from "..";
 
 export const websiteSchema: WithContext<WebSite> = {
     "@context": "https://schema.org",
@@ -23,4 +29,22 @@ export const orgSchema: WithContext<Organization> = {
     "@type": "Organization",
     url: metaData.url,
     logo: metaData.logo,
+};
+
+export const articleSchema = (postData: PostData): WithContext<Article> => {
+    return {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        headline: postData.description,
+        author: {
+            "@type": "Person",
+            name: metaData.name,
+            url: metaData.url,
+        },
+        publisher: {
+            "@type": "Person",
+            name: metaData.name,
+            url: metaData.url,
+        },
+    };
 };
