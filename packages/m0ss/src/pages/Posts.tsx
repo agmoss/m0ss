@@ -39,7 +39,7 @@ const Posts = ({ data }: { data: PostData[] }) => {
                 <Container className={classes.cardGrid} maxWidth="lg">
                     <Grid container spacing={4}>
                         {data.map((d) => (
-                            <Grid item key={d.slug}>
+                            <Grid item xs={12} md={6} key={d.slug}>
                                 <ArticleCard {...d} />
                             </Grid>
                         ))}
