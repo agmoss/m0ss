@@ -40,11 +40,22 @@ const options = {
             component: Typography,
             props: {
                 variant: "body1",
+                paragraph: true,
                 color: "secondary",
                 display: "inline",
             },
         },
-        img: { props: {} },
+        img: {
+            props: {
+                style: {
+                    maxWidth: "100%",
+                    height: "auto",
+                    pointerEvents: "none",
+                    textAlign: "center",
+                },
+                align: "center",
+            },
+        },
     },
     forceBlock: true,
 };
