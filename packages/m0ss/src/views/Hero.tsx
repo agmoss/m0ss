@@ -9,9 +9,9 @@ import {
     createStyles,
     makeStyles,
 } from "@material-ui/core";
-
-import { Card } from "../components/Card";
+import Image from 'next/image'
 import React from "react";
+
 import { metaData } from "../data";
 import { withPull } from "../components/withPull";
 
@@ -66,7 +66,7 @@ export const Hero = ({ primary, secondary, bio }: IProps) => {
                 <Grid container spacing={5}>
                     <Grid item xs={12} sm={12} md={6} lg={4}>
                         <Box className={classes.main}>
-                            <Card primary={primary} secondary={secondary} />
+                            <Image src={primary} alt={metaData.name} placeholder="blur" blurDataURL={secondary} layout="fill" priority={true} objectFit="cover" />
                         </Box>
                     </Grid>
                     <Grid

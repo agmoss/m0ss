@@ -22,8 +22,8 @@ export const landingData: IProfile = {
         lastName: "Moss",
         profilePhoto: {
             urlPrimary:
-                "https://m0ss.blob.core.windows.net/media/andrew-moss.JPG",
-            urlSecondary: "https://source.unsplash.com/random/600x600",
+                "/andrew-moss.JPEG",
+            urlSecondary: "/andrew-moss-ph.JPEG",
         },
         email: "andrew@m0ss.dev",
         rant: {

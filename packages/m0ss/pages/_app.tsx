@@ -10,10 +10,10 @@ import theme from "../src/theme";
 import { useEffect } from "react";
 
 export default function App({ Component, pageProps }: AppProps) {
-    const [key, setKey] = useState(0);
-    useEffect(() => {
-        setKey(1);
-    }, []);
+    // const [key, setKey] = useState(0);
+    // useEffect(() => {
+    //     setKey(1);
+    // }, []);
 
     useEffect(() => {
         const jssStyles = document.querySelector("#jss-server-side");
@@ -72,7 +72,7 @@ export default function App({ Component, pageProps }: AppProps) {
                     content={metaData.homePage.description}
                 />
             </Head>
-            <ThemeProvider theme={theme} key={key}>
+            <ThemeProvider theme={theme}>
                 <CssBaseline />
                 <Component {...pageProps} />
             </ThemeProvider>
