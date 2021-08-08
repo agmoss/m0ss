@@ -7,15 +7,15 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
     enabled: process.env.ANALYZE === "true",
 });
 
-const withImages = require('next-images')
+const withImages = require("next-images");
 
-module.exports = withImages(withBundleAnalyzer(
-    withTM({
-        reactStrictMode: true,
-        images: {
-            domains: [
-                "m0ss.blob.core.windows.net",
-            ],
-        },
-    })
-));
+module.exports = withImages(
+    withBundleAnalyzer(
+        withTM({
+            reactStrictMode: true,
+            images: {
+                domains: ["m0ss.blob.core.windows.net"],
+            },
+        })
+    )
+);

@@ -16,16 +16,16 @@ const useStyles = makeStyles(() =>
 );
 
 const withPage =
-        <T extends object>(WrappedComponent: ComponentType<T>): React.FC<T> =>
-        ({ ...props }) => {
-            const classes = useStyles();
-            return (
-                <div className={classes.root}>
-                    <Header />
-                    <WrappedComponent {...(props as T)} />
-                    <Footer />
-                </div>
-            );
-        };
+    <T extends object>(WrappedComponent: ComponentType<T>): React.FC<T> =>
+    ({ ...props }) => {
+        const classes = useStyles();
+        return (
+            <div className={classes.root}>
+                <Header />
+                <WrappedComponent {...(props as T)} />
+                <Footer />
+            </div>
+        );
+    };
 
 export default withPage;

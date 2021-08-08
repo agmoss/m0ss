@@ -16,7 +16,7 @@ export const Landing = ({ profile }: ILanding) => {
                 secondary={profile.profile.profilePhoto.urlSecondary}
                 bio={profile.profile.bio}
             />
-            <MainContent md={profile.profile.rant.content} />
+            <MainContent str={profile.profile.rant.content} />
         </div>
     );
 };

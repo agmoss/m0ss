@@ -15,8 +15,8 @@ import { Snacks, severity } from "../components/Snacks";
 import IconButton from "../components/IconButton";
 import MarkdownComponent from "../components/Markdown";
 import { ThumbUp } from "@material-ui/icons";
+import { IStr } from "../data";
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const randomWords = require("random-words");
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -55,11 +55,7 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-interface IMainContent {
-    md: string;
-}
-
-export const MainContent = ({ md }: IMainContent) => {
+export const MainContent = ({ str }: IStr) => {
     const classes = useStyles();
     const [openSnack, setOpenSnack] = useState(false);
 
@@ -133,7 +129,7 @@ export const MainContent = ({ md }: IMainContent) => {
                             Rant
                         </Typography>
                         <Divider className={classes.divider} />
-                        {MarkdownComponent(md)}
+                        {MarkdownComponent(str)}
                     </Grid>
                 </Grid>
             </Container>

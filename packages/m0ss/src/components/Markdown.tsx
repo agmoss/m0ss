@@ -1,5 +1,7 @@
 import { Link, Typography } from "@material-ui/core";
 import ReactMarkdown, { MarkdownToJSX } from "markdown-to-jsx";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { monokai } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 import React from "react";
 
@@ -37,6 +39,12 @@ const options = {
             props: { paragraph: true, variant: "body1" },
         },
         a: { component: Link, props: { variant: "body1" } },
+        code: {
+            component: SyntaxHighlighter,
+            props: {
+                style: monokai,
+            },
+        },
         img: { props: {} },
     },
     forceBlock: true,

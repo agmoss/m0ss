@@ -8,7 +8,7 @@ import { getText } from "../src/utils/getData";
 import { pipe } from "fp-ts/lib/function";
 import withPage from "../src/components/withPage";
 
-export async function getStaticProps(context: any) {
+export const getStaticProps = async (context: any) => {
     const md = pipe(
         await getText(landingData.profile.rant.url),
         E.fold(

@@ -1,5 +1,4 @@
 import { Grid, Theme, createStyles, makeStyles } from "@material-ui/core";
-
 import React from "react";
 import { withMarkdownView } from "../components/withMarkdownView";
 import { IStr } from "../data";
@@ -17,14 +16,14 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-const ProjectReadme = ({ str }: IStr) => {
-    const ProjectReadmeView = withMarkdownView(str);
 
+const Post = ({ str }: IStr) => {
     const classes = useStyles();
+    const PostView = withMarkdownView(str);
 
     return (
         <div className={classes.root}>
-            <ProjectReadmeView />
+            <PostView />
             <Grid
                 container
                 spacing={5}
@@ -36,4 +35,4 @@ const ProjectReadme = ({ str }: IStr) => {
     );
 };
 
-export default ProjectReadme;
+export default Post;

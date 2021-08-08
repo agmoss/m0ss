@@ -10,10 +10,9 @@ import {
     createStyles,
     makeStyles,
 } from "@material-ui/core";
-import { GitHub, LinkedIn, Mail } from "@material-ui/icons";
+import { Apps, GitHub, LinkedIn } from "@material-ui/icons";
 import React, { useState } from "react";
 
-import { ContactDialog } from "./ContactDialog";
 import IconButton from "../components/IconButton";
 import { useRouter } from "next/router";
 
@@ -54,12 +53,10 @@ const useStyles = makeStyles((theme: Theme) =>
 const Header = () => {
     const classes = useStyles();
     const router = useRouter();
-    const [open, setOpen] = useState(false);
 
     return (
         <div className={classes.root}>
             <CssBaseline />
-            <ContactDialog open={open} setOpen={setOpen} />
             <AppBar className={classes.appBar} position="fixed" elevation={0}>
                 <Container maxWidth="lg">
                     <Toolbar disableGutters={true}>
@@ -88,10 +85,10 @@ const Header = () => {
                         </div>
                         <IconButton
                             onClick={() => {
-                                setOpen(true);
+                                router.push("posts")
                             }}
                         >
-                            <Mail />
+                            <Apps />
                         </IconButton>
                         <Link
                             href="https://www.npmjs.com/~agmoss"

@@ -1,36 +1,41 @@
 import * as E from "fp-ts/lib/Either";
-
-import ProjectReadme, { IProjectReadMe } from "../../src/pages/ProjectReadMe";
-
+import ProjectReadme from "../../src/pages/ProjectReadMe";
 import Head from "next/head";
 import React from "react";
 import { getText } from "../../src/utils/getData";
-import { metaData } from "../../src/data";
+import { IStr, metaData } from "../../src/data";
 import { pipe } from "fp-ts/lib/function";
 import withPage from "../../src/components/withPage";
 
-export async function getStaticProps(context: any) {
-
-    const md = pipe(
-        await getText(metaData.readmeLink),
-        E.fold(
-            (_l) => "error",
-            (r) => r
-        )
-    );
-
+export const getStaticProps = async (context: any) => {
     return {
-        props: { md: md },
+        props: {
+            str: pipe(
+                await getText(metaData.readmeLink),
+                E.fold(
+                    (_l) => "error",
+                    (r) => r
+                )
+            ),
+        },
     };
-}
+};
 
-function ReadmePage({ md }: IProjectReadMe) {
+const ReadmePage = ({ str }: IStr) => {
     return (
         <React.Fragment>
             <Head>
                 <title>{metaData.readme.title}</title>
-                <meta property="og:title" content={metaData.readme.title} key="title" />
-                <meta name="title" property="title" content={metaData.readme.title} />
+                <meta
+                    property="og:title"
+                    content={metaData.readme.title}
+                    key="title"
+                />
+                <meta
+                    name="title"
+                    property="title"
+                    content={metaData.readme.title}
+                />
                 <meta
                     name="og:description"
                     property="og:description"
@@ -42,9 +47,9 @@ function ReadmePage({ md }: IProjectReadMe) {
                     content={metaData.readme.description}
                 />
             </Head>
-            <ProjectReadme md={md} />
+            <ProjectReadme str={str} />
         </React.Fragment>
     );
-}
+};
 
 export default withPage(ReadmePage);

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { orgSchema, personSchema, websiteSchema } from "../src/data/schemas";
 
 import { AppProps } from "next/app";
@@ -9,6 +9,12 @@ import { metaData } from "../src/data";
 import theme from "../src/theme";
 
 export default function App({ Component, pageProps }: AppProps) {
+
+    const [key, setKey] = useState(0);
+
+    useEffect(() => {
+        setKey(1);
+    }, []);
 
     useEffect(() => {
         const jssStyles = document.querySelector("#jss-server-side");
@@ -67,7 +73,7 @@ export default function App({ Component, pageProps }: AppProps) {
                     content={metaData.homePage.description}
                 />
             </Head>
-            <ThemeProvider theme={theme}>
+            <ThemeProvider theme={theme} key={key}>
                 <CssBaseline />
                 <Component {...pageProps} />
             </ThemeProvider>

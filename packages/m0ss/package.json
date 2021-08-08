@@ -7,6 +7,7 @@
     "build": "next build",
     "build:analyze": "ANALYZE=true next build",
     "start": "next start",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.tsx\" \"pages/**/*.tsx\"",
     "lint": "next lint"
   },
   "dependencies": {
@@ -14,7 +15,6 @@
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "^4.0.0-alpha.60",
     "@next/bundle-analyzer": "^11.0.1",
-    "emailjs-com": "^3.2.0",
     "fp-ts": "^2.11.1",
     "lodash-es": "^4.17.21",
     "markdown-to-jsx": "^7.1.3",
