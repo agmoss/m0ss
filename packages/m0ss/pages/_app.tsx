@@ -9,7 +9,6 @@ import { metaData } from "../src/data";
 import theme from "../src/theme";
 
 export default function App({ Component, pageProps }: AppProps) {
-
     const [key, setKey] = useState(0);
 
     useEffect(() => {
@@ -56,7 +55,6 @@ export default function App({ Component, pageProps }: AppProps) {
                     name="og:image:alt"
                 />
                 <meta property="og:image" content={metaData.logo} />
-                <meta name="og:url" property="og:url" content={metaData.url} />
                 <meta
                     name="title"
                     property="title"

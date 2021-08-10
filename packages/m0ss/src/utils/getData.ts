@@ -35,7 +35,8 @@ export const getPostData = async ({ str }: IStr) => {
     );
 };
 
-
-export function isPostData(postData: PostDataWithContent | string): postData is PostDataWithContent {
+export function isPostData(
+    postData: PostDataWithContent | string
+): postData is PostDataWithContent {
     return (postData as PostDataWithContent).content !== undefined;
-  }
+}

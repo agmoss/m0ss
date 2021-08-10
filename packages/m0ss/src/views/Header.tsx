@@ -85,7 +85,7 @@ const Header = () => {
                         </div>
                         <IconButton
                             onClick={() => {
-                                router.push("posts")
+                                router.push("posts");
                             }}
                         >
                             <Apps />

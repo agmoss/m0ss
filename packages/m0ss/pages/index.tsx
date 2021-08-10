@@ -30,6 +30,6 @@ export const getStaticProps = async (context: any) => {
     return {
         props: { profile: data },
     };
-}
+};
 
 export default withPage(LandingPage);

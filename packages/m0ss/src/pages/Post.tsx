@@ -16,7 +16,6 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-
 const Post = ({ str }: IStr) => {
     const classes = useStyles();
     const PostView = withMarkdownView(str);

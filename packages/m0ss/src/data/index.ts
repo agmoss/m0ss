@@ -40,14 +40,23 @@ export const metaData = {
         "https://raw.githubusercontent.com/agmoss/m0ss/master/README.md",
     url: "https://m0ss.dev",
     homePage: {
-        title: "Andrew Moss Personal Site",
+        title: "Andrew Moss Website",
         description: "Andrew Moss Software Developer",
     },
     readme: {
         title: "README - Andrew Moss",
-        description: "m0ss site readme",
+        description: "Andrew Moss developer site readme page",
+    },
+    posts: {
+        title: "Andrew Moss Blog Posts",
+        description: "Software blog by Andrew Moss",
     },
 };
+
+export interface IPageMeta {
+    title: string;
+    description: string;
+}
 
 export interface IStr {
     str: string;
@@ -124,5 +133,41 @@ export const postData: PostData[] = [
         description: "Predicting rental prices",
         mdLink: "https://raw.githubusercontent.com/agmoss/rental_regression_analysis/master/README.md",
         link: "https://github.com/agmoss/rental_regression_analysis",
+    },
+    {
+        slug: "iot-simulation",
+        description: "Representational simulation of IoT devices",
+        mdLink: "https://raw.githubusercontent.com/agmoss/iot-sim/master/README.md",
+        link: "https://github.com/agmoss/iot-sim",
+    },
+    {
+        slug: "rental-data-etl",
+        description: "Rental Listings ETL",
+        mdLink: "https://raw.githubusercontent.com/agmoss/Rental-Data-ETL/master/README.md",
+        link: "https://github.com/agmoss/Rental-Data-ETL",
+    },
+    {
+        slug: "urban-analytics-beijing",
+        description: "IoT Data Analysis",
+        mdLink: "https://raw.githubusercontent.com/agmoss/Urban-Analytics-Beijing/master/README.md",
+        link: "https://github.com/agmoss/Urban-Analytics-Beijing",
+    },
+    {
+        slug: "tsfc",
+        description: "Training material on function composition",
+        mdLink: "https://raw.githubusercontent.com/agmoss/tsfc/main/README.md",
+        link: "https://github.com/agmoss/tsfc",
+    },
+    {
+        slug: "uphere",
+        description: "Upload files to blob storage",
+        mdLink: "https://raw.githubusercontent.com/agmoss/uphere/main/README.md",
+        link: "https://github.com/agmoss/uphere",
+    },
+    {
+        slug: "business-card",
+        description: "Generative Art Business Card",
+        mdLink: "https://raw.githubusercontent.com/agmoss/card/master/README.md",
+        link: "https://github.com/agmoss/card",
     },
 ];

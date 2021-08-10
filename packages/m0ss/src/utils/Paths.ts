@@ -3,5 +3,5 @@ export enum Paths {
     CIRCLES = "/react-circles",
     OFFCIRCLE = "/offcircle",
     README = "/readme",
-    POSTS = "posts/"
+    POSTS = "posts/",
 }

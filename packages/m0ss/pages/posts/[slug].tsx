@@ -14,7 +14,6 @@ const Post = ({ str }: { str: PostDataWithContent | string }) => {
                     <title>{str.slug}</title>
                     {/* prettier-ignore */}
                     <script type="application/ld+json">{`${JSON.stringify(articleSchema(str)).trim()}`}</script>
-                    <link rel="icon" href="/favicon.ico" />
                     <meta property="og:title" content={str.slug} key="title" />
                     <meta name="title" property="title" content={str.slug} />
                     <meta
