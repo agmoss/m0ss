@@ -69,8 +69,6 @@ export const Hero = ({ primary, secondary, bio }: IProps) => {
                             <Image
                                 src={primary}
                                 alt={metaData.name}
-                                placeholder="blur"
-                                blurDataURL={secondary}
                                 layout="fill"
                                 priority={true}
                                 objectFit="cover"
