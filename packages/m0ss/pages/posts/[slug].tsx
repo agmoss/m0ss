@@ -1,10 +1,11 @@
-import withPage from "../../src/components/withPage";
+import { PostDataWithContent, postData } from "../../src/data";
 import { getPostData, isPostData } from "../../src/utils/getData";
-import PostPage from "../../src/pages/Post";
-import { postData, PostDataWithContent } from "../../src/data";
-import React from "react";
+
 import Head from "next/head";
+import { Post as PostPage } from "../../src/pages/Post";
+import React from "react";
 import { articleSchema } from "../../src/data/schemas";
+import { withPage } from "../../src/components/withPage";
 
 const Post = ({ str }: { str: PostDataWithContent | string }) => {
     if (isPostData(str)) {

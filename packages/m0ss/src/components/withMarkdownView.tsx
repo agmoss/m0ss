@@ -7,7 +7,7 @@ import {
     makeStyles,
 } from "@material-ui/core";
 
-import MarkdownComponent from "./Markdown";
+import { Markdown } from "./Markdown";
 import React from "react";
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -36,7 +36,7 @@ export const withMarkdownView =
                             className={classes.mainGrid}
                         >
                             <Grid item xs={12}>
-                                {MarkdownComponent(md)}
+                                {Markdown(md)}
                             </Grid>
                         </Grid>
                     </main>

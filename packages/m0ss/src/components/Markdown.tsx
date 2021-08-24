@@ -1,5 +1,6 @@
 import { Link, Typography } from "@material-ui/core";
 import ReactMarkdown, { MarkdownToJSX } from "markdown-to-jsx";
+
 import React from "react";
 
 const options = {
@@ -60,10 +61,8 @@ const options = {
     forceBlock: true,
 };
 
-const Markdown = <P extends []>(md: string, ...props: P) => (
+export const Markdown = <P extends []>(md: string, ...props: P) => (
     <ReactMarkdown options={options as MarkdownToJSX.Options} {...props}>
         {md}
     </ReactMarkdown>
 );
-
-export default Markdown;

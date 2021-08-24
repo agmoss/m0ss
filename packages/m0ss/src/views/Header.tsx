@@ -11,9 +11,10 @@ import {
     makeStyles,
 } from "@material-ui/core";
 import { Apps, GitHub, LinkedIn } from "@material-ui/icons";
-import React, { useState } from "react";
 
-import IconButton from "../components/IconButton";
+import { AboutPaper } from "../components/AboutPaper";
+import { IconButton } from "../components/IconButton";
+import React from "react";
 import { useRouter } from "next/router";
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -56,7 +57,6 @@ const Header = () => {
 
     return (
         <div className={classes.root}>
-            <CssBaseline />
             <AppBar className={classes.appBar} position="fixed" elevation={0}>
                 <Container maxWidth="lg">
                     <Toolbar disableGutters={true}>

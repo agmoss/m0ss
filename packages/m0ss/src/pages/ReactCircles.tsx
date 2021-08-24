@@ -1,6 +1,6 @@
 import Circles from "react-circles";
 
-const ReactCirclesDemo = () => {
+export const ReactCirclesDemo = () => {
     return (
         <div
             style={{
@@ -17,5 +17,3 @@ const ReactCirclesDemo = () => {
         </div>
     );
 };
-
-export default ReactCirclesDemo;

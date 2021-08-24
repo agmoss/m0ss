@@ -1,7 +1,5 @@
 import {
-    Box,
     Container,
-    CssBaseline,
     Grid,
     Paper,
     Theme,
@@ -60,12 +58,11 @@ export const Hero = ({ primary, secondary, bio }: IProps) => {
     const PullCtaCard = withPull(CtaCard);
 
     return (
-        <>
-            <CssBaseline />
+        <div>
             <Container maxWidth="lg">
                 <Grid container spacing={5}>
                     <Grid item xs={12} sm={12} md={6} lg={4}>
-                        <Box className={classes.main}>
+                        <div className={classes.main}>
                             <Image
                                 src={primary}
                                 alt={metaData.name}
@@ -73,7 +70,7 @@ export const Hero = ({ primary, secondary, bio }: IProps) => {
                                 priority={true}
                                 objectFit="cover"
                             />
-                        </Box>
+                        </div>
                     </Grid>
                     <Grid
                         item
@@ -87,6 +84,6 @@ export const Hero = ({ primary, secondary, bio }: IProps) => {
                     </Grid>
                 </Grid>
             </Container>
-        </>
+        </div>
     );
 };

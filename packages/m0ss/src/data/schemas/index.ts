@@ -5,8 +5,7 @@ import {
     WebSite,
     WithContext,
 } from "schema-dts";
-
-import { metaData, PostData } from "..";
+import { PostData, metaData } from "..";
 
 export const websiteSchema: WithContext<WebSite> = {
     "@context": "https://schema.org",

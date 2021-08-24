@@ -7,7 +7,7 @@ interface IColorPicker {
     setColor: Function;
 }
 
-const ColorPicker = ({ setColor }: IColorPicker) => {
+export const ColorPicker = ({ setColor }: IColorPicker) => {
     const theme = useTheme();
 
     function onChange(color: ColorResult) {
@@ -71,5 +71,3 @@ const ColorPicker = ({ setColor }: IColorPicker) => {
         />
     );
 };
-
-export default ColorPicker;

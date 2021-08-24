@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { orgSchema, personSchema, websiteSchema } from "../src/data/schemas";
 
 import { AppProps } from "next/app";
@@ -6,15 +6,9 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Head from "next/head";
 import { ThemeProvider } from "@material-ui/core/styles";
 import { metaData } from "../src/data";
-import theme from "../src/theme";
+import { theme } from "../src/theme";
 
 export default function App({ Component, pageProps }: AppProps) {
-    const [key, setKey] = useState(0);
-
-    useEffect(() => {
-        setKey(1);
-    }, []);
-
     useEffect(() => {
         const jssStyles = document.querySelector("#jss-server-side");
         if (jssStyles && jssStyles.parentElement) {
@@ -71,7 +65,7 @@ export default function App({ Component, pageProps }: AppProps) {
                     content={metaData.homePage.description}
                 />
             </Head>
-            <ThemeProvider theme={theme} key={key}>
+            <ThemeProvider theme={theme}>
                 <CssBaseline />
                 <Component {...pageProps} />
             </ThemeProvider>

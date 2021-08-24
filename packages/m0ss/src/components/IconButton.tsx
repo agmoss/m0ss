@@ -1,6 +1,10 @@
-import { IconButton, Theme, withStyles } from "@material-ui/core";
+import {
+    IconButton as MuiIconButton,
+    Theme,
+    withStyles,
+} from "@material-ui/core";
 
-export default withStyles((theme: Theme) => ({
+export const IconButton = withStyles((theme: Theme) => ({
     root: {
         "&:hover": {
             backgroundColor: theme.palette.primary.main,
@@ -14,4 +18,4 @@ export default withStyles((theme: Theme) => ({
             backgroundColor: theme.palette.primary.contrastText,
         },
     },
-}))(IconButton);
+}))(MuiIconButton);

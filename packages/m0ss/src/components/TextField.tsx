@@ -1,6 +1,10 @@
-import { TextField, Theme, withStyles } from "@material-ui/core";
+import {
+    TextField as MuiTextField,
+    Theme,
+    withStyles,
+} from "@material-ui/core";
 
-export default withStyles((theme: Theme) => ({
+export const TextField = withStyles((theme: Theme) => ({
     root: {
         "& label.Mui-focused": {
             color: theme.palette.primary.main,
@@ -9,4 +13,4 @@ export default withStyles((theme: Theme) => ({
             borderBottomColor: theme.palette.primary.main,
         },
     },
-}))(TextField);
+}))(MuiTextField);

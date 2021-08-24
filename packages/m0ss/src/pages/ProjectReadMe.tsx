@@ -1,8 +1,8 @@
 import { Grid, Theme, createStyles, makeStyles } from "@material-ui/core";
 
+import { IStr } from "../data";
 import React from "react";
 import { withMarkdownView } from "../components/withMarkdownView";
-import { IStr } from "../data";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-const ProjectReadme = ({ str }: IStr) => {
+export const ProjectReadme = ({ str }: IStr) => {
     const ProjectReadmeView = withMarkdownView(str);
 
     const classes = useStyles();
@@ -35,5 +35,3 @@ const ProjectReadme = ({ str }: IStr) => {
         </div>
     );
 };
-
-export default ProjectReadme;

@@ -1,7 +1,8 @@
 import { Grid, Theme, createStyles, makeStyles } from "@material-ui/core";
+
+import { IStr } from "../data";
 import React from "react";
 import { withMarkdownView } from "../components/withMarkdownView";
-import { IStr } from "../data";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -16,7 +17,7 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-const Post = ({ str }: IStr) => {
+export const Post = ({ str }: IStr) => {
     const classes = useStyles();
     const PostView = withMarkdownView(str);
 
@@ -33,5 +34,3 @@ const Post = ({ str }: IStr) => {
         </div>
     );
 };
-
-export default Post;

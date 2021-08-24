@@ -19,7 +19,7 @@ const rawTheme = createTheme({
     },
 });
 
-const theme = {
+const _theme = {
     ...rawTheme,
     palette: {
         ...rawTheme.palette,
@@ -66,4 +66,4 @@ const theme = {
     },
 };
 
-export default responsiveFontSizes(theme);
+export const theme = responsiveFontSizes(_theme);

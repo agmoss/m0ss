@@ -1,11 +1,10 @@
-import React from "react";
+import { ArticleCard } from "../components/ArticleCard";
+import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
+import { PostData } from "../data";
+import React from "react";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-import Container from "@material-ui/core/Container";
-
-import { PostData } from "../data";
-import ArticleCard from "../components/ArticleCard";
 
 const useStyles = makeStyles((theme) => ({
     heroContent: {
@@ -17,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const Posts = ({ data }: { data: PostData[] }) => {
+export const Posts = ({ data }: { data: PostData[] }) => {
     const classes = useStyles();
 
     return (
@@ -49,5 +48,3 @@ const Posts = ({ data }: { data: PostData[] }) => {
         </React.Fragment>
     );
 };
-
-export default Posts;

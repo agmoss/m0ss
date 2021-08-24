@@ -15,7 +15,7 @@ const useStyles = makeStyles(() =>
     })
 );
 
-const withPage =
+export const withPage =
     <T extends object>(WrappedComponent: ComponentType<T>): React.FC<T> =>
     ({ ...props }) => {
         const classes = useStyles();
@@ -27,5 +27,3 @@ const withPage =
             </div>
         );
     };
-
-export default withPage;

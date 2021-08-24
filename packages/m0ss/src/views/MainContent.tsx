@@ -12,11 +12,9 @@ import {
 import React, { useState } from "react";
 import { Snacks, severity } from "../components/Snacks";
 
-import IconButton from "../components/IconButton";
-import MarkdownComponent from "../components/Markdown";
-import { ThumbUp } from "@material-ui/icons";
+import { AboutPaper } from "../components/AboutPaper";
 import { IStr } from "../data";
-
+import { Markdown } from "../components/Markdown";
 const randomWords = require("random-words");
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -48,7 +46,7 @@ const useStyles = makeStyles((theme: Theme) =>
                 },
             },
         },
-        divider: {
+        customDivider: {
             backgroundColor: theme.palette.primary.main,
             marginBottom: theme.spacing(3),
         },
@@ -77,37 +75,8 @@ export const MainContent = ({ str }: IStr) => {
         }
     };
 
-    const AboutPaper = () => (
-        <Grid container spacing={2}>
-            <Grid item xs={12}>
-                <Paper className={classes.sidebarAboutBox}>
-                    <Grid container justifyContent="space-between">
-                        <Grid item>
-                            <Typography variant="h5" gutterBottom>
-                                About
-                            </Typography>
-                            <Typography>Welcome to my account</Typography>
-                        </Grid>
-                        <Grid item>
-                            <IconButton
-                                onClick={() => {
-                                    handleOpen();
-                                }}
-                            >
-                                <ThumbUp />
-                            </IconButton>
-                        </Grid>
-                    </Grid>
-                </Paper>
-            </Grid>
-            <Grid item style={{ width: "100%" }} xs={12}>
-                {/* <ColorPicker setColor={setColor} /> */}
-            </Grid>
-        </Grid>
-    );
     return (
-        <>
-            <CssBaseline />
+        <div>
             <Snacks
                 open={openSnack}
                 setOpen={setOpenSnack}
@@ -117,7 +86,7 @@ export const MainContent = ({ str }: IStr) => {
             <Container maxWidth="lg">
                 <Grid container spacing={5} className={classes.mainGrid}>
                     <Grid item xs={12} md={4}>
-                        <AboutPaper />
+                        <AboutPaper handleOpen={handleOpen} />
                     </Grid>
                     <Grid
                         item
@@ -128,11 +97,11 @@ export const MainContent = ({ str }: IStr) => {
                         <Typography variant="h5" gutterBottom>
                             Rant
                         </Typography>
-                        <Divider className={classes.divider} />
-                        {MarkdownComponent(str)}
+                        <Divider className={classes.customDivider} />
+                        {Markdown(str)}
                     </Grid>
                 </Grid>
             </Container>
-        </>
+        </div>
     );
 };

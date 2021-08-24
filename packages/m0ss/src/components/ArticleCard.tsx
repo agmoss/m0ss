@@ -1,14 +1,13 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
-import { useRouter } from "next/router";
-
-import { PostData } from "../data";
 import { Paths } from "../utils/Paths";
+import { PostData } from "../data";
+import React from "react";
+import Typography from "@material-ui/core/Typography";
+import { makeStyles } from "@material-ui/core/styles";
+import { useRouter } from "next/router";
 
 const useStyles = makeStyles({
     root: {
@@ -19,7 +18,7 @@ const useStyles = makeStyles({
     },
 });
 
-const ArticleCard = (data: PostData) => {
+export const ArticleCard = (data: PostData) => {
     const classes = useStyles();
     const router = useRouter();
 
@@ -48,5 +47,3 @@ const ArticleCard = (data: PostData) => {
         </Card>
     );
 };
-
-export default ArticleCard;
