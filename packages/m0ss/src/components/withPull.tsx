@@ -1,7 +1,7 @@
 import React, { ComponentType } from "react";
 import { animated, useSpring } from "react-spring";
 
-import { clamp } from "lodash-es";
+import clamp from "lodash-es/clamp";
 import { makeStyles } from "@material-ui/core";
 import { useGesture } from "react-with-gesture";
 
@@ -29,7 +29,6 @@ export const withPull =
     <P extends object>(WrappedComponent: ComponentType<P>): React.FC<P> =>
     ({ ...props }) => {
         const classes = useStyles();
-
         const [{ xy }, set] = useSpring(() => ({ xy: [0, 0] }));
         const bind = useGesture(({ down, delta, velocity }) => {
             const clampVel = clamp(velocity, 1, 8);

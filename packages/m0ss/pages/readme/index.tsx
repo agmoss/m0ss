@@ -1,13 +1,13 @@
-import * as E from "fp-ts/lib/Either";
+import * as E from "fp-ts/Either";
 
-import { IStr, metaData } from "../../src/data";
+import { IStr, metaData } from "@src/data";
 
 import Head from "next/head";
-import { ProjectReadme } from "../../src/pages/ProjectReadMe";
+import { ProjectReadme } from "@src/pages";
 import React from "react";
-import { getText } from "../../src/utils/getData";
-import { pipe } from "fp-ts/lib/function";
-import { withPage } from "../../src/components/withPage";
+import { getText } from "@src/utils";
+import { pipe } from "fp-ts/function";
+import { withPage } from "@src/components";
 
 export const getStaticProps = async (context: any) => {
     return {

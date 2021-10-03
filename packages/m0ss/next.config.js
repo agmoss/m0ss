@@ -13,9 +13,8 @@ module.exports = withImages(
     withBundleAnalyzer(
         withTM({
             reactStrictMode: true,
-            images: {
-                domains: ["m0ss.blob.core.windows.net"],
-            },
+            webpack5: true,
+            productionBrowserSourceMaps: false,
         })
     )
 );

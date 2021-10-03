@@ -1,7 +1,6 @@
 import {
     AppBar,
     Container,
-    CssBaseline,
     Link,
     SvgIcon,
     Theme,
@@ -12,8 +11,7 @@ import {
 } from "@material-ui/core";
 import { Apps, GitHub, LinkedIn } from "@material-ui/icons";
 
-import { AboutPaper } from "../components/AboutPaper";
-import { IconButton } from "../components/IconButton";
+import { IconButton } from "@components";
 import React from "react";
 import { useRouter } from "next/router";
 
