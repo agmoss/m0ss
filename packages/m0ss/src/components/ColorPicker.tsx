@@ -12,7 +12,7 @@ export const ColorPicker = ({ setColor }: IColorPicker) => {
 
     const onChange = (color: ColorResult) => {
         setColor(color.hex);
-    }
+    };
 
     const colorSelections = [
         "#FF6633",

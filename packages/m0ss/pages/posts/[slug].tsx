@@ -1,5 +1,6 @@
-import { PostDataWithContent, postData,articleSchema } from "@src/data";
+import { PostDataWithContent, articleSchema, postData } from "@src/data";
 import { getPostData, isPostData } from "@src/utils";
+
 import Head from "next/head";
 import { Post as PostPage } from "@src/pages";
 import React from "react";

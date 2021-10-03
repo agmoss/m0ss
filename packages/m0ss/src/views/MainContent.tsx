@@ -1,20 +1,16 @@
+import { AboutPaper, Markdown, Snacks, severity } from "@components";
 import {
     Container,
-    CssBaseline,
     Divider,
     Grid,
-    Paper,
     Theme,
     Typography,
     createStyles,
     makeStyles,
 } from "@material-ui/core";
 import React, { useState } from "react";
-import { Snacks, severity } from "../components/Snacks";
 
-import { AboutPaper } from "../components/AboutPaper";
-import { IStr } from "../data";
-import { Markdown } from "../components/Markdown";
+import { IStr } from "@data";
 
 const randomWords = require("random-words");
 

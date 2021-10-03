@@ -9,7 +9,7 @@ import {
     makeStyles,
 } from "@material-ui/core";
 
-import { Paths } from "../utils/paths";
+import { Paths } from "@utils";
 import React from "react";
 import { useRouter } from "next/router";
 

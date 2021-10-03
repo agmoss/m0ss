@@ -15,6 +15,7 @@ export const severity = Object.values(Severity);
 const Alert = (props: AlertProps) => (
     <MuiAlert elevation={6} variant="filled" {...props} />
 );
+
 interface ISnacksProps {
     open: boolean;
     setOpen: React.Dispatch<React.SetStateAction<boolean>>;

@@ -1,9 +1,11 @@
-import * as E from "fp-ts/lib/Either";
+import * as E from "fp-ts/Either";
+
 import { IProfile, landingData } from "@src/data";
+
 import { DeepRequired } from "utility-types";
 import { Landing as LandingPage } from "@src/pages";
 import { getText } from "@src/utils";
-import { pipe } from "fp-ts/lib/function";
+import { pipe } from "fp-ts/function";
 import { withPage } from "@src/components";
 
 export const getStaticProps = async (context: any) => {

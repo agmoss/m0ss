@@ -3,7 +3,6 @@ export interface IPageMeta {
     description: string;
 }
 
-
 export const metaData = {
     name: "Andrew Moss",
     logo: "https://m0ss.blob.core.windows.net/media/m0ss_v1.svg",

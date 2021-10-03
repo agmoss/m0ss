@@ -10,16 +10,11 @@ import {
 
 import Image from "next/image";
 import React from "react";
-import { metaData } from "../data";
-import { withPull } from "../components/withPull";
+import { metaData } from "@data";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         main: {
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            color: theme.palette.common.white,
             height: "100%",
             position: "relative",
             [theme.breakpoints.down("sm")]: {
@@ -35,6 +30,17 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
+const CtaCard = ({ className, bio }: { className: string; bio: string }) => (
+    <Paper className={className}>
+        <Typography variant="h3" component="h1" gutterBottom>
+            {metaData.name}
+        </Typography>
+        <Typography variant="h5" component="h3" paragraph gutterBottom>
+            {bio}
+        </Typography>
+    </Paper>
+);
+
 interface IProps {
     primary: string;
     secondary: string;
@@ -43,20 +49,6 @@ interface IProps {
 
 export const Hero = ({ primary, secondary, bio }: IProps) => {
     const classes = useStyles();
-
-    const CtaCard = () => (
-        <Paper className={classes.mainContent}>
-            <Typography variant="h3" component="h1" gutterBottom>
-                {metaData.name}
-            </Typography>
-            <Typography variant="h5" component="h3" paragraph gutterBottom>
-                {bio}
-            </Typography>
-        </Paper>
-    );
-
-    const PullCtaCard = withPull(CtaCard);
-
     return (
         <div>
             <Container maxWidth="lg">
@@ -80,7 +72,7 @@ export const Hero = ({ primary, secondary, bio }: IProps) => {
                         lg={8}
                         style={{ height: "100%" }}
                     >
-                        <PullCtaCard />
+                        <CtaCard className={classes.mainContent} bio={bio} />
                     </Grid>
                 </Grid>
             </Container>
