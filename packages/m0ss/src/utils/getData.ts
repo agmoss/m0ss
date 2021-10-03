@@ -1,10 +1,8 @@
 import * as E from "fp-ts/lib/Either";
-
 import { IStr, PostDataWithContent, postData } from "../data";
-
 import { pipe } from "fp-ts/lib/function";
 
-export const getText = async (url: string): Promise<E.Either<string, any>> => {
+export const getText = async (url: string): Promise<E.Either<any, string>> => {
     try {
         const response = await fetch(url);
         const text = await response.text();
@@ -37,8 +35,7 @@ export const getPostData = async ({ str }: IStr) => {
     );
 };
 
-export function isPostData(
+export const isPostData = (
     postData: PostDataWithContent | string
-): postData is PostDataWithContent {
-    return (postData as PostDataWithContent).content !== undefined;
-}
+): postData is PostDataWithContent =>
+    (postData as PostDataWithContent).content !== undefined;

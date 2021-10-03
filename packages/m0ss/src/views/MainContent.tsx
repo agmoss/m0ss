@@ -15,6 +15,7 @@ import { Snacks, severity } from "../components/Snacks";
 import { AboutPaper } from "../components/AboutPaper";
 import { IStr } from "../data";
 import { Markdown } from "../components/Markdown";
+
 const randomWords = require("random-words");
 
 const useStyles = makeStyles((theme: Theme) =>

@@ -1,9 +1,8 @@
-import { IPageMeta, PostData, metaData, postData } from "../../src/data";
-
+import { IPageMeta, PostData, metaData, postData } from "@src/data";
 import Head from "next/head";
-import { Posts } from "../../src/pages/Posts";
+import { Posts } from "@src/pages";
 import React from "react";
-import { withPage } from "../../src/components/withPage";
+import { withPage } from "@src/components";
 
 export const getStaticProps = async (context: any) => {
     return Promise.resolve({

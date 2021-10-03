@@ -1,4 +1,4 @@
-import { Theme, Switch as _Switch, withStyles } from "@material-ui/core";
+import { Theme, Switch as MuiSwitch, withStyles } from "@material-ui/core";
 
 export const Switch = withStyles((theme: Theme) => ({
     switchBase: {
@@ -12,4 +12,4 @@ export const Switch = withStyles((theme: Theme) => ({
     },
     checked: {},
     track: {},
-}))(_Switch);
+}))(MuiSwitch);

@@ -10,7 +10,7 @@ interface IColorPicker {
 export const ColorPicker = ({ setColor }: IColorPicker) => {
     const theme = useTheme();
 
-    function onChange(color: ColorResult) {
+    const onChange = (color: ColorResult) => {
         setColor(color.hex);
     }
 

@@ -1,7 +1,7 @@
-import { ArticleCard } from "../components/ArticleCard";
+import { ArticleCard } from "@components";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
-import { PostData } from "../data";
+import { PostData } from "@data";
 import React from "react";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
