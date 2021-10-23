@@ -8,7 +8,8 @@ import {
     makeStyles,
 } from "@material-ui/core";
 
-import { Image } from "@components";
+import AM from "../../public/andrew-moss.jpeg"
+import Image from "next/image";
 import React from "react";
 import { metaData } from "@data";
 
@@ -59,12 +60,10 @@ export const Hero = ({ primary, secondary, bio }: IProps) => {
                         <div className={classes.main}>
                             <Image
                                 className={classes.img}
-                                src={primary}
+                                src={AM}
                                 alt={metaData.name}
-                                lazyProps={{
-                                    width: "100%",
-                                    height: "100%",
-                                }}
+                                placeholder="blur"
+                                priority={false}
                             />
                         </div>
                     </Grid>
