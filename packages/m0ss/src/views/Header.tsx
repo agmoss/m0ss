@@ -11,7 +11,7 @@ import {
 } from "@material-ui/core";
 import { Apps, GitHub, LinkedIn } from "@material-ui/icons";
 
-import { IconButton } from "@components";
+import { IconButton } from "@src/components/IconButton";
 import React from "react";
 import { useRouter } from "next/router";
 

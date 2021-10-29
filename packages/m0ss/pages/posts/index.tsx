@@ -3,7 +3,7 @@ import { IPageMeta, PostData, metaData, postData } from "@src/data";
 import Head from "next/head";
 import { Posts } from "@src/pages";
 import React from "react";
-import { withPage } from "@src/components";
+import { withPage } from "@src/components/withPage";
 
 export const getStaticProps = async (context: any) => {
     return Promise.resolve({

@@ -1,4 +1,4 @@
-import { AboutPaper, Markdown, Snacks, severity } from "@components";
+
 import {
     Container,
     Divider,
@@ -11,6 +11,9 @@ import {
 import React, { useState } from "react";
 
 import { IStr } from "@data";
+import { AboutPaper } from "@src/components/AboutPaper";
+import { Markdown } from "@src/components/Markdown";
+import { Snacks, severity } from "@src/components/Snacks";
 
 const randomWords = require("random-words");
 

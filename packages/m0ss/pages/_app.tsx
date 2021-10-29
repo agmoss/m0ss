@@ -24,12 +24,24 @@ export default function App({ Component, pageProps }: AppProps) {
                     name="viewport"
                     content="minimum-scale=1, initial-scale=1, width=device-width"
                 />
-                {/* prettier-ignore */}
-                <script type="application/ld+json">{`${JSON.stringify(websiteSchema).trim()}`}</script>
-                {/* prettier-ignore */}
-                <script type="application/ld+json">{`${JSON.stringify(personSchema).trim()}`}</script>
-                {/* prettier-ignore */}
-                <script type="application/ld+json">{`${JSON.stringify(orgSchema).trim()}`}</script>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: `${JSON.stringify(websiteSchema).trim()}`,
+                    }}
+                />
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: `${JSON.stringify(personSchema).trim()}`,
+                    }}
+                />
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: `${JSON.stringify(orgSchema).trim()}`,
+                    }}
+                />
                 <link rel="icon" href="/favicon.ico" />
                 <meta
                     property="og:title"

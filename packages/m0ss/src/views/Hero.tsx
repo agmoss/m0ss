@@ -8,7 +8,7 @@ import {
     makeStyles,
 } from "@material-ui/core";
 
-import AM from "../../public/andrew-moss.jpeg"
+import AM from "../../public/andrew-moss.jpeg";
 import Image from "next/image";
 import React from "react";
 import { metaData } from "@data";
@@ -17,9 +17,11 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         main: {
             position: "relative",
-            zIndex: 9,
             width: "100%",
             height: "100%",
+            [theme.breakpoints.down("sm")]: {
+                minHeight: "200px",
+            },
         },
         img: {
             objectFit: "cover",
@@ -62,19 +64,13 @@ export const Hero = ({ primary, secondary, bio }: IProps) => {
                                 className={classes.img}
                                 src={AM}
                                 alt={metaData.name}
+                                layout="fill"
+                                priority={true}
                                 placeholder="blur"
-                                priority={false}
                             />
                         </div>
                     </Grid>
-                    <Grid
-                        item
-                        xs={12}
-                        sm={12}
-                        md={6}
-                        lg={8}
-                        style={{ height: "100%" }}
-                    >
+                    <Grid item xs={12} sm={12} md={6} lg={8}>
                         <CtaCard className={classes.mainContent} bio={bio} />
                     </Grid>
                 </Grid>

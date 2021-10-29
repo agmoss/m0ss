@@ -7,9 +7,9 @@ import { ProjectReadme } from "@src/pages";
 import React from "react";
 import { getText } from "@src/utils";
 import { pipe } from "fp-ts/function";
-import { withPage } from "@src/components";
+import { withPage } from "@src/components/withPage";
 
-export const getStaticProps = async (context: any) => {
+export const getStaticProps = async () => {
     return {
         props: {
             str: pipe(

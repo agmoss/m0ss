@@ -4,7 +4,7 @@ import { getPostData, isPostData } from "@src/utils";
 import Head from "next/head";
 import { Post as PostPage } from "@src/pages";
 import React from "react";
-import { withPage } from "@src/components";
+import { withPage } from "@src/components/withPage";
 
 const Post = ({ str }: { str: PostDataWithContent | string }) => {
     if (isPostData(str)) {
@@ -12,8 +12,14 @@ const Post = ({ str }: { str: PostDataWithContent | string }) => {
             <React.Fragment>
                 <Head>
                     <title>{str.slug}</title>
-                    {/* prettier-ignore */}
-                    <script type="application/ld+json">{`${JSON.stringify(articleSchema(str)).trim()}`}</script>
+                    <script
+                        type="application/ld+json"
+                        dangerouslySetInnerHTML={{
+                            __html: `${JSON.stringify(
+                                articleSchema(str)
+                            ).trim()}`,
+                        }}
+                    />
                     <meta property="og:title" content={str.slug} key="title" />
                     <meta name="title" property="title" content={str.slug} />
                     <meta

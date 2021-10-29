@@ -1,4 +1,4 @@
-import { ArticleCard } from "@components";
+import { ArticleCard } from "@src/components/ArticleCard";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import { PostData } from "@data";
