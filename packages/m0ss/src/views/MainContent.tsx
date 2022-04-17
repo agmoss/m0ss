@@ -1,4 +1,3 @@
-
 import {
     Container,
     Divider,
@@ -9,10 +8,10 @@ import {
     makeStyles,
 } from "@material-ui/core";
 import React, { useState } from "react";
+import { ReactMdRenderer } from "react-md-renderer";
 
 import { IStr } from "@data";
 import { AboutPaper } from "@src/components/AboutPaper";
-import { Markdown } from "@src/components/Markdown";
 import { Snacks, severity } from "@src/components/Snacks";
 
 const randomWords = require("random-words");
@@ -98,7 +97,7 @@ export const MainContent = ({ str }: IStr) => {
                             Rant
                         </Typography>
                         <Divider className={classes.customDivider} />
-                        {Markdown(str)}
+                        <ReactMdRenderer>{str}</ReactMdRenderer>
                     </Grid>
                 </Grid>
             </Container>

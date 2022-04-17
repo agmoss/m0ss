@@ -32,6 +32,7 @@
     "react-circles": "^2.0.4",
     "react-color": "^2.19.3",
     "react-dom": "17.0.2",
+    "react-md-renderer": "^0.0.2-alpha.1",
     "react-spring": "^9.4.4",
     "react-syntax-highlighter": "^15.5.0",
     "react-with-gesture": "^4.0.8",
