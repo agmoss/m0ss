@@ -1,5 +1,5 @@
-import React, { ComponentType } from "react";
 import { createStyles, makeStyles } from "@material-ui/core";
+import React, { ComponentType } from "react";
 
 import { Footer } from "../views/Footer";
 import Header from "../views/Header";

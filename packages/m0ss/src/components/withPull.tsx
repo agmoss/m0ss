@@ -1,8 +1,7 @@
+import { makeStyles } from "@material-ui/core";
+import clamp from "lodash-es/clamp";
 import React, { ComponentType } from "react";
 import { animated, useSpring } from "react-spring";
-
-import clamp from "lodash-es/clamp";
-import { makeStyles } from "@material-ui/core";
 import { useGesture } from "react-with-gesture";
 
 const useStyles = makeStyles(() => ({

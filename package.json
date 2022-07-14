@@ -11,13 +11,16 @@
     "packages/*"
   ],
   "scripts": {
+    "bootstrap": "lerna bootstrap --use-workspaces",
     "bootstrap:clean": "lerna clean -y && lerna bootstrap --use-workspaces",
+    "format": "lerna run format --stream --parallel --scope=m0ss",
     "format-imports": "import-sort --write '**/*.{js,jsx,ts,tsx}'",
     "format-package-json": "sort-package-json 'packages/*/package.json' 'package.json'",
-    "format": "lerna run format --stream --parallel --scope=m0ss",
     "lint": "lerna run lint --stream --parallel --scope=m0ss",
-    "bootstrap": "lerna bootstrap --use-workspaces",
     "lint-markdown": "markdownlint --ignore coverage --ignore dist --ignore **/node_modules/** '**/*.md' '.**/**/*.md'"
+  },
+  "resolutions": {
+    "@types/react": "17.0.16"
   },
   "dependencies": {
     "import-sort-cli": "^6.0.0",

@@ -1,7 +1,5 @@
+import { IStr, postData,PostDataWithContent } from "@data";
 import * as E from "fp-ts/Either";
-
-import { IStr, PostDataWithContent, postData } from "@data";
-
 import { pipe } from "fp-ts/function";
 
 export const getText = async (url: string): Promise<E.Either<any, string>> => {

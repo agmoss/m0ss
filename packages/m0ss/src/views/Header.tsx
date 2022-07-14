@@ -1,19 +1,18 @@
 import {
     AppBar,
     Container,
+    createStyles,
     Link,
+    makeStyles,
     SvgIcon,
     Theme,
     Toolbar,
     Typography,
-    createStyles,
-    makeStyles,
 } from "@material-ui/core";
 import { Apps, GitHub, LinkedIn } from "@material-ui/icons";
-
 import { IconButton } from "@src/components/IconButton";
-import React from "react";
 import { useRouter } from "next/router";
+import React from "react";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({

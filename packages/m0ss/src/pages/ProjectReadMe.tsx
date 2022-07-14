@@ -1,8 +1,7 @@
-import { Grid, Theme, createStyles, makeStyles } from "@material-ui/core";
-
 import { IStr } from "@data";
-import React from "react";
+import { createStyles, Grid, makeStyles,Theme } from "@material-ui/core";
 import { withMarkdownView } from "@src/components/withMarkdownView";
+import React from "react";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({

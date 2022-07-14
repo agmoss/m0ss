@@ -1,20 +1,17 @@
-import { Hero, MainContent } from "@views";
-
-import { DeepRequired } from "utility-types";
 import { IProfile } from "@data";
+import { Hero, MainContent } from "@views";
 import React from "react";
+import { DeepRequired } from "utility-types";
 
-interface ILanding {
+export const Landing = ({ profile }: {
     profile: DeepRequired<IProfile>;
-}
-
-export const Landing = ({ profile }: ILanding) => (
-    <div>
+}) => (
+    <>
         <Hero
             primary={profile.profile.profilePhoto.urlPrimary}
             secondary={profile.profile.profilePhoto.urlSecondary}
             bio={profile.profile.bio}
         />
         <MainContent str={profile.profile.rant.content} />
-    </div>
+    </>
 );

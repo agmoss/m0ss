@@ -3,29 +3,29 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
     "postbuild": "next-sitemap",
     "build:analyze": "ANALYZE=true next build",
-    "start": "next start",
-    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.tsx\" \"pages/**/*.tsx\"",
-    "lint": "next lint",
+    "check": "tsc --noEmit",
     "clean": "rimraf ./.cache ./.next ./node_modules",
-    "check": "tsc --noEmit"
+    "dev": "next dev",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.tsx\" \"pages/**/*.tsx\"",
+    "lint": "eslint --fix --ext .js,.jsx,.ts,.tsx ./src ./pages",
+    "start": "next start"
   },
   "resolutions": {
-    "@types/react": "17.0.33"
+    "@types/react": "17.0.16"
   },
   "dependencies": {
     "@material-ui/core": "^4.12.4",
     "@material-ui/icons": "^4.11.3",
     "@material-ui/lab": "^4.0.0-alpha.60",
     "@next/bundle-analyzer": "^12.1.5",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
     "fp-ts": "^2.11.10",
     "lodash-es": "^4.17.21",
     "markdown-to-jsx": "^7.1.7",
     "next": "^12.1.5",
-    "next-transpile-modules": "^9.0.0",
     "offcircle": "^3.0.2",
     "random-words": "^1.1.2",
     "react": "17.0.2",

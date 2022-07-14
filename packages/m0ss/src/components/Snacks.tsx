@@ -1,7 +1,6 @@
-import MuiAlert, { AlertProps } from "@material-ui/lab/Alert";
-
-import React from "react";
 import { Snackbar } from "@material-ui/core";
+import MuiAlert, { AlertProps } from "@material-ui/lab/Alert";
+import React from "react";
 
 export enum Severity {
     error = "error",
@@ -16,14 +15,14 @@ const Alert = (props: AlertProps) => (
     <MuiAlert elevation={6} variant="filled" {...props} />
 );
 
-interface ISnacksProps {
+type SnacksProps = {
     open: boolean;
     setOpen: React.Dispatch<React.SetStateAction<boolean>>;
     message: string;
     level: Severity;
 }
 
-export const Snacks = ({ open, setOpen, message, level }: ISnacksProps) => (
+export const Snacks = ({ open, setOpen, message, level }: SnacksProps) => (
     <Snackbar
         open={open}
         autoHideDuration={6000}

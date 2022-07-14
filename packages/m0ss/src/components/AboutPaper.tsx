@@ -1,15 +1,15 @@
 import {
+    createStyles,
     Grid,
+    makeStyles,
     Paper,
     Theme,
     Typography,
-    createStyles,
-    makeStyles,
 } from "@material-ui/core";
+import { ThumbUp } from "@material-ui/icons";
+import React from "react";
 
 import { IconButton } from "./IconButton";
-import React from "react";
-import { ThumbUp } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -19,11 +19,7 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-interface IAboutPaper {
-    handleOpen: () => void;
-}
-
-export const AboutPaper = ({ handleOpen }: IAboutPaper) => {
+export const AboutPaper = ({ handleOpen }: { handleOpen: () => void }) => {
     const classes = useStyles();
     return (
         <Grid container spacing={2}>

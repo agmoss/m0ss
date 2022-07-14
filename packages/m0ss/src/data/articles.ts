@@ -1,4 +1,4 @@
-export interface IStr {
+export type IStr = {
     str: string;
 }
 
