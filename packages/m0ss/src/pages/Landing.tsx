@@ -3,9 +3,7 @@ import { Hero, MainContent } from "@views";
 import React from "react";
 import { DeepRequired } from "utility-types";
 
-export const Landing = ({ profile }: {
-    profile: DeepRequired<IProfile>;
-}) => (
+export const Landing = ({ profile }: { profile: DeepRequired<IProfile> }) => (
     <>
         <Hero
             primary={profile.profile.profilePhoto.urlPrimary}

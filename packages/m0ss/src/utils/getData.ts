@@ -1,4 +1,4 @@
-import { IStr, postData,PostDataWithContent } from "@data";
+import { IStr, postData, PostDataWithContent } from "@data";
 import * as E from "fp-ts/Either";
 import { pipe } from "fp-ts/function";
 

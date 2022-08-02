@@ -1,7 +1,7 @@
 export type PageMeta = {
     title: string;
     description: string;
-}
+};
 
 export const metaData = {
     name: "Andrew Moss",

@@ -1,6 +1,6 @@
 export type IStr = {
     str: string;
-}
+};
 
 export type PostData = {
     slug: string;

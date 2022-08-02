@@ -9,11 +9,10 @@ import {
     Typography,
 } from "@material-ui/core";
 import { AboutPaper } from "@src/components/AboutPaper";
-import { severity,Snacks } from "@src/components/Snacks";
+import { severity, Snacks } from "@src/components/Snacks";
+import randomWords from "random-words";
 import React, { useState } from "react";
 import { ReactMdRenderer } from "react-md-renderer";
-
-const randomWords = require("random-words");
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({

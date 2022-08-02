@@ -1,5 +1,5 @@
 import { IStr } from "@data";
-import { createStyles, Grid, makeStyles,Theme } from "@material-ui/core";
+import { createStyles, Grid, makeStyles, Theme } from "@material-ui/core";
 import { withMarkdownView } from "@src/components/withMarkdownView";
 import React from "react";
 

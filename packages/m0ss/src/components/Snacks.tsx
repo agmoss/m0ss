@@ -20,7 +20,7 @@ type SnacksProps = {
     setOpen: React.Dispatch<React.SetStateAction<boolean>>;
     message: string;
     level: Severity;
-}
+};
 
 export const Snacks = ({ open, setOpen, message, level }: SnacksProps) => (
     <Snackbar
