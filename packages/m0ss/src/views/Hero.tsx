@@ -1,17 +1,17 @@
+import { metaData } from "@data";
 import {
     Container,
+    createStyles,
     Grid,
+    makeStyles,
     Paper,
     Theme,
     Typography,
-    createStyles,
-    makeStyles,
 } from "@material-ui/core";
-
-import AM from "../../public/andrew-moss.jpeg";
 import Image from "next/image";
 import React from "react";
-import { metaData } from "@data";
+
+import AM from "../../public/andrew-moss.jpeg";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -46,16 +46,18 @@ const CtaCard = ({ className, bio }: { className: string; bio: string }) => (
     </Paper>
 );
 
-interface IProps {
+export const Hero = ({
+    primary,
+    secondary,
+    bio,
+}: {
     primary: string;
     secondary: string;
     bio: string;
-}
-
-export const Hero = ({ primary, secondary, bio }: IProps) => {
+}) => {
     const classes = useStyles();
     return (
-        <div>
+        <>
             <Container maxWidth="lg">
                 <Grid container spacing={5}>
                     <Grid item xs={12} sm={12} md={6} lg={4}>
@@ -75,6 +77,6 @@ export const Hero = ({ primary, secondary, bio }: IProps) => {
                     </Grid>
                 </Grid>
             </Container>
-        </div>
+        </>
     );
 };

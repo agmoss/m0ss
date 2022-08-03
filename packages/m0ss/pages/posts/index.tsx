@@ -1,11 +1,11 @@
-import { IPageMeta, PostData, metaData, postData } from "@src/data";
-
-import Head from "next/head";
-import { Posts } from "@src/pages";
-import React from "react";
 import { withPage } from "@src/components/withPage";
+import { metaData, PageMeta, PostData, postData } from "@src/data";
+import { Posts } from "@src/pages";
+import { GetStaticProps } from "next";
+import Head from "next/head";
+import React from "react";
 
-export const getStaticProps = async (context: any) => {
+export const getStaticProps: GetStaticProps = async (context) => {
     return Promise.resolve({
         props: {
             data: postData,
@@ -19,7 +19,7 @@ const PostsWithMeta = ({
     meta,
 }: {
     data: PostData[];
-    meta: IPageMeta;
+    meta: PageMeta;
 }) => {
     return (
         <React.Fragment>

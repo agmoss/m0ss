@@ -1,10 +1,10 @@
-import { PostDataWithContent, articleSchema, postData } from "@src/data";
-import { getPostData, isPostData } from "@src/utils";
-
-import Head from "next/head";
-import { Post as PostPage } from "@src/pages";
-import React from "react";
 import { withPage } from "@src/components/withPage";
+import { articleSchema, postData, PostDataWithContent } from "@src/data";
+import { Post as PostPage } from "@src/pages";
+import { getPostData, isPostData } from "@src/utils";
+import { GetStaticPaths, GetStaticProps } from "next";
+import Head from "next/head";
+import React from "react";
 
 const Post = ({ str }: { str: PostDataWithContent | string }) => {
     if (isPostData(str)) {
@@ -41,7 +41,7 @@ const Post = ({ str }: { str: PostDataWithContent | string }) => {
     }
 };
 
-export const getStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
     const paths = postData.map((p) => {
         return {
             params: {
@@ -60,13 +60,19 @@ interface IParams {
     params: { slug: string };
 }
 
-export const getStaticProps = async ({ params }: IParams) => {
-    const str = await getPostData({ str: params.slug });
-    return {
-        props: {
-            str,
-        },
-    };
+export const getStaticProps: GetStaticProps = async (context) => {
+    try {
+        const str = await getPostData({ str: context.params!!.slug as string });
+        return {
+            props: {
+                str,
+            },
+        };
+    } catch (e) {
+        return {
+            notFound: true,
+        };
+    }
 };
 
 export default withPage(Post);

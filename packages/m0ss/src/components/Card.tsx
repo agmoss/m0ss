@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { animated as a, useSpring } from "react-spring";
 
-interface IProps {
+export const Card = ({
+    primary,
+    secondary,
+}: {
     primary: string;
     secondary: string;
-}
-
-export const Card = ({ primary, secondary }: IProps) => {
+}) => {
     const [flipped, set] = useState(false);
     const { transform, opacity } = useSpring({
         opacity: flipped ? 1 : 0,

@@ -1,13 +1,8 @@
+import { useTheme } from "@material-ui/core";
+import React from "react";
 import { BlockPicker, ColorResult } from "react-color";
 
-import React from "react";
-import { useTheme } from "@material-ui/core";
-
-interface IColorPicker {
-    setColor: Function;
-}
-
-export const ColorPicker = ({ setColor }: IColorPicker) => {
+export const ColorPicker = ({ setColor }: { setColor: Function }) => {
     const theme = useTheme();
 
     const onChange = (color: ColorResult) => {

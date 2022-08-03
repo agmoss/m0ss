@@ -1,6 +1,6 @@
-export interface IStr {
+export type IStr = {
     str: string;
-}
+};
 
 export type PostData = {
     slug: string;

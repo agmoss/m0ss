@@ -1,17 +1,16 @@
 import {
     Button,
     Container,
+    createStyles,
     CssBaseline,
     Grid,
+    makeStyles,
     Theme,
     Typography,
-    createStyles,
-    makeStyles,
 } from "@material-ui/core";
-
 import { Paths } from "@utils";
-import React from "react";
 import { useRouter } from "next/router";
+import React from "react";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -43,7 +42,6 @@ export const Footer = () => {
     const router = useRouter();
     return (
         <>
-            <CssBaseline />
             <Typography component="footer" className={classes.root}>
                 <Container className={classes.container}>
                     <Grid container>

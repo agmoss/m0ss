@@ -4,13 +4,10 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 
 module.exports = withBundleAnalyzer({
     reactStrictMode: true,
-    webpack5: true,
     productionBrowserSourceMaps: false,
     images: {
         domains: ["m0ss.dev"],
         formats: ["image/avif", "image/webp"],
     },
-    experimental: {
-        outputStandalone: true,
-    },
+    output: "standalone"
 });

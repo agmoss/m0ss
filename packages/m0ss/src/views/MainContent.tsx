@@ -1,20 +1,18 @@
+import { IStr } from "@data";
 import {
     Container,
+    createStyles,
     Divider,
     Grid,
+    makeStyles,
     Theme,
     Typography,
-    createStyles,
-    makeStyles,
 } from "@material-ui/core";
+import { AboutPaper } from "@src/components/AboutPaper";
+import { severity, Snacks } from "@src/components/Snacks";
+import randomWords from "random-words";
 import React, { useState } from "react";
 import { ReactMdRenderer } from "react-md-renderer";
-
-import { IStr } from "@data";
-import { AboutPaper } from "@src/components/AboutPaper";
-import { Snacks, severity } from "@src/components/Snacks";
-
-const randomWords = require("random-words");
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -75,7 +73,7 @@ export const MainContent = ({ str }: IStr) => {
     };
 
     return (
-        <div>
+        <>
             <Snacks
                 open={openSnack}
                 setOpen={setOpenSnack}
@@ -101,6 +99,6 @@ export const MainContent = ({ str }: IStr) => {
                     </Grid>
                 </Grid>
             </Container>
-        </div>
+        </>
     );
 };

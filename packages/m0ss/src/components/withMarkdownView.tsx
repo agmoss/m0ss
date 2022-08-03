@@ -1,15 +1,14 @@
 import {
     Container,
-    CssBaseline,
-    Grid,
-    Theme,
     createStyles,
+    Grid,
     makeStyles,
+    Theme,
 } from "@material-ui/core";
+import React from "react";
+import { ReactMdRenderer } from "react-md-renderer";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { monokai } from "react-syntax-highlighter/dist/cjs/styles/hljs";
-import { ReactMdRenderer } from "react-md-renderer";
-import React from "react";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -42,7 +41,6 @@ export const withMarkdownView =
         };
         return (
             <>
-                <CssBaseline />
                 <Container maxWidth="lg">
                     <main>
                         <Grid

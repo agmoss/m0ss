@@ -11,20 +11,18 @@
     "packages/*"
   ],
   "scripts": {
-    "bootstrap:clean": "lerna clean -y && lerna bootstrap --use-workspaces",
-    "format-imports": "import-sort --write '**/*.{js,jsx,ts,tsx}'",
-    "format-package-json": "sort-package-json 'packages/*/package.json' 'package.json'",
-    "format": "lerna run format --stream --parallel --scope=m0ss",
-    "lint": "lerna run lint --stream --parallel --scope=m0ss",
     "bootstrap": "lerna bootstrap --use-workspaces",
+    "bootstrap:clean": "lerna clean -y && lerna bootstrap --use-workspaces",
+    "format": "lerna run format --stream --parallel --scope=m0ss",
+    "format-package-json": "sort-package-json 'packages/*/package.json' 'package.json'",
+    "lint": "lerna run lint --stream --parallel --scope=m0ss",
     "lint-markdown": "markdownlint --ignore coverage --ignore dist --ignore **/node_modules/** '**/*.md' '.**/**/*.md'"
   },
+  "resolutions": {
+    "@types/react": "17.0.16"
+  },
   "dependencies": {
-    "import-sort-cli": "^6.0.0",
-    "import-sort-parser-babylon": "^6.0.0",
-    "import-sort-parser-typescript": "^6.0.0",
-    "import-sort-style-module": "^6.0.0",
-    "markdownlint-cli": "^0.31.1",
+    "markdownlint-cli": "^0.32.1",
     "sort-package-json": "^1.55.0"
   },
   "devDependencies": {
