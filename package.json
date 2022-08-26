@@ -22,11 +22,11 @@
     "@types/react": "17.0.16"
   },
   "dependencies": {
-    "markdownlint-cli": "^0.32.1",
+    "markdownlint-cli": "^0.32.2",
     "sort-package-json": "^1.55.0"
   },
   "devDependencies": {
-    "lerna": "^4.0.0"
+    "lerna": "^5.4.3"
   },
   "engines": {
     "node": "16.X",
