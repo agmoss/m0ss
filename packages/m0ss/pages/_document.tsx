@@ -3,7 +3,7 @@ import { theme } from "@src/theme";
 import Document, { Head, Html, Main, NextScript } from "next/document";
 import React from "react";
 
-export default class MyDocument extends Document {
+export default class _Document extends Document {
     render() {
         return (
             <Html lang="en">
@@ -11,14 +11,6 @@ export default class MyDocument extends Document {
                     <meta
                         name="theme-color"
                         content={theme.palette.primary.main}
-                    />
-                    <link
-                        rel="stylesheet"
-                        href="https://fonts.googleapis.com/css?family=Lato:300,400,500,700&display=swap"
-                    />
-                    <link
-                        rel="stylesheet"
-                        href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,500,700&display=swap"
                     />
                     <link
                         rel="stylesheet"
@@ -38,7 +30,7 @@ export default class MyDocument extends Document {
     }
 }
 
-MyDocument.getInitialProps = async (ctx) => {
+_Document.getInitialProps = async (ctx) => {
     const sheets = new ServerStyleSheets();
     const originalRenderPage = ctx.renderPage;
 

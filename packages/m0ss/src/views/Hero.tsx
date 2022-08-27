@@ -1,13 +1,12 @@
 import { metaData } from "@data";
 import {
-    Container,
     createStyles,
-    Grid,
     makeStyles,
     Paper,
     Theme,
     Typography,
 } from "@material-ui/core";
+import { DualGrid } from "@src/components/DualGrid";
 import Image from "next/image";
 import React from "react";
 
@@ -28,27 +27,13 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         mainContent: {
             height: "100%",
-            marginBottom: "auto",
-            overflow: "auto",
             padding: theme.spacing(6),
         },
     })
 );
 
-const CtaCard = ({ className, bio }: { className: string; bio: string }) => (
-    <Paper className={className}>
-        <Typography variant="h3" component="h1" gutterBottom>
-            {metaData.name}
-        </Typography>
-        <Typography variant="h5" component="h3" paragraph gutterBottom>
-            {bio}
-        </Typography>
-    </Paper>
-);
 
 export const Hero = ({
-    primary,
-    secondary,
     bio,
 }: {
     primary: string;
@@ -58,25 +43,31 @@ export const Hero = ({
     const classes = useStyles();
     return (
         <>
-            <Container maxWidth="lg">
-                <Grid container spacing={5}>
-                    <Grid item xs={12} sm={12} md={6} lg={4}>
-                        <div className={classes.main}>
-                            <Image
-                                className={classes.img}
-                                src={AM}
-                                alt={metaData.name}
-                                layout="fill"
-                                priority={true}
-                                placeholder="blur"
-                            />
-                        </div>
-                    </Grid>
-                    <Grid item xs={12} sm={12} md={6} lg={8}>
-                        <CtaCard className={classes.mainContent} bio={bio} />
-                    </Grid>
-                </Grid>
-            </Container>
+            <DualGrid
+                Left={
+                    <div className={classes.main}>
+                        <Image
+                            className={classes.img}
+                            src={AM}
+                            alt={metaData.name}
+                            layout="fill"
+                            priority={false}
+                            placeholder="blur"
+                            quality={75}
+                        />
+                    </div>
+                }
+                Right={
+                    <Paper className={classes.mainContent}>
+                        <Typography variant="h3" component="h1" gutterBottom>
+                            {metaData.name}
+                        </Typography>
+                        <Typography variant="h5" component="h3" paragraph gutterBottom>
+                            {bio}
+                        </Typography>
+                    </Paper>
+                }
+            />
         </>
     );
 };

@@ -6,7 +6,7 @@ import { AppProps } from "next/app";
 import Head from "next/head";
 import React, { useEffect } from "react";
 
-export default function App({ Component, pageProps }: AppProps) {
+const App = ({ Component, pageProps }: AppProps) => {
     useEffect(() => {
         const jssStyles = document.querySelector("#jss-server-side");
         if (jssStyles && jssStyles.parentElement) {
@@ -82,3 +82,5 @@ export default function App({ Component, pageProps }: AppProps) {
         </React.Fragment>
     );
 }
+
+export default App
