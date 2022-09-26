@@ -28,7 +28,7 @@ export const landingData: IProfile = {
         rant: {
             url: "https://m0ss.blob.core.windows.net/media/landing.md",
         },
-        bio: "Hi, I'm a software developer with a focus on web applications, infrastructure, data visualization, and creative programming. I am currently working on open source contributions in the JS/TS ecosystem. I am also on the lookout for something new and exciting!",
+        bio: "Hi, I'm a software developer with a focus on web applications, infrastructure, data visualization, and creative programming. I am currently working on open source contributions in the JS/TS ecosystem. In a short period of time I will be announcing my next move!",
         color: "#e91e63",
     },
 };

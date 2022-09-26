@@ -32,7 +32,6 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-
 export const Hero = ({
     bio,
 }: {
@@ -62,7 +61,12 @@ export const Hero = ({
                         <Typography variant="h3" component="h1" gutterBottom>
                             {metaData.name}
                         </Typography>
-                        <Typography variant="h5" component="h3" paragraph gutterBottom>
+                        <Typography
+                            variant="h5"
+                            component="h3"
+                            paragraph
+                            gutterBottom
+                        >
                             {bio}
                         </Typography>
                     </Paper>

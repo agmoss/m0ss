@@ -3,6 +3,7 @@ import React, { ComponentType } from "react";
 
 import { Footer } from "../views/Footer";
 import Header from "../views/Header";
+import ApplyAos from "./ApplyAos";
 
 const useStyles = makeStyles(() =>
     createStyles({
@@ -22,7 +23,9 @@ export const withPage =
         return (
             <div className={classes.root}>
                 <Header />
-                <WrappedComponent {...(props as T)} />
+                <ApplyAos>
+                    <WrappedComponent {...(props as T)} />
+                </ApplyAos>
                 <Footer />
             </div>
         );

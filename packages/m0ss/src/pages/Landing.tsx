@@ -10,6 +10,7 @@ export const Landing = ({ profile }: { profile: DeepRequired<IProfile> }) => (
             secondary={profile.profile.profilePhoto.urlSecondary}
             bio={profile.profile.bio}
         />
+
         <MainContent str={profile.profile.rant.content} />
     </>
 );

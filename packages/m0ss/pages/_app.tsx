@@ -1,7 +1,10 @@
+import "aos/dist/aos.css";
+
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { ThemeProvider } from "@material-ui/core/styles";
 import { metaData, orgSchema, personSchema, websiteSchema } from "@src/data";
 import { theme } from "@src/theme";
+import AOS from "aos";
 import { AppProps } from "next/app";
 import Head from "next/head";
 import React, { useEffect } from "react";
@@ -12,6 +15,13 @@ const App = ({ Component, pageProps }: AppProps) => {
         if (jssStyles && jssStyles.parentElement) {
             jssStyles.parentElement.removeChild(jssStyles);
         }
+
+        AOS.init({
+            once: true,
+            delay: 50,
+            duration: 500,
+            easing: "ease-in-out",
+        });
     }, []);
 
     return (
@@ -81,6 +91,6 @@ const App = ({ Component, pageProps }: AppProps) => {
             </ThemeProvider>
         </React.Fragment>
     );
-}
+};
 
-export default App
+export default App;

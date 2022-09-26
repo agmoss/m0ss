@@ -1,12 +1,9 @@
-import {
-    Container,
-    Grid,
-} from "@material-ui/core";
+import { Container, Grid } from "@material-ui/core";
 import React from "react";
 
 export const DualGrid = ({
     Left,
-    Right
+    Right,
 }: {
     Left: JSX.Element;
     Right: JSX.Element;
