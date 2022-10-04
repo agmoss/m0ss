@@ -1,4 +1,5 @@
 import { PostData } from "@data";
+import { Box } from "@material-ui/core";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
@@ -13,6 +14,9 @@ const useStyles = makeStyles((theme) => ({
     cardGrid: {
         paddingTop: theme.spacing(8),
         paddingBottom: theme.spacing(8),
+    },
+    cardWrapper: {
+        display: "flex",
     },
 }));
 
@@ -35,9 +39,20 @@ export const Posts = ({ data }: { data: PostData[] }) => {
                 </Container>
             </div>
             <Container className={classes.cardGrid} maxWidth="lg">
-                <Grid container spacing={4}>
+                <Grid
+                    container
+                    spacing={4}
+                    alignItems="stretch"
+                    direction="row"
+                >
                     {data.map((d) => (
-                        <Grid item xs={12} md={6} key={d.slug}>
+                        <Grid
+                            item
+                            xs={12}
+                            md={6}
+                            key={d.slug}
+                            className={classes.cardWrapper}
+                        >
                             <ArticleCard {...d} />
                         </Grid>
                     ))}

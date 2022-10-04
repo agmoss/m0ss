@@ -56,9 +56,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
     });
 };
 
-interface IParams {
+type IParams = {
     params: { slug: string };
-}
+};
 
 export const getStaticProps: GetStaticProps = async (context) => {
     try {

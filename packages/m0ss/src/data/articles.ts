@@ -13,6 +13,34 @@ export type PostDataWithContent = PostData & { content: string };
 
 export const postData: PostData[] = [
     {
+        slug: "use-query-rd",
+        description:
+            " A drop in replacement for apollo client's `useQuery` hook with a return type that mimics Elm's RemoteData ADT",
+        mdLink: "https://raw.githubusercontent.com/agmoss/use-query-rd/master/README.md",
+        link: "https://github.com/agmoss/use-query-rd",
+    },
+    {
+        slug: "react-md-renderer",
+        description:
+            "Simple batteries included rendering library for markdown files.",
+        mdLink: "https://raw.githubusercontent.com/agmoss/react-md-renderer/master/README.md",
+        link: "https://github.com/agmoss/react-md-renderer",
+    },
+    {
+        slug: "graphql-request-less-graphql",
+        description:
+            "Minimal GraphQL client supporting Node and browsers for scripts or simple apps (without requiring graphql)",
+        mdLink: "https://raw.githubusercontent.com/agmoss/graphql-request-less-graphql/master/README.md",
+        link: "https://github.com/agmoss/graphql-request-less-graphql",
+    },
+    {
+        slug: "nextjs-mui-fabric",
+        description:
+            "Instructional Nextjs project with a focus on composition over inheritance",
+        mdLink: "https://raw.githubusercontent.com/agmoss/nextjs-mui-fabric/master/README.md",
+        link: "https://github.com/agmoss/nextjs-mui-fabric",
+    },
+    {
         slug: "nestjs-graphql-azure-functions",
         description: "Serverless GraphQL API with Nest.js and Azure Functions",
         mdLink: "https://raw.githubusercontent.com/agmoss/nestjs-graphql-azure-functions/master/README.md",

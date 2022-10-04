@@ -18,7 +18,7 @@ export const metaData = {
         description: "Andrew Moss developer site readme page",
     },
     posts: {
-        title: "Andrew Moss Blog Posts",
+        title: "Andrew Moss - Blog Posts",
         description: "Software blog by Andrew Moss",
     },
 };

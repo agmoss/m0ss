@@ -2,7 +2,6 @@ import {
     Button,
     Container,
     createStyles,
-    CssBaseline,
     Grid,
     makeStyles,
     Theme,
