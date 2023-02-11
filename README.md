@@ -27,10 +27,6 @@
   <a>
     <img alt="code style: prettier" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square">
   </a>
-    <!-- Lerna -->
-  <a>
-    <img alt="Lerna" src="https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg">
-  </a>
     <!-- website -->
   <a href="https://m0ss.dev">
     <img alt="site" src="https://img.shields.io/website?url=https%3A%2F%2Fm0ss.dev">

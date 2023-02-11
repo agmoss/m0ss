@@ -9,27 +9,23 @@
 <div align="center">
   <!-- Dependencies -->
   <a>
-    <img src="https://img.shields.io/david/agmoss/m0ss-v2" alt="Dependencies" />
+    <img src="https://img.shields.io/david/agmoss/m0ss" alt="Dependencies" />
   </a>
   <!-- Version -->
   <a href="https://github.com/agmoss/m0ss">
-    <img src="https://img.shields.io/github/package-json/v/agmoss/m0ss-v2" alt="Version" />
+    <img src="https://img.shields.io/github/package-json/v/agmoss/m0ss" alt="Version" />
   </a>
   <!-- Size -->
   <a>
-    <img src="https://img.shields.io/github/languages/code-size/agmoss/m0ss-v2" alt="Code Size" />
+    <img src="https://img.shields.io/github/languages/code-size/agmoss/m0ss" alt="Code Size" />
   </a>
   <!-- Repo Size -->
   <a>
-    <img src="https://img.shields.io/github/repo-size/agmoss/m0ss-v2" alt="Repo Size" />
+    <img src="https://img.shields.io/github/repo-size/agmoss/m0ss" alt="Repo Size" />
   </a>
   <!-- Style -->
   <a>
     <img alt="code style: prettier" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square">
-  </a>
-    <!-- Lerna -->
-  <a>
-    <img alt="Lerna" src="https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg">
   </a>
     <!-- website -->
   <a href="https://m0ss.dev">
@@ -37,11 +33,11 @@
   </a>
   <!-- Language -->
   <a>
-    <img alt="language" src="https://img.shields.io/github/languages/top/agmoss/m0ss-v2">
+    <img alt="language" src="https://img.shields.io/github/languages/top/agmoss/m0ss">
   </a>
     <!-- License -->
   <a>
-    <img alt="license" src="https://img.shields.io/github/license/agmoss/m0ss-v2">
+    <img alt="license" src="https://img.shields.io/github/license/agmoss/m0ss">
   </a>
 </div>
 
