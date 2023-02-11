@@ -1,5 +1,5 @@
-import { IProfile } from "@data";
-import { Hero, MainContent } from "@views";
+import { IProfile } from "../data";
+import { Hero, MainContent } from "../components";
 import React from "react";
 import { DeepRequired } from "utility-types";
 

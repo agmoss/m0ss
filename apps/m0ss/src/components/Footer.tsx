@@ -7,7 +7,7 @@ import {
     Theme,
     Typography,
 } from "@material-ui/core";
-import { Paths } from "@utils";
+import { Paths } from "../utils";
 import { useRouter } from "next/router";
 import React from "react";
 

@@ -1,6 +1,6 @@
-import { withPage } from "@src/components/withPage";
-import { metaData, PageMeta, PostData, postData } from "@src/data";
-import { Posts } from "@src/page-views";
+import { withPage } from "../../components/withPage";
+import { metaData, PageMeta, PostData, postData } from "../../data";
+import { Posts } from "../../views";
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import React from "react";

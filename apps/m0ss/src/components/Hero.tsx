@@ -1,4 +1,4 @@
-import { metaData } from "@data";
+import { metaData } from "../data";
 import {
     createStyles,
     makeStyles,

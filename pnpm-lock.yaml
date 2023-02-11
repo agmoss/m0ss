@@ -25,6 +25,7 @@ importers:
   apps/m0ss:
     specifiers:
       '@m0ss/core': workspace:*
+      '@m0ss/tsconfig': workspace:*
       '@material-ui/core': latest
       '@material-ui/icons': latest
       '@material-ui/lab': latest
@@ -39,7 +40,6 @@ importers:
       markdown-to-jsx: latest
       next: latest
       next-sitemap: latest
-      prettier: latest
       random-words: latest
       react: latest
       react-circles: latest
@@ -68,13 +68,13 @@ importers:
       sharp: 0.31.3
       utility-types: 3.10.0
     devDependencies:
+      '@m0ss/tsconfig': link:../../packages/m0ss-tsconfig
       '@types/aos': 3.0.4
       '@types/lodash-es': 4.17.6
       '@types/node': 18.13.0
       '@types/react': 18.0.28
       eslint-config-m0ss: link:../../packages/eslint-config-m0ss
       next-sitemap: 3.1.52_next@13.1.6
-      prettier: 2.8.4
       typescript: 4.9.5
 
   packages/eslint-config-m0ss:
@@ -84,6 +84,7 @@ importers:
       eslint-config-prettier: latest
       eslint-config-turbo: latest
       eslint-plugin-react: latest
+      eslint-plugin-simple-import-sort: latest
       typescript: latest
     dependencies:
       eslint: 8.34.0
@@ -91,6 +92,7 @@ importers:
       eslint-config-prettier: 8.6.0_eslint@8.34.0
       eslint-config-turbo: 0.0.7_eslint@8.34.0
       eslint-plugin-react: 7.32.2_eslint@8.34.0
+      eslint-plugin-simple-import-sort: 10.0.0_eslint@8.34.0
       typescript: 4.9.5
 
   packages/m0ss-core:
@@ -2136,6 +2138,14 @@ packages:
       resolve: 2.0.0-next.4
       semver: 6.3.0
       string.prototype.matchall: 4.0.8
+    dev: false
+
+  /eslint-plugin-simple-import-sort/10.0.0_eslint@8.34.0:
+    resolution: {integrity: sha512-AeTvO9UCMSNzIHRkg8S6c3RPy5YEwKWSQPx3DYghLedo2ZQxowPFLGDN1AZ2evfg6r6mjBSZSLxLFsWSu3acsw==}
+    peerDependencies:
+      eslint: '>=5.0.0'
+    dependencies:
+      eslint: 8.34.0
     dev: false
 
   /eslint-plugin-turbo/0.0.7_eslint@8.34.0:

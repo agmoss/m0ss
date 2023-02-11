@@ -1,4 +1,4 @@
-import { IStr } from "@data";
+import { IStr } from "../data";
 import {
     Container,
     createStyles,

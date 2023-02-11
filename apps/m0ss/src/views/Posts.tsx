@@ -1,10 +1,9 @@
-import { PostData } from "@data";
-import { Box } from "@material-ui/core";
+import { PostData } from "../data";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
-import { ArticleCard } from "@src/components/ArticleCard";
+import { ArticleCard } from "../components/ArticleCard";
 import React from "react";
 
 const useStyles = makeStyles((theme) => ({

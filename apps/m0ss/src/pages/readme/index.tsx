@@ -1,7 +1,7 @@
-import { withPage } from "@src/components/withPage";
-import { IStr, metaData } from "@src/data";
-import { ProjectReadme } from "@src/page-views";
-import { getText } from "@src/utils";
+import { withPage } from "../../components/withPage";
+import { IStr, metaData } from "../../data";
+import { ProjectReadme } from "../../views";
+import { getText } from "../../utils";
 import * as E from "fp-ts/Either";
 import { pipe } from "fp-ts/function";
 import { GetStaticProps } from "next";

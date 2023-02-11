@@ -8,7 +8,6 @@
     "check": "tsc --noEmit",
     "clean": "rm -rf ./.cache ./.next ./node_modules",
     "dev": "next dev -p 3010",
-    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.tsx\" \"pages/**/*.tsx\"",
     "lint": "next lint",
     "start": "next start"
   },
@@ -32,13 +31,13 @@
     "utility-types": "latest"
   },
   "devDependencies": {
+    "@m0ss/tsconfig": "workspace:*",
     "@types/aos": "latest",
     "@types/lodash-es": "latest",
     "@types/node": "latest",
     "@types/react": "latest",
     "eslint-config-m0ss": "workspace:0.0.0",
     "next-sitemap": "latest",
-    "prettier": "latest",
     "typescript": "latest"
   }
 }

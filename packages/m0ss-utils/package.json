@@ -1,18 +1,18 @@
 {
   "name": "@m0ss/utils",
   "version": "0.0.0",
+  "license": "MIT",
+  "sideEffects": false,
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "sideEffects": false,
-  "license": "MIT",
   "files": [
     "dist/**"
   ],
   "scripts": {
     "build": "tsc",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "dev": "tsc --watch",
-    "lint": "TIMING=1 eslint \"src/**/*.ts*\"",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+    "lint": "TIMING=1 eslint \"src/**/*.ts*\""
   },
   "devDependencies": {
     "@m0ss/tsconfig": "workspace:*",

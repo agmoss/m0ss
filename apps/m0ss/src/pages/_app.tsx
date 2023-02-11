@@ -2,8 +2,8 @@ import "aos/dist/aos.css";
 
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { ThemeProvider } from "@material-ui/core/styles";
-import { metaData, orgSchema, personSchema, websiteSchema } from "@src/data";
-import { theme } from "@src/theme";
+import { metaData, orgSchema, personSchema, websiteSchema } from "../data";
+import { theme } from "../theme";
 import AOS from "aos";
 import { AppProps } from "next/app";
 import Head from "next/head";

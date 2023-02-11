@@ -1,4 +1,4 @@
-import { IStr } from "@data";
+import { IStr } from "../data";
 import { createStyles, Grid, makeStyles, Theme } from "@material-ui/core";
 import { withMarkdownView } from "@m0ss/core";
 import React from "react";

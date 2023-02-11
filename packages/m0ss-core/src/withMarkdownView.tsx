@@ -25,6 +25,7 @@ const useStyles = makeStyles((theme: Theme) =>
  */
 export const withMarkdownView =
     (md: string): React.FC =>
+    // eslint-disable-next-line react/display-name
     () => {
         const classes = useStyles();
         const options = {
