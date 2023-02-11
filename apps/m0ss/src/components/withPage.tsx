@@ -18,6 +18,7 @@ const useStyles = makeStyles(() =>
 
 export const withPage =
     <T extends object>(WrappedComponent: ComponentType<T>): React.FC<T> =>
+    // eslint-disable-next-line react/display-name
     ({ ...props }) => {
         const classes = useStyles();
         return (

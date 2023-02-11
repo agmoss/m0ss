@@ -1,6 +1,6 @@
 import { withPage } from "@src/components/withPage";
 import { articleSchema, postData, PostDataWithContent } from "@src/data";
-import { Post as PostPage } from "@src/pages";
+import { Post as PostPage } from "@src/page-views";
 import { getPostData, isPostData } from "@src/utils";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";

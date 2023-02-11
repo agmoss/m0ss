@@ -6,9 +6,9 @@ import {
     Theme,
 } from "@material-ui/core";
 import React from "react";
-import { ReactMdRenderer } from "react-md-renderer";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { monokai } from "react-syntax-highlighter/dist/cjs/styles/hljs";
+import ReactMdRenderer from "markdown-to-jsx";
+// import SyntaxHighlighter from "react-syntax-highlighter";
+// import { monokai } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -18,26 +18,30 @@ const useStyles = makeStyles((theme: Theme) =>
         },
     })
 );
-
+/**
+ * @deprecated This is not fully compatible with muiv4
+ * @param md
+ * @returns
+ */
 export const withMarkdownView =
     (md: string): React.FC =>
     () => {
         const classes = useStyles();
         const options = {
-            overrides: {
-                code: {
-                    component: SyntaxHighlighter,
-                    props: {
-                        customStyle: {
-                            display: "inline",
-                            background: "transparent",
-                            padding: "1.5px",
-                        },
-                        style: monokai,
-                        wrapLongLines: true,
-                    },
-                },
-            },
+            // overrides: {
+            //     code: {
+            //         component: SyntaxHighlighter,
+            //         props: {
+            //             customStyle: {
+            //                 display: "inline",
+            //                 background: "transparent",
+            //                 padding: "1.5px",
+            //             },
+            //             style: monokai,
+            //             wrapLongLines: true,
+            //         },
+            //     },
+            // },
         };
         return (
             <>

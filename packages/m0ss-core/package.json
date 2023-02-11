@@ -4,22 +4,21 @@
   "license": "MIT",
   "sideEffects": false,
   "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "files": [
     "dist/**"
   ],
   "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs --dts --external react",
+    "build": "tsc",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
-    "dev": "tsup src/index.ts --format esm,cjs --watch --dts --external react",
+    "dev": "tsc --watch",
     "lint": "TIMING=1 eslint \"src/**/*.ts*\""
   },
   "dependencies": {
-    "@hello-pangea/color-picker": "^3.2.2",
-    "@material-ui/core": "^4.12.4",
-    "@material-ui/icons": "^4.11.3",
-    "@material-ui/lab": "^4.0.0-alpha.60",
+    "@hello-pangea/color-picker": "latest",
+    "@material-ui/core": "latest",
+    "@material-ui/icons": "latest",
+    "@material-ui/lab": "latest",
     "aos": "latest",
     "markdown-to-jsx": "latest",
     "offcircle": "latest",
@@ -39,7 +38,6 @@
     "@types/react-syntax-highlighter": "latest",
     "eslint": "latest",
     "eslint-config-m0ss": "workspace:*",
-    "tsup": "^5.10.1",
     "typescript": "latest"
   },
   "publishConfig": {

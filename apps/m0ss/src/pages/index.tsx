@@ -1,6 +1,6 @@
 import { withPage } from "@src/components/withPage";
 import { IProfile, landingData } from "@src/data";
-import { Landing as LandingPage } from "@src/pages";
+import { Landing as LandingPage } from "@src/page-views";
 import { getText } from "@src/utils";
 import * as E from "fp-ts/Either";
 import { pipe } from "fp-ts/function";

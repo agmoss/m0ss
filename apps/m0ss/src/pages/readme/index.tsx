@@ -1,6 +1,6 @@
 import { withPage } from "@src/components/withPage";
 import { IStr, metaData } from "@src/data";
-import { ProjectReadme } from "@src/pages";
+import { ProjectReadme } from "@src/page-views";
 import { getText } from "@src/utils";
 import * as E from "fp-ts/Either";
 import { pipe } from "fp-ts/function";

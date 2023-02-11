@@ -20,7 +20,7 @@
             "@data": ["./src/data"],
             "@utils": ["./src/utils"],
             "@components": ["./src/components"],
-            "@pages": ["./src/pages"],
+            "@pages": ["src/page-views"],
             "@views": ["./src/views"],
             "@theme": ["./src/theme"]
         },
