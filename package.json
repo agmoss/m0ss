@@ -20,17 +20,17 @@
     "release": "turbo run build --filter=docs^... && changeset publish"
   },
   "devDependencies": {
-    "markdownlint-cli": "latest",
-    "sort-package-json": "latest",
-    "npm-run-all": "latest",
     "@changesets/cli": "latest",
     "eslint": "latest",
     "eslint-config-m0ss": "workspace:0.0.0",
+    "markdownlint-cli": "latest",
+    "npm-run-all": "latest",
     "prettier": "latest",
+    "sort-package-json": "latest",
     "turbo": "latest"
   },
+  "packageManager": "pnpm@7.15.0",
   "engines": {
     "node": "18.X"
-  },
-  "packageManager": "pnpm@7.15.0"
+  }
 }

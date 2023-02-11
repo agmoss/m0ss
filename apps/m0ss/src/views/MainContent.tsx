@@ -8,8 +8,8 @@ import {
     Theme,
     Typography,
 } from "@material-ui/core";
-import { AboutPaper } from "@src/components/AboutPaper";
-import { severity, Snacks } from "@src/components/Snacks";
+import { AboutPaper } from "@m0ss/core";
+import { severity, Snacks } from "@m0ss/core";
 import randomWords from "random-words";
 import React, { useState } from "react";
 import { ReactMdRenderer } from "react-md-renderer";

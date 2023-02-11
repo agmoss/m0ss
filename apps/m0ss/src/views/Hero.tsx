@@ -6,7 +6,7 @@ import {
     Theme,
     Typography,
 } from "@material-ui/core";
-import { DualGrid } from "@src/components/DualGrid";
+import { DualGrid } from "@m0ss/core";
 import Image from "next/image";
 import React from "react";
 

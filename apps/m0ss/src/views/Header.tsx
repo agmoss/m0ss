@@ -10,7 +10,7 @@ import {
     Typography,
 } from "@material-ui/core";
 import { Apps, GitHub, LinkedIn } from "@material-ui/icons";
-import { IconButton } from "@src/components/IconButton";
+import { IconButton } from "@m0ss/core";
 import { useRouter } from "next/router";
 import React from "react";
 
@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-const Header = () => {
+export const Header = () => {
     const classes = useStyles();
     const router = useRouter();
 
@@ -135,5 +135,3 @@ const Header = () => {
         </div>
     );
 };
-
-export default Header;

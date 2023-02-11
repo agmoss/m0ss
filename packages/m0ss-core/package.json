@@ -1,27 +1,44 @@
 {
   "name": "@m0ss/core",
   "version": "0.0.0",
+  "license": "MIT",
+  "sideEffects": false,
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "sideEffects": false,
-  "license": "MIT",
   "files": [
     "dist/**"
   ],
   "scripts": {
-    "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
-    "dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react",
-    "lint": "TIMING=1 eslint \"src/**/*.ts*\"",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+    "build": "tsup src/index.ts --format esm,cjs --dts --external react",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "dev": "tsup src/index.ts --format esm,cjs --watch --dts --external react",
+    "lint": "TIMING=1 eslint \"src/**/*.ts*\""
+  },
+  "dependencies": {
+    "@hello-pangea/color-picker": "^3.2.2",
+    "@material-ui/core": "^4.12.4",
+    "@material-ui/icons": "^4.11.3",
+    "@material-ui/lab": "^4.0.0-alpha.60",
+    "aos": "latest",
+    "markdown-to-jsx": "latest",
+    "offcircle": "latest",
+    "random-words": "latest",
+    "react": "latest",
+    "react-circles": "latest",
+    "react-dom": "latest",
+    "react-md-renderer": "latest",
+    "react-syntax-highlighter": "latest"
   },
   "devDependencies": {
     "@m0ss/tsconfig": "workspace:*",
-    "@types/react": "^18.0.9",
-    "@types/react-dom": "^18.0.4",
+    "@types/aos": "latest",
+    "@types/react": "latest",
+    "@types/react-color": "latest",
+    "@types/react-dom": "latest",
+    "@types/react-syntax-highlighter": "latest",
     "eslint": "latest",
     "eslint-config-m0ss": "workspace:*",
-    "react": "^18.1.0",
     "tsup": "^5.10.1",
     "typescript": "latest"
   },
