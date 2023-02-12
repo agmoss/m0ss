@@ -1,9 +1,10 @@
-import { withPage } from "../../components/withPage";
-import { metaData, PageMeta, PostData, postData } from "../../data";
-import { Posts } from "../../views";
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import React from "react";
+
+import { withPage } from "../../components/withPage";
+import { metaData, PageMeta, PostData, postData } from "../../data";
+import { Posts } from "../../views";
 
 export const getStaticProps: GetStaticProps = async (context) => {
     return Promise.resolve({

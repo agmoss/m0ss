@@ -12,14 +12,14 @@
     "build": "tsc",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "dev": "tsc --watch",
-    "lint": "TIMING=1 eslint \"src/**/*.ts*\""
+    "lint": "TIMING=1 eslint --fix \"src/**/*.ts*\""
   },
   "devDependencies": {
-    "@m0ss/tsconfig": "workspace:*",
+    "@m0ss/tsconfig": "*",
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "eslint": "latest",
-    "eslint-config-m0ss": "workspace:*",
+    "eslint-config-m0ss": "*",
     "react": "latest",
     "typescript": "latest"
   },

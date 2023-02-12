@@ -1,12 +1,13 @@
-import { withPage } from "../../components/withPage";
-import { IStr, metaData } from "../../data";
-import { ProjectReadme } from "../../views";
-import { getText } from "../../utils";
 import * as E from "fp-ts/Either";
 import { pipe } from "fp-ts/function";
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import React from "react";
+
+import { withPage } from "../../components/withPage";
+import { IStr, metaData } from "../../data";
+import { getText } from "../../utils";
+import { ProjectReadme } from "../../views";
 
 export const getStaticProps: GetStaticProps = async () => {
     return {

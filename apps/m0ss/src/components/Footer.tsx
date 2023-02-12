@@ -7,9 +7,10 @@ import {
     Theme,
     Typography,
 } from "@material-ui/core";
-import { Paths } from "../utils";
 import { useRouter } from "next/router";
 import React from "react";
+
+import { Paths } from "../utils";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({

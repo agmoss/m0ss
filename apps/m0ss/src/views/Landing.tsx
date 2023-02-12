@@ -1,7 +1,8 @@
-import { IProfile } from "../data";
-import { Hero, MainContent } from "../components";
 import React from "react";
 import { DeepRequired } from "utility-types";
+
+import { Hero, MainContent } from "../components";
+import { IProfile } from "../data";
 
 export const Landing = ({ profile }: { profile: DeepRequired<IProfile> }) => (
     <>

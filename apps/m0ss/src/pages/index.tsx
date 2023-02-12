@@ -1,10 +1,11 @@
-import { withPage } from "../components/withPage";
-import { IProfile, landingData } from "../data";
-import { Landing as LandingPage } from "../views";
-import { getText } from "../utils";
 import * as E from "fp-ts/Either";
 import { pipe } from "fp-ts/function";
 import { DeepRequired } from "utility-types";
+
+import { withPage } from "../components/withPage";
+import { IProfile, landingData } from "../data";
+import { getText } from "../utils";
+import { Landing as LandingPage } from "../views";
 
 export const getStaticProps = async () => {
     const md = pipe(

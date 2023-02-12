@@ -2,12 +2,13 @@ import "aos/dist/aos.css";
 
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { ThemeProvider } from "@material-ui/core/styles";
-import { metaData, orgSchema, personSchema, websiteSchema } from "../data";
-import { theme } from "../theme";
 import AOS from "aos";
 import { AppProps } from "next/app";
 import Head from "next/head";
 import React, { useEffect } from "react";
+
+import { metaData, orgSchema, personSchema, websiteSchema } from "../data";
+import { theme } from "../theme";
 
 const App = ({ Component, pageProps }: AppProps) => {
     useEffect(() => {

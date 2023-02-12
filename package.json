@@ -7,10 +7,12 @@
   "license": "MIT",
   "author": "Andrew Moss <andrew@m0ss.dev> (https://m0ss.dev/)",
   "workspaces": [
+    "apps/*",
     "packages/*"
   ],
   "scripts": {
     "build": "turbo run build",
+    "build:m0ss": "turbo run build --filter=m0ss...",
     "dev": "turbo run dev --no-cache --continue",
     "lint": "turbo run lint",
     "clean": "turbo run clean && rm -rf node_modules",
@@ -22,15 +24,16 @@
   "devDependencies": {
     "@changesets/cli": "latest",
     "eslint": "latest",
-    "eslint-config-m0ss": "workspace:0.0.0",
+    "eslint-config-m0ss": "*",
     "markdownlint-cli": "latest",
     "npm-run-all": "latest",
     "prettier": "latest",
     "sort-package-json": "latest",
     "turbo": "latest"
   },
-  "packageManager": "pnpm@7.15.0",
+  "packageManager": "yarn@1.22.19",
   "engines": {
-    "node": "18.X"
+    "node": "18.X",
+    "yarn":"1.X"
   }
 }

@@ -1,16 +1,15 @@
-FROM node:alpine AS builder
+FROM node:18-alpine AS builder
 # Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
 RUN apk add --no-cache libc6-compat
 RUN apk update
 # Set working directory
 WORKDIR /app
-RUN npm install -g npm@latest
-RUN npm install -g turbo
+RUN yarn global add turbo
 COPY . .
 RUN turbo prune --scope=m0ss --docker
 
 # Add lockfile and package.json's of isolated subworkspace
-FROM node:alpine AS installer
+FROM node:18-alpine AS installer
 RUN apk add --no-cache libc6-compat
 RUN apk update
 WORKDIR /app
@@ -18,7 +17,8 @@ WORKDIR /app
 # First install the dependencies (as they change less often)
 COPY .gitignore .gitignore
 COPY --from=builder /app/out/json/ .
-RUN npm install
+COPY --from=builder /app/out/yarn.lock ./yarn.lock
+RUN yarn install
 
 # Build the project
 COPY --from=builder /app/out/full/ .
@@ -31,9 +31,9 @@ COPY turbo.json turbo.json
 # ARG TURBO_TOKEN
 # ENV TURBO_TOKEN=$TURBO_TOKEN
 
-RUN npm turbo run build --filter=m0ss...
+RUN yarn turbo run build --filter=web...
 
-FROM node:alpine AS runner
+FROM node:18-alpine AS runner
 WORKDIR /app
 
 # Don't run production as root

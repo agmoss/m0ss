@@ -1,4 +1,4 @@
-import { metaData } from "../data";
+import { DualGrid } from "@m0ss/core";
 import {
     createStyles,
     makeStyles,
@@ -6,11 +6,11 @@ import {
     Theme,
     Typography,
 } from "@material-ui/core";
-import { DualGrid } from "@m0ss/core";
 import Image from "next/image";
 import React from "react";
 
 import AM from "../../public/andrew-moss.jpeg";
+import { metaData } from "../data";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -49,10 +49,11 @@ export const Hero = ({
                             className={classes.img}
                             src={AM}
                             alt={metaData.name}
-                            layout="fill"
                             priority={false}
                             placeholder="blur"
                             quality={75}
+                            fill
+                            sizes="100vw"
                         />
                     </div>
                 }

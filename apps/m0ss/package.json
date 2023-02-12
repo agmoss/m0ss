@@ -7,12 +7,12 @@
     "postbuild": "next-sitemap",
     "check": "tsc --noEmit",
     "clean": "rm -rf ./.cache ./.next ./node_modules",
-    "dev": "next dev -p 3010",
-    "lint": "next lint",
+    "dev": "next dev",
+    "lint": "next lint --fix",
     "start": "next start"
   },
   "dependencies": {
-    "@m0ss/core": "workspace:*",
+    "@m0ss/core": "*",
     "@material-ui/core": "latest",
     "@material-ui/icons": "latest",
     "@material-ui/lab": "latest",
@@ -31,12 +31,12 @@
     "utility-types": "latest"
   },
   "devDependencies": {
-    "@m0ss/tsconfig": "workspace:*",
+    "@m0ss/tsconfig": "*",
     "@types/aos": "latest",
     "@types/lodash-es": "latest",
     "@types/node": "latest",
     "@types/react": "latest",
-    "eslint-config-m0ss": "workspace:0.0.0",
+    "eslint-config-m0ss": "*",
     "next-sitemap": "latest",
     "typescript": "latest"
   }

@@ -1,4 +1,5 @@
-import { IStr } from "../data";
+import { AboutPaper } from "@m0ss/core";
+import { severity, Snacks } from "@m0ss/core";
 import {
     Container,
     createStyles,
@@ -8,11 +9,11 @@ import {
     Theme,
     Typography,
 } from "@material-ui/core";
-import { AboutPaper } from "@m0ss/core";
-import { severity, Snacks } from "@m0ss/core";
 import randomWords from "random-words";
 import React, { useState } from "react";
 import { ReactMdRenderer } from "react-md-renderer";
+
+import { IStr } from "../data";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({

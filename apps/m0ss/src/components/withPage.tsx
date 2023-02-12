@@ -1,9 +1,9 @@
+import { ApplyAos } from "@m0ss/core";
 import { createStyles, makeStyles } from "@material-ui/core";
 import React, { ComponentType } from "react";
 
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
-import { ApplyAos } from "@m0ss/core";
 
 const useStyles = makeStyles(() =>
     createStyles({
