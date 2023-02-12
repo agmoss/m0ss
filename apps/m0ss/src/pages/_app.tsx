@@ -85,6 +85,15 @@ const App = ({ Component, pageProps }: AppProps) => {
                     property="description"
                     content={metaData.homePage.description}
                 />
+                <link rel="preconnect" href="https://fonts.gstatic.com" />
+                <link
+                    rel="stylesheet"
+                    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+                />
+                <link
+                    rel="stylesheet"
+                    href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,400i,700,700i&display=swap"
+                />
             </Head>
             <ThemeProvider theme={theme}>
                 <CssBaseline />

@@ -34,6 +34,9 @@
   "packageManager": "yarn@1.22.19",
   "engines": {
     "node": "18.X",
-    "yarn":"1.X"
+    "yarn": "1.X"
+  },
+  "dependencies": {
+    "sharp": "^0.31.3"
   }
 }

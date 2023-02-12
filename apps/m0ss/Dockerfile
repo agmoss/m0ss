@@ -31,7 +31,7 @@ COPY turbo.json turbo.json
 # ARG TURBO_TOKEN
 # ENV TURBO_TOKEN=$TURBO_TOKEN
 
-RUN yarn turbo run build --filter=web...
+RUN yarn turbo run build --filter=m0ss...
 
 FROM node:18-alpine AS runner
 WORKDIR /app

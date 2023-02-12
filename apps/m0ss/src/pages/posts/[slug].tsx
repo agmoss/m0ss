@@ -5,7 +5,7 @@ import React from "react";
 import { withPage } from "../../components/withPage";
 import { articleSchema, postData, PostDataWithContent } from "../../data";
 import { getPostData, isPostData } from "../../utils";
-import { Post as PostPage } from "../../views";
+import { Post as PostPage } from "../../views/Post";
 
 const Post = ({ str }: { str: PostDataWithContent | string }) => {
     if (isPostData(str)) {

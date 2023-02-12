@@ -16,6 +16,7 @@
     "@material-ui/core": "latest",
     "@material-ui/icons": "latest",
     "@material-ui/lab": "latest",
+    "@next/font": "latest",
     "aos": "latest",
     "fp-ts": "latest",
     "lodash-es": "latest",
