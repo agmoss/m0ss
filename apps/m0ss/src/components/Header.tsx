@@ -5,7 +5,9 @@ import {
     createStyles,
     Link,
     makeStyles,
+    PaletteType,
     SvgIcon,
+    Switch,
     Theme,
     Toolbar,
     Typography,
@@ -48,7 +50,12 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-export const Header = () => {
+interface IHeader {
+    themeToggler: Function;
+    themeMode: PaletteType;
+}
+
+export const Header = ({ themeMode, themeToggler }: IHeader) => {
     const classes = useStyles();
     const router = useRouter();
 
@@ -80,6 +87,13 @@ export const Header = () => {
                                 m0ss
                             </Typography>
                         </div>
+
+                        <Switch
+                            checked={themeMode === "light" ? true : false}
+                            onChange={() => themeToggler()}
+                            name="theme"
+                            inputProps={{ "aria-label": "theme toggle" }}
+                        />
                         <IconButton
                             onClick={() => {
                                 router.push("/posts");

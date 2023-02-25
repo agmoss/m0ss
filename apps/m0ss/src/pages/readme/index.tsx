@@ -4,7 +4,6 @@ import { GetStaticProps } from "next";
 import Head from "next/head";
 import React from "react";
 
-import { withPage } from "../../components/withPage";
 import { IStr, metaData } from "../../data";
 import { getText } from "../../utils";
 import { ProjectReadme } from "../../views";
@@ -54,4 +53,4 @@ const ReadmePage = ({ str }: IStr) => {
     );
 };
 
-export default withPage(ReadmePage);
+export default ReadmePage

@@ -3,6 +3,8 @@ import { createStyles, Grid, makeStyles, Theme } from "@material-ui/core";
 import React from "react";
 
 import { IStr } from "../data";
+import {Main} from "../layouts/main/main";
+import {withLayout} from "../layouts/main/withLayout";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -17,7 +19,7 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-export const ProjectReadme = ({ str }: IStr) => {
+const _ProjectReadme = ({ str }: IStr) => {
     const ProjectReadmeView = withMarkdownView(str);
 
     const classes = useStyles();
@@ -35,3 +37,5 @@ export const ProjectReadme = ({ str }: IStr) => {
         </div>
     );
 };
+
+export const ProjectReadme = withLayout({ Layout: Main })(_ProjectReadme);

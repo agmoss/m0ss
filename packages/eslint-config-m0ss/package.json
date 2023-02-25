@@ -10,6 +10,7 @@
     "eslint-config-turbo": "latest",
     "eslint-plugin-react": "latest",
     "eslint-plugin-simple-import-sort": "latest",
+    "eslint-plugin-unused-imports": "latest",
     "typescript": "latest"
   },
   "publishConfig": {

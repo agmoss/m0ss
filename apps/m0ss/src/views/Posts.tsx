@@ -7,6 +7,8 @@ import React from "react";
 
 import { ArticleCard } from "../components/ArticleCard";
 import { PostData } from "../data";
+import {Main} from "../layouts/main/main";
+import {withLayout} from "../layouts/main/withLayout";
 
 const useStyles = makeStyles((theme) => ({
     heroContent: {
@@ -21,11 +23,11 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export const Posts = ({ data }: { data: PostData[] }) => {
+const _Posts = ({ data }: { data: PostData[] }) => {
     const classes = useStyles();
 
     return (
-        <main>
+        <>
             <div className={classes.heroContent}>
                 <Container maxWidth="sm">
                     <Typography
@@ -59,6 +61,9 @@ export const Posts = ({ data }: { data: PostData[] }) => {
                     ))}
                 </Grid>
             </Container>
-        </main>
+        </>
     );
 };
+
+
+export const Posts = withLayout({ Layout: Main })(_Posts);

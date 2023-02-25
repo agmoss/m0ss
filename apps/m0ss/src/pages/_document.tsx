@@ -2,7 +2,7 @@ import { ServerStyleSheets } from "@material-ui/core/styles";
 import Document, { Head, Html, Main, NextScript } from "next/document";
 import React from "react";
 
-import { theme } from "../theme";
+import { rawTheme } from "../theme";
 
 export default class _Document extends Document {
     render() {
@@ -11,7 +11,7 @@ export default class _Document extends Document {
                 <Head>
                     <meta
                         name="theme-color"
-                        content={theme.palette.primary.main}
+                        content={rawTheme.palette.primary.main}
                     />
                 </Head>
                 <body>

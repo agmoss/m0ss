@@ -24,9 +24,16 @@ type SnacksProps = {
 
 export const Snacks = ({ open, setOpen, message, level }: SnacksProps) => (
     <Snackbar
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
         open={open}
         autoHideDuration={6000}
-        onClose={() => {
+        onClose={(
+            _event: React.SyntheticEvent | React.MouseEvent,
+            reason?: string
+        ) => {
+            if (reason === "clickaway") {
+                return;
+            }
             setOpen(false);
         }}
     >

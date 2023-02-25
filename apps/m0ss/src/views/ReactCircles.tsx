@@ -1,6 +1,6 @@
 import Circles from "react-circles";
 
-export const ReactCirclesDemo = () => (
+const _ReactCirclesDemo = () => (
     <div
         style={{
             height: window.innerHeight,
@@ -15,3 +15,5 @@ export const ReactCirclesDemo = () => (
         <Circles numCircles={60} speed="slow" />
     </div>
 );
+
+export const ReactCirclesDemo = _ReactCirclesDemo

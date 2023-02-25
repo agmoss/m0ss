@@ -2,11 +2,10 @@ import { GetStaticProps } from "next";
 import Head from "next/head";
 import React from "react";
 
-import { withPage } from "../../components/withPage";
 import { metaData, PageMeta, PostData, postData } from "../../data";
 import { Posts } from "../../views";
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps = async (_context) => {
     return Promise.resolve({
         props: {
             data: postData,
@@ -44,4 +43,4 @@ const PostsWithMeta = ({
     );
 };
 
-export default withPage(PostsWithMeta);
+export default PostsWithMeta;

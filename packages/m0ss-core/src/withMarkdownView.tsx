@@ -2,13 +2,13 @@ import {
     Container,
     createStyles,
     Grid,
+    Link,
     makeStyles,
     Theme,
+    Typography,
 } from "@material-ui/core";
 import ReactMdRenderer from "markdown-to-jsx";
 import React from "react";
-// import SyntaxHighlighter from "react-syntax-highlighter";
-// import { monokai } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -28,21 +28,64 @@ export const withMarkdownView =
     // eslint-disable-next-line react/display-name
     () => {
         const classes = useStyles();
-        const options = {
-            // overrides: {
-            //     code: {
-            //         component: SyntaxHighlighter,
-            //         props: {
-            //             customStyle: {
-            //                 display: "inline",
-            //                 background: "transparent",
-            //                 padding: "1.5px",
-            //             },
-            //             style: monokai,
-            //             wrapLongLines: true,
-            //         },
-            //     },
-            // },
+        const opts = {
+            overrides: {
+                h1: {
+                    component: Typography,
+                    props: {
+                        gutterBottom: true,
+                        variant: "h1",
+                    },
+                },
+                h2: {
+                    component: Typography,
+                    props: { gutterBottom: true, variant: "h2" },
+                },
+                h3: {
+                    component: Typography,
+                    props: { gutterBottom: true, variant: "h3" },
+                },
+                h4: {
+                    component: Typography,
+                    props: { gutterBottom: true, variant: "h4" },
+                },
+                h5: {
+                    component: Typography,
+                    props: { gutterBottom: true, variant: "h5" },
+                },
+                h6: {
+                    component: Typography,
+                    props: { gutterBottom: true, variant: "h6" },
+                },
+                p: {
+                    component: Typography,
+                    props: { paragraph: true, variant: "body1" },
+                },
+                a: { component: Link, props: { variant: "body1" } },
+                code: {
+                    component: Typography,
+                    props: {
+                        paragraph: true,
+                        variant: "caption",
+                        style: {
+                            whiteSpace: "pre-wrap",
+                            wordWrap: "break-word",
+                        },
+                    },
+                },
+                img: {
+                    props: {
+                        style: {
+                            maxWidth: "100%",
+                            height: "auto",
+                            pointerEvents: "none",
+                            textAlign: "center",
+                        },
+                        align: "center",
+                    },
+                },
+            },
+            forceBlock: true,
         };
         return (
             <>
@@ -56,7 +99,7 @@ export const withMarkdownView =
                             className={classes.mainGrid}
                         >
                             <Grid item xs={12}>
-                                <ReactMdRenderer options={options}>
+                                <ReactMdRenderer options={opts}>
                                     {md}
                                 </ReactMdRenderer>
                             </Grid>

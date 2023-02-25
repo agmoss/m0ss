@@ -2,7 +2,6 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import React from "react";
 
-import { withPage } from "../../components/withPage";
 import { articleSchema, postData, PostDataWithContent } from "../../data";
 import { getPostData, isPostData } from "../../utils";
 import { Post as PostPage } from "../../views/Post";
@@ -76,4 +75,4 @@ export const getStaticProps: GetStaticProps = async (context) => {
     }
 };
 
-export default withPage(Post);
+export default Post
