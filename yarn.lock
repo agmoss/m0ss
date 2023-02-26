@@ -3391,25 +3391,15 @@ react-is@^16.13.1, react-is@^16.7.0:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
-react-md-renderer@1.0.3-0:
-  version "1.0.3-0"
-  resolved "https://registry.yarnpkg.com/react-md-renderer/-/react-md-renderer-1.0.3-0.tgz#14bd51cb7a315f1e01b77332d546f1f887501e7e"
-  integrity sha512-IrEWCtE2DpnPMSR3Kcs+RRxd5jy4Sk9Rn/8/d8KsqQcWJdkBb+AzEEtuQ27OzKxBlLvGns6Wn0Vhe+iKayM+dw==
+react-md-renderer@1.0.4-0:
+  version "1.0.4-0"
+  resolved "https://registry.yarnpkg.com/react-md-renderer/-/react-md-renderer-1.0.4-0.tgz#6b2a4165f5d8deb981f9eb6e508fe865bd50a75b"
+  integrity sha512-NfqZeO2EqiHCL+7Z1G+YyX7bmvwzirRv+JnVOnuhzssJ5QJDV1JXOFH+DwHk13j13D7xkh2iD0PQoo8TFcZ1hQ==
   dependencies:
     markdown-to-jsx "^7.1.7"
-    react-syntax-highlighter "^15.5.0"
     tslib "^2.5.0"
 
-react-md-renderer@latest:
-  version "1.0.1-0"
-  resolved "https://registry.yarnpkg.com/react-md-renderer/-/react-md-renderer-1.0.1-0.tgz#96b9f902619ea5ecaea1abcf4b882733789a9a7b"
-  integrity sha512-MFVcXkB3g66Hrn2H1axJzW6rgWg/xFDOFd1dkMn3RO29jmGNbxUSvBJba0LNs36zjjGfyygBTrD8LRnl49bB1w==
-  dependencies:
-    markdown-to-jsx "^7.1.7"
-    react-syntax-highlighter "^15.5.0"
-    tslib "^2.5.0"
-
-react-syntax-highlighter@^15.5.0, react-syntax-highlighter@latest:
+react-syntax-highlighter@latest:
   version "15.5.0"
   resolved "https://registry.yarnpkg.com/react-syntax-highlighter/-/react-syntax-highlighter-15.5.0.tgz#4b3eccc2325fa2ec8eff1e2d6c18fa4a9e07ab20"
   integrity sha512-+zq2myprEnQmH5yw6Gqc8lD55QHnpKaU8TOcFeC/Lg/MQSs8UknEA0JC4nTZGFAXC2J2Hyj/ijJ7NlabyPi2gg==
@@ -3645,7 +3635,7 @@ set-blocking@^2.0.0:
   resolved "https://registry.yarnpkg.com/set-blocking/-/set-blocking-2.0.0.tgz#045f9782d011ae9a6803ddd382b24392b3d890f7"
   integrity sha512-KiKBS8AnWGEyLzofFfmvKwpdPzqiy16LvQfK3yv/fVH7Bj13/wl3JSR1J+rfgRE9q7xUJK4qvgS8raSOeLUehw==
 
-sharp@^0.31.3, sharp@latest:
+sharp@^0.31.3:
   version "0.31.3"
   resolved "https://registry.yarnpkg.com/sharp/-/sharp-0.31.3.tgz#60227edc5c2be90e7378a210466c99aefcf32688"
   integrity sha512-XcR4+FCLBFKw1bdB+GEhnUNXNXvnt0tDo4WsBsraKymuo/IAuPuCBVAL2wIkUw2r/dwFW5Q5+g66Kwl2dgDFVg==

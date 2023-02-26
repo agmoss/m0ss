@@ -25,9 +25,9 @@
     "react": "latest",
     "react-circles": "latest",
     "react-dom": "latest",
-    "react-md-renderer": "latest",
+    "react-md-renderer": "1.0.4-0",
     "schema-dts": "latest",
-    "sharp": "latest",
+    "sharp": "^0.31.3",
     "utility-types": "latest"
   },
   "devDependencies": {
