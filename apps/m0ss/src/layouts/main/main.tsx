@@ -12,11 +12,10 @@ const useStyles = makeStyles(() =>
             display: "flex",
             flexDirection: "column",
             minHeight: "100vh",
-            overflowX: "hidden"
+            overflowX: "hidden",
         },
     })
 );
-
 
 export const Main = ({
     children,

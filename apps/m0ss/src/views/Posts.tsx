@@ -1,4 +1,3 @@
-
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
@@ -7,8 +6,6 @@ import React from "react";
 
 import { ArticleCard } from "../components/ArticleCard";
 import { PostData } from "../data";
-import {Main} from "../layouts/main/main";
-import {withLayout} from "../layouts/main/withLayout";
 
 const useStyles = makeStyles((theme) => ({
     heroContent: {
@@ -23,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const _Posts = ({ data }: { data: PostData[] }) => {
+export const Posts = ({ data }: { data: PostData[] }) => {
     const classes = useStyles();
 
     return (
@@ -64,6 +61,3 @@ const _Posts = ({ data }: { data: PostData[] }) => {
         </>
     );
 };
-
-
-export const Posts = withLayout({ Layout: Main })(_Posts);

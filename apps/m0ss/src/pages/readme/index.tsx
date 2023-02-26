@@ -5,8 +5,10 @@ import Head from "next/head";
 import React from "react";
 
 import { IStr, metaData } from "../../data";
+import { Main } from "../../layouts/main";
+import { withLayout } from "../../layouts/main/withLayout";
 import { getText } from "../../utils";
-import { ProjectReadme } from "../../views";
+import { _ProjectReadme } from "../../views";
 
 export const getStaticProps: GetStaticProps = async () => {
     return {
@@ -48,9 +50,9 @@ const ReadmePage = ({ str }: IStr) => {
                     content={metaData.readme.description}
                 />
             </Head>
-            <ProjectReadme str={str} />
+            <_ProjectReadme str={str} />
         </React.Fragment>
     );
 };
 
-export default ReadmePage
+export default withLayout({ Layout: Main })(ReadmePage);

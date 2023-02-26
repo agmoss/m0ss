@@ -6,7 +6,6 @@ import React from "react";
 
 import { metaData, orgSchema, personSchema, websiteSchema } from "../data";
 
-
 const App = ({ Component, pageProps }: AppProps) => {
     return (
         <React.Fragment>

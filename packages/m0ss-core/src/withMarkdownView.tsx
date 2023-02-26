@@ -7,8 +7,8 @@ import {
     Typography,
     useTheme,
 } from "@material-ui/core";
-import { ReactMdRenderer } from "react-md-renderer/v4";
 import React from "react";
+import { ReactMdRenderer } from "react-md-renderer/v4";
 import SyntaxHighlighter from "react-syntax-highlighter";
 
 const useStyles = makeStyles((theme: Theme) =>

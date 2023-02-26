@@ -3,8 +3,6 @@ import { createStyles, Grid, makeStyles, Theme } from "@material-ui/core";
 import React from "react";
 
 import { IStr } from "../data";
-import {Main} from "../layouts/main/main";
-import {withLayout} from "../layouts/main/withLayout";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -19,7 +17,7 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-const _Post = ({ str }: IStr) => {
+export const Post = ({ str }: IStr) => {
     const classes = useStyles();
     const PostView = withMarkdownView(str);
 
@@ -36,5 +34,3 @@ const _Post = ({ str }: IStr) => {
         </div>
     );
 };
-
-export const Post = withLayout({ Layout: Main })(_Post);

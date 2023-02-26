@@ -11,7 +11,7 @@ import {
 } from "@material-ui/core";
 import randomWords from "random-words";
 import React, { useState } from "react";
-import {ReactMdRenderer} from "react-md-renderer/v4";
+import { ReactMdRenderer } from "react-md-renderer/v4";
 
 import { IStr } from "../data";
 
@@ -74,32 +74,25 @@ export const MainContent = ({ str }: IStr) => {
     };
 
     return (
-        <>
+        <Container maxWidth="lg">
             <Snacks
                 open={openSnack}
                 setOpen={setOpenSnack}
                 message={message}
                 level={severity[level]}
             />
-            <Container maxWidth="lg">
-                <Grid container spacing={5} className={classes.mainGrid}>
-                    <Grid item xs={12} md={4}>
-                        <AboutPaper handleOpen={handleOpen} />
-                    </Grid>
-                    <Grid
-                        item
-                        xs={12}
-                        md={8}
-                        className={classes.landingTypography}
-                    >
-                        <Typography variant="h5" gutterBottom>
-                            Rant
-                        </Typography>
-                        <Divider className={classes.customDivider} />
-                        <ReactMdRenderer>{str}</ReactMdRenderer>
-                    </Grid>
+            <Grid container spacing={5} className={classes.mainGrid}>
+                <Grid item xs={12} md={4}>
+                    <AboutPaper handleOpen={handleOpen} />
                 </Grid>
-            </Container>
-        </>
+                <Grid item xs={12} md={8} className={classes.landingTypography}>
+                    <Typography variant="h5" gutterBottom>
+                        Rant
+                    </Typography>
+                    <Divider className={classes.customDivider} />
+                    <ReactMdRenderer>{str}</ReactMdRenderer>
+                </Grid>
+            </Grid>
+        </Container>
     );
 };

@@ -3,6 +3,8 @@ import Head from "next/head";
 import React from "react";
 
 import { articleSchema, postData, PostDataWithContent } from "../../data";
+import { Main } from "../../layouts/main";
+import { withLayout } from "../../layouts/main/withLayout";
 import { getPostData, isPostData } from "../../utils";
 import { Post as PostPage } from "../../views/Post";
 
@@ -75,4 +77,4 @@ export const getStaticProps: GetStaticProps = async (context) => {
     }
 };
 
-export default Post
+export default withLayout({ Layout: Main })(Post);

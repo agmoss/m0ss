@@ -41,38 +41,36 @@ export const Hero = ({
 }) => {
     const classes = useStyles();
     return (
-        <>
-            <DualGrid
-                Left={
-                    <div className={classes.main}>
-                        <Image
-                            className={classes.img}
-                            src={AM}
-                            alt={metaData.name}
-                            priority={false}
-                            placeholder="blur"
-                            quality={75}
-                            fill
-                            sizes="100vw"
-                        />
-                    </div>
-                }
-                Right={
-                    <Paper className={classes.mainContent}>
-                        <Typography variant="h3" component="h1" gutterBottom>
-                            {metaData.name}
-                        </Typography>
-                        <Typography
-                            variant="h5"
-                            component="h3"
-                            paragraph
-                            gutterBottom
-                        >
-                            {bio}
-                        </Typography>
-                    </Paper>
-                }
-            />
-        </>
+        <DualGrid
+            Left={
+                <div className={classes.main}>
+                    <Image
+                        className={classes.img}
+                        src={AM}
+                        alt={metaData.name}
+                        priority={false}
+                        placeholder="blur"
+                        quality={75}
+                        fill
+                        sizes="100vw"
+                    />
+                </div>
+            }
+            Right={
+                <Paper className={classes.mainContent}>
+                    <Typography variant="h3" component="h1" gutterBottom>
+                        {metaData.name}
+                    </Typography>
+                    <Typography
+                        variant="h5"
+                        component="h3"
+                        paragraph
+                        gutterBottom
+                    >
+                        {bio}
+                    </Typography>
+                </Paper>
+            }
+        />
     );
 };

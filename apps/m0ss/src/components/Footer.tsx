@@ -41,60 +41,58 @@ export const Footer = () => {
     const classes = useStyles();
     const router = useRouter();
     return (
-        <>
-            <Typography component="footer" className={classes.root}>
-                <Container className={classes.container}>
-                    <Grid container>
-                        <Grid item xs={12}>
-                            <Grid
-                                container
-                                justifyContent="center"
-                                alignItems="center"
-                                alignContent="center"
-                                spacing={6}
-                            >
-                                <Grid item>
-                                    <Typography
-                                        component="h3"
-                                        variant="h3"
-                                        color="inherit"
-                                        noWrap
-                                    >
-                                        m0ss
-                                    </Typography>
-                                </Grid>
-                                <Grid item>
-                                    <ul className={classes.list}>
-                                        <li>
-                                            <Button
-                                                size="large"
-                                                className={classes.button}
-                                                href="https://github.com/agmoss/m0ss"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                            >
-                                                Source
-                                            </Button>
-                                        </li>
-                                        <li>
-                                            <Button
-                                                size="large"
-                                                className={classes.button}
-                                                onClick={() =>
-                                                    router.push(Paths.README)
-                                                }
-                                                role="link"
-                                            >
-                                                README
-                                            </Button>
-                                        </li>
-                                    </ul>
-                                </Grid>
+        <Typography component="footer" className={classes.root}>
+            <Container className={classes.container}>
+                <Grid container>
+                    <Grid item xs={12}>
+                        <Grid
+                            container
+                            justifyContent="center"
+                            alignItems="center"
+                            alignContent="center"
+                            spacing={6}
+                        >
+                            <Grid item>
+                                <Typography
+                                    component="h3"
+                                    variant="h3"
+                                    color="inherit"
+                                    noWrap
+                                >
+                                    m0ss
+                                </Typography>
+                            </Grid>
+                            <Grid item>
+                                <ul className={classes.list}>
+                                    <li>
+                                        <Button
+                                            size="large"
+                                            className={classes.button}
+                                            href="https://github.com/agmoss/m0ss"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            Source
+                                        </Button>
+                                    </li>
+                                    <li>
+                                        <Button
+                                            size="large"
+                                            className={classes.button}
+                                            onClick={() =>
+                                                router.push(Paths.README)
+                                            }
+                                            role="link"
+                                        >
+                                            README
+                                        </Button>
+                                    </li>
+                                </ul>
                             </Grid>
                         </Grid>
                     </Grid>
-                </Container>
-            </Typography>
-        </>
+                </Grid>
+            </Container>
+        </Typography>
     );
 };

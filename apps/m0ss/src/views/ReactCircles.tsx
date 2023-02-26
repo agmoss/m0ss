@@ -16,4 +16,4 @@ const _ReactCirclesDemo = () => (
     </div>
 );
 
-export const ReactCirclesDemo = _ReactCirclesDemo
+export const ReactCirclesDemo = _ReactCirclesDemo;

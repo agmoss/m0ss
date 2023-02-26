@@ -51,7 +51,7 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 interface IHeader {
-    themeToggler: Function;
+    themeToggler: () => void;
     themeMode: PaletteType;
 }
 
@@ -87,9 +87,8 @@ export const Header = ({ themeMode, themeToggler }: IHeader) => {
                                 m0ss
                             </Typography>
                         </div>
-
                         <Switch
-                            checked={themeMode === "light" ? true : false}
+                            checked={themeMode === "dark" ? true : false}
                             onChange={() => themeToggler()}
                             name="theme"
                             inputProps={{ "aria-label": "theme toggle" }}

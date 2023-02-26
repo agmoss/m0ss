@@ -8,7 +8,7 @@ import { getTheme } from "../../theme/index";
 import { useDarkMode } from "./useDarkMode";
 
 export interface ILayout {
-    themeToggler: Function;
+    themeToggler: () => void;
     themeMode: PaletteType;
 }
 
@@ -18,7 +18,7 @@ interface IWithLayout {
 
 export const withLayout =
     ({ Layout }: IWithLayout) =>
-    <T extends Record<string,unknown>>(
+    <T extends Record<string, unknown>>(
         WrappedComponent: ComponentType<T>
     ): React.FC<T> =>
     // eslint-disable-next-line react/display-name
