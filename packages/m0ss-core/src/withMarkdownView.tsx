@@ -2,19 +2,21 @@ import {
     Container,
     createStyles,
     Grid,
-    Link,
     makeStyles,
     Theme,
     Typography,
+    useTheme,
 } from "@material-ui/core";
-import ReactMdRenderer from "markdown-to-jsx";
+import { ReactMdRenderer } from "react-md-renderer/v4";
 import React from "react";
+import SyntaxHighlighter from "react-syntax-highlighter";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         mainGrid: {
             marginTop: theme.spacing(3),
             marginBottom: theme.spacing(3),
+            overflowWrap: "break-word",
         },
     })
 );
@@ -28,60 +30,23 @@ export const withMarkdownView =
     // eslint-disable-next-line react/display-name
     () => {
         const classes = useStyles();
+        const theme = useTheme();
         const opts = {
             overrides: {
-                h1: {
-                    component: Typography,
-                    props: {
-                        gutterBottom: true,
-                        variant: "h1",
-                    },
-                },
-                h2: {
-                    component: Typography,
-                    props: { gutterBottom: true, variant: "h2" },
-                },
                 h3: {
-                    component: Typography,
-                    props: { gutterBottom: true, variant: "h3" },
-                },
-                h4: {
-                    component: Typography,
-                    props: { gutterBottom: true, variant: "h4" },
-                },
-                h5: {
                     component: Typography,
                     props: { gutterBottom: true, variant: "h5" },
                 },
-                h6: {
-                    component: Typography,
-                    props: { gutterBottom: true, variant: "h6" },
-                },
-                p: {
-                    component: Typography,
-                    props: { paragraph: true, variant: "body1" },
-                },
-                a: { component: Link, props: { variant: "body1" } },
                 code: {
-                    component: Typography,
+                    component: SyntaxHighlighter,
                     props: {
-                        paragraph: true,
-                        variant: "caption",
-                        style: {
-                            whiteSpace: "pre-wrap",
-                            wordWrap: "break-word",
+                        customStyle: {
+                            display: "inline",
+                            background: "transparent",
+                            padding: "1.5px",
+                            color: theme.palette.secondary.main,
                         },
-                    },
-                },
-                img: {
-                    props: {
-                        style: {
-                            maxWidth: "100%",
-                            height: "auto",
-                            pointerEvents: "none",
-                            textAlign: "center",
-                        },
-                        align: "center",
+                        wrapLongLines: true,
                     },
                 },
             },

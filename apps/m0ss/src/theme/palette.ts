@@ -1,12 +1,12 @@
 import { PaletteOptions } from "@material-ui/core/styles/createPalette";
-// "#ffe11c"
+
 export const light: PaletteOptions = {
     type: "light",
     primary: {
         main: "#e91e63",
     },
     secondary: {
-        main: "#54f542",
+        main: "#32a852",
     },
 };
 

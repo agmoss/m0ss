@@ -11,7 +11,7 @@ import {
 } from "@material-ui/core";
 import randomWords from "random-words";
 import React, { useState } from "react";
-import { ReactMdRenderer } from "react-md-renderer";
+import {ReactMdRenderer} from "react-md-renderer/v4";
 
 import { IStr } from "../data";
 
