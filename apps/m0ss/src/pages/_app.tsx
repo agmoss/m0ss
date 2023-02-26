@@ -5,6 +5,8 @@ import Head from "next/head";
 import React from "react";
 
 import { metaData, orgSchema, personSchema, websiteSchema } from "../data";
+import { Main } from "../layouts/main";
+import { withLayout } from "../layouts/main/withLayout";
 
 const App = ({ Component, pageProps }: AppProps) => {
     return (
@@ -82,4 +84,4 @@ const App = ({ Component, pageProps }: AppProps) => {
     );
 };
 
-export default App;
+export default withLayout({ Layout: Main })(App);

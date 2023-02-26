@@ -3,8 +3,6 @@ import { pipe } from "fp-ts/function";
 import { DeepRequired } from "utility-types";
 
 import { IProfile, landingData } from "../data";
-import { Main } from "../layouts/main";
-import { withLayout } from "../layouts/main/withLayout";
 import { getText } from "../utils";
 import { Landing as LandingPage } from "../views";
 
@@ -32,4 +30,4 @@ export const getStaticProps = async () => {
     };
 };
 
-export default withLayout({ Layout: Main })(LandingPage);
+export default LandingPage;

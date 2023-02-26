@@ -5,12 +5,17 @@ import {
     Link,
     PaletteType,
     SvgIcon,
-    Switch,
     Toolbar,
     Typography,
 } from "@material-ui/core";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
-import { Apps, GitHub, LinkedIn } from "@material-ui/icons";
+import {
+    Apps,
+    Brightness4,
+    Brightness7,
+    GitHub,
+    LinkedIn,
+} from "@material-ui/icons";
 import { useRouter } from "next/router";
 import React from "react";
 
@@ -85,12 +90,13 @@ export const Header = ({ themeMode, themeToggler }: IHeader) => {
                                 m0ss
                             </Typography>
                         </div>
-                        <Switch
-                            checked={themeMode === "dark" ? true : false}
-                            onChange={() => themeToggler()}
-                            name="theme"
-                            inputProps={{ "aria-label": "theme toggle" }}
-                        />
+                        <IconButton onClick={() => themeToggler()}>
+                            {themeMode === "dark" ? (
+                                <Brightness7 />
+                            ) : (
+                                <Brightness4 />
+                            )}
+                        </IconButton>
                         <IconButton
                             onClick={() => {
                                 router.push("/posts");

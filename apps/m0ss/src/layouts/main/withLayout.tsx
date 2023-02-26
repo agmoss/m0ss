@@ -39,12 +39,14 @@ export const withLayout =
 
         const mode = useDarkMode();
 
+        const theme = getTheme(mode.themeMode);
+
         useEffect(() => {
             AOS.refresh();
         }, [mode.mountedComponent]);
 
         return (
-            <ThemeProvider theme={getTheme(mode.themeMode)}>
+            <ThemeProvider theme={theme}>
                 <CssBaseline />
                 <Layout
                     themeMode={mode.themeMode}

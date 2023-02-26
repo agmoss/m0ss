@@ -3,7 +3,7 @@ import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import { useRouter } from "next/router";
 import React from "react";
 
-import { Paths } from "../utils";
+import { Paths } from "../../../utils";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({

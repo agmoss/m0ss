@@ -5,8 +5,6 @@ import Head from "next/head";
 import React from "react";
 
 import { IStr, metaData } from "../../data";
-import { Main } from "../../layouts/main";
-import { withLayout } from "../../layouts/main/withLayout";
 import { getText } from "../../utils";
 import { _ProjectReadme } from "../../views";
 
@@ -55,4 +53,4 @@ const ReadmePage = ({ str }: IStr) => {
     );
 };
 
-export default withLayout({ Layout: Main })(ReadmePage);
+export default ReadmePage;

@@ -3,8 +3,6 @@ import Head from "next/head";
 import React from "react";
 
 import { metaData, PageMeta, PostData, postData } from "../../data";
-import { Main } from "../../layouts/main";
-import { withLayout } from "../../layouts/main/withLayout";
 import { Posts } from "../../views";
 
 export const getStaticProps: GetStaticProps = async (_context) => {
@@ -45,4 +43,4 @@ const PostsWithMeta = ({
     );
 };
 
-export default withLayout({ Layout: Main })(PostsWithMeta);
+export default PostsWithMeta;
