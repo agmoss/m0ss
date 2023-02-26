@@ -1,11 +1,5 @@
-import {
-    createStyles,
-    Grid,
-    makeStyles,
-    Paper,
-    Theme,
-    Typography,
-} from "@material-ui/core";
+import { Grid, Paper, Typography } from "@material-ui/core";
+import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import { ThumbUp } from "@material-ui/icons";
 import React from "react";
 
@@ -15,6 +9,7 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         sidebarAboutBox: {
             padding: theme.spacing(2),
+            backgroundColor: theme.palette.background.paper,
         },
     })
 );

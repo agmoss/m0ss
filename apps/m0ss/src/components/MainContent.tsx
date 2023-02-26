@@ -1,14 +1,7 @@
 import { AboutPaper } from "@m0ss/core";
 import { severity, Snacks } from "@m0ss/core";
-import {
-    Container,
-    createStyles,
-    Divider,
-    Grid,
-    makeStyles,
-    Theme,
-    Typography,
-} from "@material-ui/core";
+import { Container, Divider, Grid, Typography } from "@material-ui/core";
+import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import randomWords from "random-words";
 import React, { useState } from "react";
 import { ReactMdRenderer } from "react-md-renderer/v4";

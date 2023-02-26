@@ -14,15 +14,6 @@ export const rawTheme = createTheme({
         fontWeightMedium: 500,
         fontWeightBold: 700,
     },
-    palette: {
-        type: "dark",
-        primary: {
-            main: "#e91e63",
-        },
-        secondary: {
-            main: "#54f542",
-        },
-    },
 });
 
 export const getTheme = (mode: PaletteType) =>

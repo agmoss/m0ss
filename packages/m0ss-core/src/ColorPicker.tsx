@@ -1,8 +1,12 @@
 import { BlockPicker } from "@hello-pangea/color-picker";
-import { useTheme } from "@material-ui/core";
+import { useTheme } from "@material-ui/core/styles";
 import React from "react";
 
-export const ColorPicker = ({ setColor }: { setColor: Function }) => {
+export const ColorPicker = ({
+    setColor,
+}: {
+    setColor: (color: any) => void;
+}) => {
     const theme = useTheme();
 
     const onChange = (color: any) => {

@@ -1,5 +1,6 @@
 import { withMarkdownView } from "@m0ss/core";
-import { createStyles, Grid, makeStyles, Theme } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
+import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import React from "react";
 
 import { IStr } from "../data";

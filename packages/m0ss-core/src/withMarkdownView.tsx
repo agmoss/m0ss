@@ -1,12 +1,10 @@
+import { Container, Grid, Typography } from "@material-ui/core";
 import {
-    Container,
     createStyles,
-    Grid,
     makeStyles,
     Theme,
-    Typography,
     useTheme,
-} from "@material-ui/core";
+} from "@material-ui/core/styles";
 import React from "react";
 import { ReactMdRenderer } from "react-md-renderer/v4";
 import SyntaxHighlighter from "react-syntax-highlighter";
@@ -21,7 +19,6 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 /**
- * @deprecated This is not fully compatible with muiv4
  * @param md
  * @returns
  */

@@ -1,11 +1,6 @@
 import { DualGrid } from "@m0ss/core";
-import {
-    createStyles,
-    makeStyles,
-    Paper,
-    Theme,
-    Typography,
-} from "@material-ui/core";
+import { Paper, Typography } from "@material-ui/core";
+import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import Image from "next/image";
 import React from "react";
 
@@ -28,6 +23,7 @@ const useStyles = makeStyles((theme: Theme) =>
         mainContent: {
             height: "100%",
             padding: theme.spacing(6),
+            backgroundColor: theme.palette.background.paper,
         },
     })
 );

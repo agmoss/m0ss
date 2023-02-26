@@ -1,12 +1,5 @@
-import {
-    Button,
-    Container,
-    createStyles,
-    Grid,
-    makeStyles,
-    Theme,
-    Typography,
-} from "@material-ui/core";
+import { Button, Container, Grid, Typography } from "@material-ui/core";
+import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import { useRouter } from "next/router";
 import React from "react";
 

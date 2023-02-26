@@ -2,16 +2,14 @@ import { IconButton } from "@m0ss/core";
 import {
     AppBar,
     Container,
-    createStyles,
     Link,
-    makeStyles,
     PaletteType,
     SvgIcon,
     Switch,
-    Theme,
     Toolbar,
     Typography,
 } from "@material-ui/core";
+import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import { Apps, GitHub, LinkedIn } from "@material-ui/icons";
 import { useRouter } from "next/router";
 import React from "react";
