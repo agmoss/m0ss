@@ -9,7 +9,6 @@ const _ReactCirclesDemo = () => (
             maxHeight: "100%",
             overflowX: "hidden",
             overflowY: "hidden",
-            backgroundColor: "black",
         }}
     >
         <Circles numCircles={60} speed="slow" />
