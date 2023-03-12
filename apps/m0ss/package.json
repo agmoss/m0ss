@@ -20,24 +20,24 @@
     "fp-ts": "latest",
     "lodash-es": "latest",
     "markdown-to-jsx": "latest",
-    "next": "latest",
+    "next": "13.2.4",
     "random-words": "latest",
     "react": "latest",
     "react-circles": "latest",
     "react-dom": "latest",
     "react-md-renderer": "1.0.4-0",
     "schema-dts": "latest",
-    "sharp": "^0.31.3",
+    "sharp": "0.31.3",
     "utility-types": "latest"
   },
   "devDependencies": {
     "@m0ss/tsconfig": "*",
     "@types/aos": "latest",
     "@types/lodash-es": "latest",
-    "@types/node": "latest",
+    "@types/node": "18.15.0",
     "@types/react": "latest",
     "eslint-config-m0ss": "*",
-    "next-sitemap": "latest",
+    "next-sitemap": "4.0.5",
     "typescript": "latest"
   }
 }

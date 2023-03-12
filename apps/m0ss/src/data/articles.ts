@@ -13,9 +13,34 @@ export type PostDataWithContent = PostData & { content: string };
 
 export const postData: PostData[] = [
     {
+        slug: "nextjs-msw-introspection",
+        description: "Using msw-introspection in a nextjs app",
+        mdLink: "https://raw.githubusercontent.com/agmoss/nextjs-msw-introspection/master/README.md",
+        link: "https://github.com/agmoss/nextjs-msw-introspection",
+    },
+    {
+        slug: "msw-introspection",
+        description:
+            "Creates a msw handler for GraphQL operations. The handler returns mocked data that conforms to the schema types",
+        mdLink: "https://raw.githubusercontent.com/agmoss/msw-introspection/master/README.md",
+        link: "https://github.com/agmoss/msw-introspection",
+    },
+    {
+        slug: "flake",
+        description: "Identify problematic jest tests",
+        mdLink: "https://raw.githubusercontent.com/agmoss/flake/master/README.md",
+        link: "https://github.com/agmoss/flake",
+    },
+    {
+        slug: "lineage-ts",
+        description: "CLI to identify all descendant imports of a ts file",
+        mdLink: "https://raw.githubusercontent.com/agmoss/lineage-ts/master/README.md",
+        link: "https://github.com/agmoss/lineage-ts",
+    },
+    {
         slug: "use-query-rd",
         description:
-            " A drop in replacement for apollo client's `useQuery` hook with a return type that mimics Elm's RemoteData ADT",
+            "A drop in replacement for apollo client's `useQuery` hook with a return type that mimics Elm's RemoteData ADT",
         mdLink: "https://raw.githubusercontent.com/agmoss/use-query-rd/master/README.md",
         link: "https://github.com/agmoss/use-query-rd",
     },

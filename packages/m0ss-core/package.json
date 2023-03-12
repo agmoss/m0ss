@@ -36,7 +36,7 @@
     "@types/react-color": "latest",
     "@types/react-dom": "latest",
     "@types/react-syntax-highlighter": "latest",
-    "eslint": "latest",
+    "eslint": "8.36.0",
     "eslint-config-m0ss": "*",
     "typescript": "latest"
   },
