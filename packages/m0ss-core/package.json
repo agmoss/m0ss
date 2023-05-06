@@ -20,7 +20,7 @@
     "@material-ui/icons": "latest",
     "@material-ui/lab": "latest",
     "aos": "latest",
-    "markdown-to-jsx": "latest",
+    "markdown-to-jsx": "7.2.0",
     "offcircle": "latest",
     "random-words": "latest",
     "react": "latest",
@@ -36,9 +36,9 @@
     "@types/react-color": "latest",
     "@types/react-dom": "latest",
     "@types/react-syntax-highlighter": "latest",
-    "eslint": "8.36.0",
+    "eslint": "8.40.0",
     "eslint-config-m0ss": "*",
-    "typescript": "latest"
+    "typescript": "5.0.4"
   },
   "publishConfig": {
     "access": "public"
