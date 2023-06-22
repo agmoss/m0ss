@@ -13,6 +13,24 @@ export type PostDataWithContent = PostData & { content: string };
 
 export const postData: PostData[] = [
     {
+        slug: "ts.rs",
+        description: "Write typescript while thinking in rust ",
+        mdLink: "https://raw.githubusercontent.com/agmoss/ts.rs/main/README.md",
+        link: "https://github.com/agmoss/ts.rs",
+    },
+    {
+        slug: "erdgen",
+        description: "Generate dbml from dbt yml ",
+        mdLink: "https://raw.githubusercontent.com/agmoss/erdgen/main/README.md",
+        link: "https://github.com/agmoss/erdgen",
+    },
+    {
+        slug: "sheet-df",
+        description: "google sheet -> dataframe",
+        mdLink: "https://raw.githubusercontent.com/agmoss/sheet_df/main/README.rst",
+        link: "https://github.com/agmoss/sheet_df",
+    },
+    {
         slug: "nextjs-msw-introspection",
         description: "Using msw-introspection in a nextjs app",
         mdLink: "https://raw.githubusercontent.com/agmoss/nextjs-msw-introspection/master/README.md",
