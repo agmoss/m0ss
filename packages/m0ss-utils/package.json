@@ -18,10 +18,10 @@
     "@m0ss/tsconfig": "*",
     "@types/react": "latest",
     "@types/react-dom": "latest",
-    "eslint": "8.40.0",
+    "eslint": "8.45.0",
     "eslint-config-m0ss": "*",
     "react": "latest",
-    "typescript": "5.0.4"
+    "typescript": "5.1.6"
   },
   "publishConfig": {
     "access": "public"

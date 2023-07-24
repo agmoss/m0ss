@@ -22,14 +22,14 @@
     "release": "turbo run build --filter=m0ss^... && changeset publish"
   },
   "devDependencies": {
-    "@changesets/cli": "2.26.1",
-    "eslint": "8.40.0",
+    "@changesets/cli": "2.26.2",
+    "eslint": "8.45.0",
     "eslint-config-m0ss": "*",
-    "markdownlint-cli": "0.34.0",
+    "markdownlint-cli": "0.35.0",
     "npm-run-all": "latest",
-    "prettier": "^2.8.8",
-    "sort-package-json": "latest",
-    "turbo": "1.9.3"
+    "prettier": "^3.0.0",
+    "sort-package-json": "2.5.1",
+    "turbo": "1.10.10"
   },
   "packageManager": "yarn@1.22.19",
   "engines": {

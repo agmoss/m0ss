@@ -31,6 +31,7 @@ COPY turbo.json turbo.json
 # ARG TURBO_TOKEN
 # ENV TURBO_TOKEN=$TURBO_TOKEN
 
+RUN yarn global add sharp
 RUN yarn turbo run build --filter=m0ss...
 
 FROM node:18-alpine AS runner

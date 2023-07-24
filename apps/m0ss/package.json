@@ -17,27 +17,28 @@
     "@material-ui/icons": "latest",
     "@material-ui/lab": "latest",
     "aos": "latest",
-    "fp-ts": "2.14.0",
+    "fp-ts": "2.16.0",
     "lodash-es": "latest",
-    "markdown-to-jsx": "7.2.0",
-    "next": "13.4.1",
-    "random-words": "latest",
+    "markdown-to-jsx": "7.2.1",
+    "next": "13.4.12",
+    "random-words": "2.0.0",
     "react": "latest",
     "react-circles": "latest",
     "react-dom": "latest",
     "react-md-renderer": "1.0.4-0",
     "schema-dts": "latest",
-    "sharp": "0.32.1",
+    "sharp": "0.32.4",
     "utility-types": "latest"
   },
   "devDependencies": {
     "@m0ss/tsconfig": "*",
     "@types/aos": "latest",
-    "@types/lodash-es": "4.17.7",
-    "@types/node": "18.15.0",
+    "@types/lodash-es": "4.17.8",
+    "@types/node": "20.4.4",
     "@types/react": "latest",
     "eslint-config-m0ss": "*",
-    "next-sitemap": "4.0.9",
-    "typescript": "5.0.4"
+    "next-sitemap": "4.1.8",
+    "sharp": "^0.32.4",
+    "typescript": "5.1.6"
   }
 }

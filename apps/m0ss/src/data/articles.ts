@@ -13,14 +13,20 @@ export type PostDataWithContent = PostData & { content: string };
 
 export const postData: PostData[] = [
     {
+        slug: "bookit",
+        description: "Doc site generator ",
+        mdLink: "https://raw.githubusercontent.com/agmoss/bookit/main/README.md",
+        link: "https://github.com/agmoss/bookit",
+    },
+    {
         slug: "ts.rs",
-        description: "Write typescript while thinking in rust ",
+        description: "Write typescript while thinking in rust",
         mdLink: "https://raw.githubusercontent.com/agmoss/ts.rs/main/README.md",
         link: "https://github.com/agmoss/ts.rs",
     },
     {
         slug: "erdgen",
-        description: "Generate dbml from dbt yml ",
+        description: "Generate dbml from dbt yml",
         mdLink: "https://raw.githubusercontent.com/agmoss/erdgen/main/README.md",
         link: "https://github.com/agmoss/erdgen",
     },

@@ -2,7 +2,7 @@ import { AboutPaper } from "@m0ss/core";
 import { severity, Snacks } from "@m0ss/core";
 import { Container, Divider, Grid, Typography } from "@material-ui/core";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
-import randomWords from "random-words";
+import { generate } from "random-words";
 import React, { useState } from "react";
 import { ReactMdRenderer } from "react-md-renderer/v4";
 
@@ -48,16 +48,14 @@ export const MainContent = ({ str }: IStr) => {
     const classes = useStyles();
     const [openSnack, setOpenSnack] = useState(false);
 
-    const [message, setMessage] = useState(
-        randomWords({ exactly: 5, join: " " })
-    );
+    const [message, setMessage] = useState(generate({ exactly: 5, join: " " }));
     const [level, setLevel] = useState(Math.floor(Math.random() * 4) + 1);
 
     const handleOpen = () => {
         setOpenSnack(!openSnack);
         if (openSnack === false) {
             setMessage(
-                randomWords({
+                generate({
                     exactly: Math.floor(Math.random() * 6) + 1,
                     join: " ",
                 })
