@@ -1,12 +1,12 @@
-import { PaletteType } from "@material-ui/core";
+import { PaletteMode } from "@mui/material";
 import AOS from "aos";
 import { useEffect, useState } from "react";
 
 export const useDarkMode = () => {
-    const [themeMode, setTheme] = useState<PaletteType>("light");
+    const [themeMode, setTheme] = useState<PaletteMode>("light");
     const [mountedComponent, setMountedComponent] = useState(false);
 
-    const setMode = (mode: PaletteType) => {
+    const setMode = (mode: PaletteMode) => {
         window.localStorage.setItem("themeMode", mode);
         setTheme(mode);
     };
@@ -18,7 +18,7 @@ export const useDarkMode = () => {
     useEffect(() => {
         const localTheme = window.localStorage.getItem(
             "themeMode"
-        ) as PaletteType;
+        ) as PaletteMode;
         localTheme ? setTheme(localTheme) : setMode("light");
         setMountedComponent(true);
         AOS.refresh();

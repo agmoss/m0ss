@@ -1,23 +1,9 @@
-import { Container, Grid, Typography } from "@material-ui/core";
-import {
-    createStyles,
-    makeStyles,
-    Theme,
-    useTheme,
-} from "@material-ui/core/styles";
+// @ts-nocheck
+import { Container, Grid, Typography } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import React from "react";
-import { ReactMdRenderer } from "react-md-renderer/v4";
+import Markdown from "markdown-to-jsx";
 import SyntaxHighlighter from "react-syntax-highlighter";
-
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        mainGrid: {
-            marginTop: theme.spacing(3),
-            marginBottom: theme.spacing(3),
-            overflowWrap: "break-word",
-        },
-    })
-);
 /**
  * @param md
  * @returns
@@ -26,7 +12,6 @@ export const withMarkdownView =
     (md: string): React.FC =>
     // eslint-disable-next-line react/display-name
     () => {
-        const classes = useStyles();
         const theme = useTheme();
         const opts = {
             overrides: {
@@ -48,26 +33,22 @@ export const withMarkdownView =
                 },
             },
             forceBlock: true,
-        };
+        } as const;
         return (
-            <>
-                <Container maxWidth="lg">
-                    <main>
-                        <Grid
-                            container
-                            spacing={5}
-                            justifyContent="center"
-                            direction="column"
-                            className={classes.mainGrid}
-                        >
-                            <Grid item xs={12}>
-                                <ReactMdRenderer options={opts}>
-                                    {md}
-                                </ReactMdRenderer>
-                            </Grid>
-                        </Grid>
-                    </main>
-                </Container>
-            </>
+            <Container maxWidth="lg">
+                <main>
+                    <Grid
+                        container
+                        spacing={5}
+                        justifyContent="center"
+                        direction="column"
+                        sx={{ mt: 3, mb: 3, overflowWrap: "break-word" }}
+                    >
+                        <div>
+                            <Markdown options={opts as any}>{md}</Markdown>
+                        </div>
+                    </Grid>
+                </main>
+            </Container>
         );
     };

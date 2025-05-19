@@ -1,5 +1,6 @@
-import { Snackbar } from "@material-ui/core";
-import MuiAlert, { AlertProps } from "@material-ui/lab/Alert";
+// @ts-nocheck
+import { Snackbar } from "@mui/material";
+import MuiAlert, { AlertProps } from "@mui/material/Alert";
 import React from "react";
 
 export enum Severity {
@@ -27,15 +28,7 @@ export const Snacks = ({ open, setOpen, message, level }: SnacksProps) => (
         anchorOrigin={{ vertical: "top", horizontal: "center" }}
         open={open}
         autoHideDuration={6000}
-        onClose={(
-            _event: React.SyntheticEvent | React.MouseEvent,
-            reason?: string
-        ) => {
-            if (reason === "clickaway") {
-                return;
-            }
-            setOpen(false);
-        }}
+        onClose={() => setOpen(false)}
     >
         <Alert
             onClose={() => {

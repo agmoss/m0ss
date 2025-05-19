@@ -1,11 +1,11 @@
-import { PaletteType } from "@material-ui/core";
+import { PaletteMode } from "@mui/material";
 export const light = {
     alternate: {
         main: "#f7f9fa", // White
         dark: "#e8eaf6", // White touch of blue
     },
     cardShadow: "rgba(23, 70, 161, .11)",
-    type: "light" as PaletteType,
+    type: "light" as PaletteMode,
     primary: {
         main: "#e91e63",
     },
@@ -17,6 +17,7 @@ export const light = {
         secondary: "#718096",
     },
     divider: "rgba(0, 0, 0, 0.12)",
+    contrastText: '#rgba(0, 0, 0, 0.12)"',
     background: {
         paper: "#fff",
         default: "#fff",
@@ -36,7 +37,7 @@ export const dark = {
         black: "#000",
         white: "#fff",
     },
-    type: "dark" as PaletteType,
+    type: "dark" as PaletteMode,
     primary: {
         main: "#e91e63",
     },

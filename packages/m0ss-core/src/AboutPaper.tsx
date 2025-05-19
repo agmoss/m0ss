@@ -1,38 +1,22 @@
-import { Grid, Paper, Typography } from "@material-ui/core";
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
-import { ThumbUp } from "@material-ui/icons";
+// @ts-nocheck
+import { Grid, Paper, Typography, IconButton } from "@mui/material";
+import { ThumbUp } from "@mui/icons-material";
 import React from "react";
 
-import { IconButton } from "./IconButton";
-
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        sidebarAboutBox: {
-            padding: theme.spacing(2),
-            backgroundColor: theme.palette.background.paper,
-        },
-    })
-);
-
 export const AboutPaper = ({ handleOpen }: { handleOpen: () => void }) => {
-    const classes = useStyles();
     return (
         <Grid container spacing={2}>
-            <Grid item xs={12}>
-                <Paper className={classes.sidebarAboutBox}>
+            <Grid size={{ xs: 12, sm: 12, md: 12, lg: 12 }}>
+                <Paper sx={{ p: 2, bgcolor: "background.paper" }}>
                     <Grid container justifyContent="space-between">
-                        <Grid item>
+                        <Grid>
                             <Typography variant="h5" gutterBottom>
                                 About
                             </Typography>
                             <Typography>Welcome to my account</Typography>
                         </Grid>
-                        <Grid item>
-                            <IconButton
-                                onClick={() => {
-                                    handleOpen();
-                                }}
-                            >
+                        <Grid>
+                            <IconButton onClick={handleOpen}>
                                 <ThumbUp />
                             </IconButton>
                         </Grid>

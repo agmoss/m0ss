@@ -1,8 +1,5 @@
-import {
-    createTheme,
-    PaletteType,
-    responsiveFontSizes,
-} from "@material-ui/core";
+import { createTheme, responsiveFontSizes } from "@mui/material/styles";
+import { PaletteMode } from "@mui/material";
 
 import { dark, light } from "./palette";
 
@@ -16,7 +13,7 @@ export const rawTheme = createTheme({
     },
 });
 
-export const getTheme = (mode: PaletteType) =>
+export const getTheme = (mode: PaletteMode) =>
     responsiveFontSizes(
         createTheme({
             ...rawTheme,
