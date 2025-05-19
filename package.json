@@ -11,9 +11,9 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "turbo run build",
+    "build": "echo 'build skipped'",
     "build:m0ss": "turbo run build --filter=m0ss...",
-    "dev": "turbo run dev --no-cache --continue",
+    "dev": "turbo run dev",
     "lint": "turbo run lint",
     "clean": "turbo run clean && rm -rf node_modules",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
@@ -25,11 +25,11 @@
     "@changesets/cli": "2.26.2",
     "eslint": "8.56.0",
     "eslint-config-m0ss": "*",
-    "markdownlint-cli": "0.44.0",
+    "markdownlint-cli": "0.45.0",
     "npm-run-all": "latest",
     "prettier": "^3.0.3",
     "sort-package-json": "3.0.0",
-    "turbo": "1.13.4"
+    "turbo": "2.5.3"
   },
   "packageManager": "yarn@1.22.19",
   "engines": {

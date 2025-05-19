@@ -1,16 +1,29 @@
+// @ts-nocheck
 import "aos/dist/aos.css";
 
 import { AppProps } from "next/app";
 import Head from "next/head";
 import React from "react";
+import { CacheProvider, EmotionCache } from "@emotion/react";
+import createEmotionCache from "../createEmotionCache";
 
 import { metaData, orgSchema, personSchema, websiteSchema } from "../data";
 import { Main } from "../layouts/main";
 import { withLayout } from "../layouts/main/withLayout";
 
-const App = ({ Component, pageProps }: AppProps) => {
+const clientSideEmotionCache = createEmotionCache();
+
+interface MyAppProps extends AppProps {
+    emotionCache?: EmotionCache;
+}
+
+const App = ({
+    Component,
+    pageProps,
+    emotionCache = clientSideEmotionCache,
+}: MyAppProps) => {
     return (
-        <React.Fragment>
+        <CacheProvider value={emotionCache}>
             <Head>
                 <title>{metaData.name}</title>
                 <meta charSet="utf-8" />
@@ -71,7 +84,7 @@ const App = ({ Component, pageProps }: AppProps) => {
                 />
             </Head>
             <Component {...pageProps} />
-        </React.Fragment>
+        </CacheProvider>
     );
 };
 

@@ -1,34 +1,32 @@
 import { ApplyAos } from "@m0ss/core";
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import React from "react";
+import { styled } from "@mui/material/styles";
 
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { ILayout } from "./withLayout";
+import { Box } from "@mui/material";
 
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        root: {
-            display: "flex",
-            flexDirection: "column",
-            minHeight: "100vh",
-            overflowX: "hidden",
-            backgroundColor: theme.palette.background.default,
-        },
-    })
-);
+const Root = styled("div")(({ theme }) => ({
+    display: "flex",
+    flexDirection: "column",
+    minHeight: "100vh",
+    overflowX: "hidden",
+    backgroundColor: theme.palette.background.default,
+}));
 
 export const Main = ({
     children,
     themeToggler,
     themeMode,
 }: React.PropsWithChildren<ILayout>) => {
-    const classes = useStyles();
     return (
-        <div className={classes.root}>
+        <Root>
             <Header themeMode={themeMode} themeToggler={themeToggler} />
-            <ApplyAos>{children}</ApplyAos>
+            <Box sx={{ mt: 5 }}>
+                <ApplyAos>{children}</ApplyAos>
+            </Box>
             <Footer />
-        </div>
+        </Root>
     );
 };

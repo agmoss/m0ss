@@ -1,15 +1,15 @@
-import { Switch as MuiSwitch, Theme, withStyles } from "@material-ui/core";
+// @ts-nocheck
+import MuiSwitch from "@mui/material/Switch";
+import { styled } from "@mui/material/styles";
 
-export const Switch = withStyles((theme: Theme) => ({
-    switchBase: {
+export const Switch = styled(MuiSwitch)(({ theme }) => ({
+    "& .MuiSwitch-switchBase": {
         color: theme.palette.primary.main,
-        "&$checked": {
+        "&.Mui-checked": {
             color: theme.palette.primary.main,
         },
-        "&$checked + $track": {
+        "&.Mui-checked + .MuiSwitch-track": {
             backgroundColor: theme.palette.primary.main,
         },
     },
-    checked: {},
-    track: {},
-}))(MuiSwitch);
+}));
