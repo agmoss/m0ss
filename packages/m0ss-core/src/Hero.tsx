@@ -3,9 +3,7 @@ import { DualGrid } from "@m0ss/core";
 import { Paper, Typography, Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import Image from "next/image";
-
-import AM from "../../public/andrew-moss.jpeg";
-import { metaData } from "../data";
+import { StaticImageData } from "next/image";
 
 const Main = styled("div")(({ theme }) => ({
     position: "relative",
@@ -43,20 +41,20 @@ const HighlightText = styled("span")(({ theme }) => ({
     fontWeight: 700,
 }));
 
-export const Hero = ({
-    bio,
-}: {
-    primary: string;
-    secondary: string;
+export interface HeroProps {
     bio: string;
-}) => {
+    image: StaticImageData;
+    name: string;
+}
+
+export const Hero = ({ bio, image, name }: HeroProps) => {
     return (
         <DualGrid
             Left={
                 <Main>
                     <MainImage
-                        src={AM}
-                        alt={metaData.name}
+                        src={image}
+                        alt={name}
                         priority={true}
                         placeholder="blur"
                         quality={90}
@@ -76,7 +74,7 @@ export const Hero = ({
                             mb: 3,
                         }}
                     >
-                        {metaData.name}
+                        {name}
                     </Typography>
                     <Typography
                         variant="h5"

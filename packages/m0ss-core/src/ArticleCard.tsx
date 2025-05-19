@@ -1,5 +1,3 @@
-"use client";
-
 import {
     Button,
     Card,
@@ -12,11 +10,18 @@ import {
     Avatar,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { useRouter } from "next/router";
 import { ArrowRight, GitHub } from "@mui/icons-material";
 
-import type { PostData } from "../data";
-import { Paths } from "../utils/paths";
+export interface PostData {
+    slug: string;
+    description: string;
+    link: string;
+}
+
+export interface ArticleCardProps {
+    data: PostData;
+    onViewClick: (slug: string) => void;
+}
 
 const Root = styled(Card)(({ theme }) => ({
     minWidth: 275,
@@ -94,8 +99,7 @@ const getCategory = (data: PostData) => {
     }
 };
 
-export const ArticleCard = (data: PostData) => {
-    const router = useRouter();
+export const ArticleCard = ({ data, onViewClick }: ArticleCardProps) => {
     const category = getCategory(data);
 
     return (
@@ -158,7 +162,7 @@ export const ArticleCard = (data: PostData) => {
             </CardContentStyled>
             <CardActionsStyled>
                 <Button
-                    onClick={() => router.push(`${Paths.POSTS}${data.slug}`)}
+                    onClick={() => onViewClick(data.slug)}
                     size="medium"
                     variant="contained"
                     color="primary"

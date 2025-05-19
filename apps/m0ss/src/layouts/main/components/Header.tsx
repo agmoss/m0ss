@@ -1,4 +1,4 @@
-import { IconButton } from "@m0ss/core";
+import { StyledIconButton } from "@m0ss/core";
 import { AppBar, Container, Link, Toolbar, Typography } from "@mui/material";
 import {
     Apps,
@@ -54,37 +54,37 @@ export const Header = ({ themeMode, themeToggler }: IHeader) => {
                             m0ss
                         </Typography>
                     </div>
-                    <IconButton onClick={() => themeToggler()}>
+                    <StyledIconButton onClick={() => themeToggler()}>
                         {themeMode === "dark" ? (
                             <Brightness7 />
                         ) : (
                             <Brightness4 />
                         )}
-                    </IconButton>
-                    <IconButton
+                    </StyledIconButton>
+                    <StyledIconButton
                         onClick={() => {
                             router.push("/posts");
                         }}
                     >
                         <Apps />
-                    </IconButton>
+                    </StyledIconButton>
                     <Link
                         href="https://github.com/agmoss"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <IconButton>
+                        <StyledIconButton>
                             <GitHub />
-                        </IconButton>
+                        </StyledIconButton>
                     </Link>
                     <Link
                         href="https://www.linkedin.com/in/agmoss/"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <IconButton>
+                        <StyledIconButton>
                             <LinkedIn />
-                        </IconButton>
+                        </StyledIconButton>
                     </Link>
                 </Toolbar>
             </Container>

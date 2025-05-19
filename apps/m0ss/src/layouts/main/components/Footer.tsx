@@ -9,11 +9,11 @@ import {
     Link,
     Divider,
     TextField,
-    IconButton,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { useRouter } from "next/router";
 import { GitHub, LinkedIn, Twitter, Send } from "@mui/icons-material";
+import { StyledIconButton } from "@m0ss/core";
 
 const Root = styled("footer")(({ theme }) => ({
     backgroundColor: theme.palette.primary.main,
@@ -96,30 +96,39 @@ export const Footer = () => {
                             programming.
                         </Typography>
                         <Box sx={{ display: "flex", gap: 1 }}>
-                            <IconButton
-                                component="a"
+                            <Link
                                 href="https://github.com/agmoss"
                                 target="_blank"
-                                sx={{ color: "primary.contrastText" }}
+                                rel="noopener noreferrer"
                             >
-                                <GitHub />
-                            </IconButton>
-                            <IconButton
-                                component="a"
+                                <StyledIconButton
+                                    sx={{ color: "primary.contrastText" }}
+                                >
+                                    <GitHub />
+                                </StyledIconButton>
+                            </Link>
+                            <Link
                                 href="https://www.linkedin.com/in/agmoss/"
                                 target="_blank"
-                                sx={{ color: "primary.contrastText" }}
+                                rel="noopener noreferrer"
                             >
-                                <LinkedIn />
-                            </IconButton>
-                            <IconButton
-                                component="a"
+                                <StyledIconButton
+                                    sx={{ color: "primary.contrastText" }}
+                                >
+                                    <LinkedIn />
+                                </StyledIconButton>
+                            </Link>
+                            <Link
                                 href="https://twitter.com"
                                 target="_blank"
-                                sx={{ color: "primary.contrastText" }}
+                                rel="noopener noreferrer"
                             >
-                                <Twitter />
-                            </IconButton>
+                                <StyledIconButton
+                                    sx={{ color: "primary.contrastText" }}
+                                >
+                                    <Twitter />
+                                </StyledIconButton>
+                            </Link>
                         </Box>
                     </Grid>
                 </Grid>

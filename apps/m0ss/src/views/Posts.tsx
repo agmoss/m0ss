@@ -16,9 +16,10 @@ import {
     Divider,
 } from "@mui/material";
 import { Search as SearchIcon } from "@mui/icons-material";
+import { useRouter } from "next/router";
+import { Paths } from "../utils/paths";
 
-import { ArticleCard } from "../components/ArticleCard";
-import type { PostData } from "../data";
+import { ArticleCard, type PostData } from "@m0ss/core";
 
 const HeroContent = styled("div")(({ theme }) => ({
     padding: theme.spacing(8, 0, 6),
@@ -97,6 +98,7 @@ export const Posts = ({ data }: { data: PostData[] }) => {
     const [searchTerm, setSearchTerm] = useState("");
     const [activeCategory, setActiveCategory] = useState("All");
     const categories = getCategories(data);
+    const router = useRouter();
 
     const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSearchTerm(event.target.value);
@@ -107,6 +109,10 @@ export const Posts = ({ data }: { data: PostData[] }) => {
         newValue: string
     ) => {
         setActiveCategory(newValue);
+    };
+
+    const handleViewClick = (slug: string) => {
+        router.push(`${Paths.POSTS}${slug}`);
     };
 
     const filteredData = data.filter((post) => {
@@ -260,7 +266,10 @@ export const Posts = ({ data }: { data: PostData[] }) => {
                                 key={d.slug}
                                 sx={{ display: "flex" }}
                             >
-                                <ArticleCard {...d} />
+                                <ArticleCard
+                                    data={d}
+                                    onViewClick={handleViewClick}
+                                />
                             </Grid>
                         ))}
                     </Grid>
