@@ -12,7 +12,8 @@
     "build": "tsc",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "dev": "tsc --watch",
-    "lint": "TIMING=1 eslint --fix \"src/**/*.ts*\""
+    "lint": "TIMING=1 eslint --fix \"src/**/*.ts*\"",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@hello-pangea/color-picker": "latest",
