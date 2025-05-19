@@ -23,7 +23,7 @@ export const Main = ({
     return (
         <Root>
             <Header themeMode={themeMode} themeToggler={themeToggler} />
-            <Box sx={{ mt: 5 }}>
+            <Box sx={{ mt: 10 }}>
                 <ApplyAos>{children}</ApplyAos>
             </Box>
             <Footer />

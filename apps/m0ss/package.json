@@ -9,7 +9,8 @@
     "clean": "rm -rf ./.cache ./.next ./node_modules",
     "dev": "next dev",
     "lint": "next lint --fix",
-    "start": "next start"
+    "start": "next start",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@m0ss/core": "*",

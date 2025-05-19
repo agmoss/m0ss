@@ -1,7 +1,8 @@
 // @ts-nocheck
-import { Grid, Paper, Typography, IconButton } from "@mui/material";
+import { Grid, Paper, Typography } from "@mui/material";
 import { ThumbUp } from "@mui/icons-material";
 import React from "react";
+import { StyledIconButton } from "./StyledIconButton";
 
 export const AboutPaper = ({ handleOpen }: { handleOpen: () => void }) => {
     return (
@@ -16,9 +17,9 @@ export const AboutPaper = ({ handleOpen }: { handleOpen: () => void }) => {
                             <Typography>Welcome to my account</Typography>
                         </Grid>
                         <Grid>
-                            <IconButton onClick={handleOpen}>
+                            <StyledIconButton onClick={handleOpen}>
                                 <ThumbUp />
-                            </IconButton>
+                            </StyledIconButton>
                         </Grid>
                     </Grid>
                 </Paper>
