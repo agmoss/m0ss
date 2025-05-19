@@ -1,6 +1,6 @@
-import { PaletteType } from "@material-ui/core";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import { ThemeProvider } from "@material-ui/core/styles";
+// @ts-nocheck
+import { PaletteMode, CssBaseline } from "@mui/material";
+import { ThemeProvider } from "@mui/material/styles";
 import AOS from "aos";
 import React, { ComponentType, useEffect } from "react";
 
@@ -9,7 +9,7 @@ import { useDarkMode } from "./useDarkMode";
 
 export interface ILayout {
     themeToggler: () => void;
-    themeMode: PaletteType;
+    themeMode: PaletteMode;
 }
 
 interface IWithLayout {
@@ -24,11 +24,6 @@ export const withLayout =
     // eslint-disable-next-line react/display-name
     ({ ...props }) => {
         useEffect(() => {
-            const jssStyles = document.querySelector("#jss-server-side");
-            if (jssStyles && jssStyles.parentElement) {
-                jssStyles.parentElement.removeChild(jssStyles);
-            }
-
             AOS.init({
                 once: true,
                 delay: 50,

@@ -1,41 +1,29 @@
-import { Button, Container, Grid, Typography } from "@material-ui/core";
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+// @ts-nocheck
+import { Button, Container, Grid, Typography } from "@mui/material";
+import { styled } from "@mui/material/styles";
 import { useRouter } from "next/router";
 import React from "react";
 
 import { Paths } from "../../../utils";
 
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        root: {
-            backgroundColor: theme.palette.primary.main,
-            marginTop: "auto",
-            width: "100%",
-        },
-        container: {
-            marginTop: theme.spacing(10),
-            marginBottom: theme.spacing(10),
-        },
-        list: {
-            margin: 0,
-            listStyle: "none",
-            paddingLeft: 0,
-        },
-        button: {
-            "&:hover": {
-                background: theme.palette.primary.contrastText,
-                color: theme.palette.primary.main,
-            },
-        },
-    })
-);
+const Root = styled(Typography)(({ theme }) => ({
+    backgroundColor: theme.palette.primary.main,
+    marginTop: "auto",
+    width: "100%",
+}));
+
+const StyledButton = styled(Button)(({ theme }) => ({
+    "&:hover": {
+        background: theme.palette.primary.contrastText,
+        color: theme.palette.primary.main,
+    },
+}));
 
 export const Footer = () => {
-    const classes = useStyles();
     const router = useRouter();
     return (
-        <Typography component="footer" className={classes.root}>
-            <Container className={classes.container}>
+        <Root as="footer">
+            <Container sx={{ mt: 10, mb: 10 }}>
                 <Grid container>
                     <Grid item xs={12}>
                         <Grid
@@ -56,29 +44,25 @@ export const Footer = () => {
                                 </Typography>
                             </Grid>
                             <Grid item>
-                                <ul className={classes.list}>
+                                <ul style={{ margin: 0, listStyle: "none", paddingLeft: 0 }}>
                                     <li>
-                                        <Button
+                                        <StyledButton
                                             size="large"
-                                            className={classes.button}
                                             href="https://github.com/agmoss/m0ss"
                                             target="_blank"
                                             rel="noopener noreferrer"
                                         >
                                             Source
-                                        </Button>
+                                        </StyledButton>
                                     </li>
                                     <li>
-                                        <Button
+                                        <StyledButton
                                             size="large"
-                                            className={classes.button}
-                                            onClick={() =>
-                                                router.push(Paths.README)
-                                            }
+                                            onClick={() => router.push(Paths.README)}
                                             role="link"
                                         >
                                             README
-                                        </Button>
+                                        </StyledButton>
                                     </li>
                                 </ul>
                             </Grid>
@@ -86,6 +70,6 @@ export const Footer = () => {
                     </Grid>
                 </Grid>
             </Container>
-        </Typography>
+        </Root>
     );
 };

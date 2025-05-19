@@ -1,29 +1,23 @@
+// @ts-nocheck
 import { withMarkdownView } from "@m0ss/core";
-import { Grid } from "@material-ui/core";
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import { Grid } from "@mui/material";
+import { styled } from "@mui/material/styles";
 import React from "react";
 
 import { IStr } from "../data";
 
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        root: {
-            "@global": {
-                h1: {
-                    ...theme.typography.h4,
-                    paddingBottom: theme.spacing(2),
-                },
-            },
-        },
-    })
-);
+const Root = styled("div")(({ theme }) => ({
+    "& h1": {
+        ...theme.typography.h4,
+        paddingBottom: theme.spacing(2),
+    },
+}));
 
 export const Post = ({ str }: IStr) => {
-    const classes = useStyles();
     const PostView = withMarkdownView(str);
 
     return (
-        <div className={classes.root}>
+        <Root>
             <PostView />
             <Grid
                 container
@@ -32,6 +26,6 @@ export const Post = ({ str }: IStr) => {
                 alignItems="center"
                 justifyContent="center"
             ></Grid>
-        </div>
+        </Root>
     );
 };

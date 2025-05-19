@@ -3,70 +3,38 @@ import {
     AppBar,
     Container,
     Link,
-    PaletteType,
     SvgIcon,
     Toolbar,
     Typography,
-} from "@material-ui/core";
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+} from "@mui/material";
 import {
     Apps,
     Brightness4,
     Brightness7,
     GitHub,
     LinkedIn,
-} from "@material-ui/icons";
+} from "@mui/icons-material";
 import { useRouter } from "next/router";
 import React from "react";
-
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        toolbar: {
-            marginBottom: theme.spacing(2),
-        },
-        toolbarTitle: {
-            color: theme.palette.primary.main,
-            flex: 1,
-            textDecoration: "none",
-            outline: 0,
-        },
-        appBar: {
-            backgroundColor: theme.palette.background.default,
-        },
-        root: {
-            paddingBottom: theme.spacing(2),
-        },
-        npm: {
-            "@global": {
-                button: {
-                    "&:hover": {
-                        "& rect": {
-                            fill: "white",
-                        },
-                        "& polygon": {
-                            fill: theme.palette.primary.main,
-                        },
-                    },
-                },
-            },
-        },
-    })
-);
+import { PaletteMode } from "@mui/material";
 
 interface IHeader {
     themeToggler: () => void;
-    themeMode: PaletteType;
+    themeMode: PaletteMode;
 }
 
 export const Header = ({ themeMode, themeToggler }: IHeader) => {
-    const classes = useStyles();
     const router = useRouter();
 
     return (
-        <div className={classes.root}>
-            <AppBar className={classes.appBar} position="fixed" elevation={0}>
+        <div>
+            <AppBar
+                sx={{ bgcolor: "background.default", pb: 2 }}
+                position="fixed"
+                elevation={0}
+            >
                 <Container maxWidth="lg">
-                    <Toolbar disableGutters={true}>
+                    <Toolbar disableGutters sx={{ mb: 2 }}>
                         <div
                             role="menuitem"
                             tabIndex={0}
@@ -76,26 +44,20 @@ export const Header = ({ themeMode, themeToggler }: IHeader) => {
                             onKeyPress={() => {
                                 router.push("/");
                             }}
-                            className={classes.toolbarTitle}
+                            style={{
+                                color: "primary.main",
+                                flex: 1,
+                                textDecoration: "none",
+                                outline: 0,
+                                cursor: "pointer",
+                            }}
                         >
-                            <Typography
-                                component="h1"
-                                variant="h4"
-                                color="inherit"
-                                noWrap
-                                style={{
-                                    cursor: "pointer",
-                                }}
-                            >
+                            <Typography component="h1" variant="h4" noWrap>
                                 m0ss
                             </Typography>
                         </div>
                         <IconButton onClick={() => themeToggler()}>
-                            {themeMode === "dark" ? (
-                                <Brightness7 />
-                            ) : (
-                                <Brightness4 />
-                            )}
+                            {themeMode === "dark" ? <Brightness7 /> : <Brightness4 />}
                         </IconButton>
                         <IconButton
                             onClick={() => {
@@ -108,20 +70,18 @@ export const Header = ({ themeMode, themeToggler }: IHeader) => {
                             href="https://www.npmjs.com/~agmoss"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className={classes.npm}
+                            sx={{
+                                "& button:hover rect": { fill: "white" },
+                                "& button:hover polygon": { fill: "primary.main" },
+                            }}
                         >
                             <IconButton>
                                 <SvgIcon>
                                     <svg viewBox="0 0 27.23 27.23">
-                                        <rect
-                                            fill="#fff"
-                                            width="27.23"
-                                            height="27.23"
-                                            rx="2"
-                                        />
+                                        <rect fill="#fff" width="27.23" height="27.23" rx="2" />
                                         <polygon
                                             fill="rgba(0, 0, 0, 0.54)"
-                                            points="5.8 21.75 13.66 21.75 13.67 9.98 17.59 9.98 17.58 21.76 21.51 21.76 21.52 6.06 5.82 6.04 5.8 21.75"
+                                            points="5.8 21.75 13.66 21.75 13.679.98 17.59 9.98 17.58 21.76 21.51 21.76 21.52 6.06 5.82 6.04 5.8 21.75"
                                         />
                                     </svg>
                                 </SvgIcon>

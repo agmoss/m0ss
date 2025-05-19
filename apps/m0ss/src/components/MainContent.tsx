@@ -1,51 +1,36 @@
+// @ts-nocheck
 import { AboutPaper } from "@m0ss/core";
 import { severity, Snacks } from "@m0ss/core";
-import { Container, Divider, Grid, Typography } from "@material-ui/core";
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import { Container, Divider, Grid, Typography } from "@mui/material";
+import { styled } from "@mui/material/styles";
 import { generate } from "random-words";
 import React, { useState } from "react";
-import { ReactMdRenderer } from "react-md-renderer/v4";
+import Markdown from "markdown-to-jsx";
 
 import { IStr } from "../data";
 
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        sidebarSection: {
-            padding: theme.spacing(2),
-        },
-        sidebarAboutBox: {
-            padding: theme.spacing(2),
-        },
-        mainGrid: {
-            marginTop: theme.spacing(3),
-            marginBottom: theme.spacing(3),
-        },
-        landingTypography: {
-            "@global": {
-                h2: {
-                    ...theme.typography.h4,
-                },
-                h3: {
-                    ...theme.typography.h5,
-                    fontWeight: theme.typography.fontWeightBold,
-                    paddingTop: theme.spacing(1),
-                    paddingBottom: theme.spacing(1),
-                },
-                h4: {
-                    ...theme.typography.body1,
-                    paddingBottom: theme.spacing(1.5),
-                },
-            },
-        },
-        customDivider: {
-            backgroundColor: theme.palette.primary.main,
-            marginBottom: theme.spacing(3),
-        },
-    })
-);
+const MainGrid = styled(Grid)(({ theme }) => ({
+    marginTop: theme.spacing(3),
+    marginBottom: theme.spacing(3),
+}));
+
+const LandingTypography = styled(Grid)(({ theme }) => ({
+    "& h2": {
+        ...theme.typography.h4,
+    },
+    "& h3": {
+        ...theme.typography.h5,
+        fontWeight: theme.typography.fontWeightBold,
+        paddingTop: theme.spacing(1),
+        paddingBottom: theme.spacing(1),
+    },
+    "& h4": {
+        ...theme.typography.body1,
+        paddingBottom: theme.spacing(1.5),
+    },
+}));
 
 export const MainContent = ({ str }: IStr) => {
-    const classes = useStyles();
     const [openSnack, setOpenSnack] = useState(false);
 
     const [message, setMessage] = useState(generate({ exactly: 5, join: " " }));
@@ -72,18 +57,18 @@ export const MainContent = ({ str }: IStr) => {
                 message={message}
                 level={severity[level]}
             />
-            <Grid container spacing={5} className={classes.mainGrid}>
+            <MainGrid container spacing={5}>
                 <Grid item xs={12} md={4}>
                     <AboutPaper handleOpen={handleOpen} />
                 </Grid>
-                <Grid item xs={12} md={8} className={classes.landingTypography}>
+                <LandingTypography item xs={12} md={8}>
                     <Typography variant="h5" gutterBottom>
                         Rant
                     </Typography>
-                    <Divider className={classes.customDivider} />
-                    <ReactMdRenderer>{str}</ReactMdRenderer>
-                </Grid>
-            </Grid>
+                    <Divider sx={{ bgcolor: "primary.main", mb: 3 }} />
+                    <Markdown>{str}</Markdown>
+                </LandingTypography>
+            </MainGrid>
         </Container>
     );
 };

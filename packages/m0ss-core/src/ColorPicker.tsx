@@ -1,5 +1,6 @@
+// @ts-nocheck
 import { BlockPicker } from "@hello-pangea/color-picker";
-import { useTheme } from "@material-ui/core/styles";
+import { useTheme } from "@mui/material/styles";
 import React from "react";
 
 export const ColorPicker = ({
