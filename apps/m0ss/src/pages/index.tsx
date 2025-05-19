@@ -3,7 +3,7 @@ import { pipe } from "fp-ts/function";
 import { DeepRequired } from "utility-types";
 
 import { IProfile, landingData } from "../data";
-import { getText } from "../utils";
+import { getText } from "@m0ss/utils";
 import { Landing as LandingPage } from "../views";
 
 export const getStaticProps = async () => {

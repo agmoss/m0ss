@@ -1,17 +1,8 @@
 import * as E from "fp-ts/Either";
 import { pipe } from "fp-ts/function";
+import { getText } from "@m0ss/utils";
 
 import { IStr, postData, PostDataWithContent } from "../data";
-
-export const getText = async (url: string): Promise<E.Either<any, string>> => {
-    try {
-        const response = await fetch(url);
-        const text = await response.text();
-        return E.right(text);
-    } catch (e) {
-        return E.left(e);
-    }
-};
 
 export const getPostData = async ({ str }: IStr) => {
     const link = postData.find((p) => p.slug === str);

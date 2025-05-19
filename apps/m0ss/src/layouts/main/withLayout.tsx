@@ -4,7 +4,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import AOS from "aos";
 import React, { ComponentType, useEffect } from "react";
 
-import { getTheme } from "../../theme/index";
+import { getTheme } from "@m0ss/theme";
 import { useDarkMode } from "./useDarkMode";
 
 export interface ILayout {

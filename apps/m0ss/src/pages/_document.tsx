@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React from "react";
 import Document, { Html, Head, Main, NextScript } from "next/document";
-import { rawTheme } from "../theme";
+import { rawTheme } from "@m0ss/theme";
 
 export default class MyDocument extends Document {
     render() {

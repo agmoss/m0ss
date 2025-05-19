@@ -5,7 +5,7 @@ import Head from "next/head";
 import React from "react";
 
 import { IStr, metaData } from "../../data";
-import { getText } from "../../utils";
+import { getText } from "@m0ss/utils";
 import { _ProjectReadme } from "../../views";
 
 export const getStaticProps: GetStaticProps = async () => {
