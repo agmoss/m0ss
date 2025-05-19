@@ -1,6 +1,5 @@
 import path from "path";
-import { fileURLToPath } from 'url';
-
+import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -13,13 +12,16 @@ const nextConfig = {
     transpilePackages: ["@m0ss/core", "react-md-renderer"],
     productionBrowserSourceMaps: false,
     images: {
-        domains: ["m0ss.dev"],
+        remotePatterns: [
+            {
+                protocol: "https",
+                hostname: "m0ss.dev",
+            },
+        ],
         formats: ["image/avif", "image/webp"],
     },
     output: "standalone",
-    experimental: {
-        outputFileTracingRoot: path.join(__dirname, "../../"),
-    },
+    outputFileTracingRoot: path.join(__dirname, "../../"),
     eslint: {
         ignoreDuringBuilds: true,
     },

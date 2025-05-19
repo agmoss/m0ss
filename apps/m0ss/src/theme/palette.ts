@@ -17,6 +17,7 @@ export const light = {
         secondary: "#718096",
     },
     divider: "rgba(0, 0, 0, 0.12)",
+    contrastText: '#rgba(0, 0, 0, 0.12)"',
     background: {
         paper: "#fff",
         default: "#fff",

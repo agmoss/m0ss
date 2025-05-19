@@ -25,7 +25,7 @@ export const Footer = () => {
         <Root as="footer">
             <Container sx={{ mt: 10, mb: 10 }}>
                 <Grid container>
-                    <Grid item xs={12}>
+                    <Grid size={{ xs: 12, sm: 12, md: 12, lg: 12 }}>
                         <Grid
                             container
                             justifyContent="center"
@@ -33,7 +33,7 @@ export const Footer = () => {
                             alignContent="center"
                             spacing={6}
                         >
-                            <Grid item>
+                            <Grid>
                                 <Typography
                                     component="h3"
                                     variant="h3"
@@ -43,8 +43,14 @@ export const Footer = () => {
                                     m0ss
                                 </Typography>
                             </Grid>
-                            <Grid item>
-                                <ul style={{ margin: 0, listStyle: "none", paddingLeft: 0 }}>
+                            <Grid>
+                                <ul
+                                    style={{
+                                        margin: 0,
+                                        listStyle: "none",
+                                        paddingLeft: 0,
+                                    }}
+                                >
                                     <li>
                                         <StyledButton
                                             size="large"
@@ -58,7 +64,9 @@ export const Footer = () => {
                                     <li>
                                         <StyledButton
                                             size="large"
-                                            onClick={() => router.push(Paths.README)}
+                                            onClick={() =>
+                                                router.push(Paths.README)
+                                            }
                                             role="link"
                                         >
                                             README

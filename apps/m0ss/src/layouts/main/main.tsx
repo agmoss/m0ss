@@ -5,6 +5,7 @@ import { styled } from "@mui/material/styles";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { ILayout } from "./withLayout";
+import { Box } from "@mui/material";
 
 const Root = styled("div")(({ theme }) => ({
     display: "flex",
@@ -22,7 +23,9 @@ export const Main = ({
     return (
         <Root>
             <Header themeMode={themeMode} themeToggler={themeToggler} />
-            <ApplyAos>{children}</ApplyAos>
+            <Box sx={{ mt: 5 }}>
+                <ApplyAos>{children}</ApplyAos>
+            </Box>
             <Footer />
         </Root>
     );

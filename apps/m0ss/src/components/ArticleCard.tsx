@@ -1,4 +1,10 @@
-import { Button, Card, CardActions, CardContent, Typography } from "@mui/material";
+import {
+    Button,
+    Card,
+    CardActions,
+    CardContent,
+    Typography,
+} from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { useRouter } from "next/router";
 import React from "react";
@@ -21,7 +27,11 @@ export const ArticleCard = (data: PostData) => {
     return (
         <Root variant="outlined">
             <CardContent>
-                <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                <Typography
+                    sx={{ fontSize: 14 }}
+                    color="text.secondary"
+                    gutterBottom
+                >
                     {data.slug}
                 </Typography>
                 <Typography variant="body2" component="p">

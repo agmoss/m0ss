@@ -58,10 +58,10 @@ export const MainContent = ({ str }: IStr) => {
                 level={severity[level]}
             />
             <MainGrid container spacing={5}>
-                <Grid item xs={12} md={4}>
+                <Grid size={{ xs: 12, sm: 12, md: 4, lg: 4 }}>
                     <AboutPaper handleOpen={handleOpen} />
                 </Grid>
-                <LandingTypography item xs={12} md={8}>
+                <LandingTypography size={{ xs: 12, sm: 12, md: 8, lg: 8 }}>
                     <Typography variant="h5" gutterBottom>
                         Rant
                     </Typography>

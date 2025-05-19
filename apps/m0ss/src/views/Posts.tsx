@@ -18,7 +18,6 @@ const CardGrid = styled(Container)(({ theme }) => ({
 }));
 
 export const Posts = ({ data }: { data: PostData[] }) => {
-
     return (
         <>
             <HeroContent>
@@ -42,7 +41,11 @@ export const Posts = ({ data }: { data: PostData[] }) => {
                     direction="row"
                 >
                     {data.map((d) => (
-                        <Grid item xs={12} md={6} key={d.slug} sx={{ display: "flex" }}>
+                        <Grid
+                            size={{ xs: 12, sm: 12, md: 6, lg: 6 }}
+                            key={d.slug}
+                            sx={{ display: "flex" }}
+                        >
                             <ArticleCard {...d} />
                         </Grid>
                     ))}
